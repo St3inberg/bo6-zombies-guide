@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Liberty Falls Main Quest Easter Egg guide for Black Ops 6 Zombies. Step-by-step checklist, RAI K-84 crafting, church steps, and Amalgam boss fight strategy." />
+  <title>Liberty Falls Easter Egg Guide — BO6 Zombies</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛪</text></svg>" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    :root { --accent-color: var(--neon-orange); }
+    .guide-hero--liberty .guide-hero-tag { color: var(--neon-orange); }
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      color: var(--neon-orange) !important;
+      background: rgba(255,107,0,0.08) !important;
+      border-left-color: var(--neon-orange) !important;
+    }
+    .hero-stat-value { color: var(--neon-orange) !important; }
+    .hero-stat-value.green  { color: var(--neon-green)  !important; }
+    .hero-stat-value.red    { color: var(--neon-red)    !important; }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: var(--neon-orange) !important; background: rgba(255,107,0,0.08) !important; }
+  </style>
+</head>
+<body data-map-id="liberty">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🧟</span>
+        <span>BO6<span class="accent"> Zombies</span></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Maps</a></li>
+        <li><a href="terminus.html">Terminus</a></li>
+        <li><a href="liberty-falls.html" class="active">Liberty Falls</a></li>
+        <li><a href="citadelle.html">Citadelle</a></li>
+      </ul>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+    </nav>
+  </header>
+
+  <div class="guide-layout">
+
+    <!-- Sidebar -->
+    <aside class="guide-sidebar" aria-label="Guide navigation">
+      <p class="sidebar-label">Jump to Section</p>
+      <ul class="sidebar-nav" role="list">
+        <li><a href="#loadout">🎒 Recommended Loadout</a></li>
+        <li><a href="#power">⚡ Power Up the Town</a></li>
+        <li><a href="#raik84">🔫 Build RAI K-84</a></li>
+        <li><a href="#church">⛪ Church Investigation</a></li>
+        <li><a href="#crystals">💎 Charge the Crystals</a></li>
+        <li><a href="#boss">💀 Boss Fight — Amalgam</a></li>
+      </ul>
+      <div class="sidebar-progress" role="region" aria-label="Quest progress">
+        <p class="sidebar-progress-label">Quest Progress</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-text">
+          <span class="pct">0%</span>
+          <span class="count">0/0</span>
+        </div>
+        <button class="sidebar-reset-btn" type="button">↺ Reset Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="guide-main" id="main-content">
+
+      <!-- Hero -->
+      <div class="guide-hero guide-hero--liberty">
+        <p class="guide-hero-tag">Main Quest Easter Egg · Round-Based</p>
+        <h1>Liberty Falls</h1>
+        <p>
+          A sleepy West Virginia town with a sinister backroom cult. Restore power to the
+          town grid, rebuild the RAI K-84 Wonder Weapon, expose the church conspiracy, charge
+          four Aether Crystals, and face the Amalgam in an intense multi-phase showdown.
+        </p>
+        <div class="guide-hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-orange)">20</span>
+            <span class="hero-stat-label">Quest Steps</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-green)">1–2h</span>
+            <span class="hero-stat-label">Avg Time</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-yellow)">★★☆</span>
+            <span class="hero-stat-label">Difficulty</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value class=green" style="color:var(--neon-green)">Best First</span>
+            <span class="hero-stat-label">Map to Try</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOADOUT ─────────────────────────────────────── -->
+      <section class="guide-section" id="loadout" aria-labelledby="loadout-heading">
+        <div class="section-header section-header--orange">
+          <span class="section-icon">🎒</span>
+          <h2 id="loadout-heading">Recommended Loadout</h2>
+          <span class="section-phase-tag phase-early">Pre-Game</span>
+        </div>
+
+        <div class="loadout-grid">
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">💊</span>
+              <span class="loadout-label">Perks Priority</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">Juggernaut</div><div class="item-why">Mandatory — boss charges are lethal</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">Quick Revive</div><div class="item-why">Solo self-revive, or fast partner revive</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">PhD Flopper</div><div class="item-why">Dive attacks deal explosion damage to boss clusters</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">Stamina-Up</div><div class="item-why">Liberty Falls has tight corridors — you sprint constantly</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">🧠</span>
+              <span class="loadout-label">Gobblegums</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">Perkaholic</div><div class="item-why">Easiest map to run this — grab all perks Round 1</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">In Plain Sight</div><div class="item-why">Invisible briefly — use during crystal charging</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">Weapons of the Damned</div><div class="item-why">Random mystery box WW — save for boss phase 2</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">🔫</span>
+              <span class="loadout-label">Weapons</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">XM4 (PaP Tier 2)</div><div class="item-why">Fast TTK, great ammo economy</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">RAI K-84 (WW)</div><div class="item-why">Fires void grenades — melts the Amalgam's weak points</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">🔮</span>
+              <span class="loadout-label">Ammo Mod</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">Napalm Burst</div><div class="item-why">AoE fire — clears zombie clusters around crystals</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-orange)"></span>
+                <div><div class="item-name">Dead Wire</div><div class="item-why">Stuns Amalgam briefly in Phase 1</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>Beginner's Map</strong>
+            Liberty Falls is the recommended starting map. The quest is linear, the
+            town layout is easy to navigate, and the boss fight phases are predictable.
+            Learn the Easter Egg here before tackling Terminus or Citadelle.
+          </div>
+        </div>
+      </section>
+
+      <!-- ── POWER ───────────────────────────────────────── -->
+      <section class="guide-section" id="power" aria-labelledby="power-heading">
+        <div class="section-header section-header--orange">
+          <span class="section-icon">⚡</span>
+          <h2 id="power-heading">Power Up the Town</h2>
+          <span class="section-phase-tag phase-early">Rounds 1–4</span>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="lf001" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 01</div>
+                <div class="step-title">Turn on the Power at Liberty Falls Electrical Substation</div>
+                <div class="step-desc">
+                  The substation is on the eastern edge of town, behind the
+                  <strong>Ray's Bait &amp; Tackle</strong> shop. Pull the large
+                  red lever to restore town power. This unlocks the Pack-a-Punch
+                  and all perk machines.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                  <span class="step-tag tag-tip">Unlocks PaP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf002" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 02</div>
+                <div class="step-title">Pack-a-Punch your primary weapon (at least Tier 1)</div>
+                <div class="step-desc">
+                  The PaP Machine appears at the town square gazebo once power
+                  is on. Tier 1 Pack is sufficient for early WW steps.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf003" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 03</div>
+                <div class="step-title">Collect the Liberty Falls Newspaper (Quest Trigger)</div>
+                <div class="step-desc">
+                  A glowing newspaper lies on a bench outside the
+                  <strong>Liberty Falls Diner</strong>. Picking it up reveals
+                  redacted text about the church — this officially starts the quest.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Triggers Quest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── RAI K-84 ────────────────────────────────────── -->
+      <section class="guide-section" id="raik84" aria-labelledby="raik84-heading">
+        <div class="section-header section-header--orange">
+          <span class="section-icon">🔫</span>
+          <h2 id="raik84-heading">Build the RAI K-84</h2>
+          <span class="section-phase-tag phase-mid">Mid-Game</span>
+        </div>
+
+        <div class="callout callout-tip" style="margin-bottom:1rem;">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>Weapon Blueprint</strong>
+            Unlike Terminus, the RAI K-84 requires a blueprint schematic to be found first —
+            it's in the <strong>Library</strong> second floor. Get it before collecting parts.
+          </div>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="lf004" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 04</div>
+                <div class="step-title">Find the RAI K-84 Blueprint in the Library</div>
+                <div class="step-desc">
+                  On the second floor of <strong>Liberty Falls Public Library</strong>,
+                  check the reading table closest to the south window. Pick up the
+                  glowing blueprint scroll.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Blueprint First</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf005" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 05</div>
+                <div class="step-title">Kill 30 zombies with headshots near the Town Hall</div>
+                <div class="step-desc">
+                  The first WW part — a <strong>Void Beam Emitter</strong> —
+                  drops from the 30th headshot kill anywhere in the Town Hall
+                  area (north quarter of the map).
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">WW Part 1</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf006" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 06</div>
+                <div class="step-title">Destroy the glowing satellite dish on the Police Station roof</div>
+                <div class="step-desc">
+                  A corrupted satellite dish on the <strong>police station</strong>
+                  rooftop emits black Aether energy. Shoot it 5 times with
+                  any PaP'd weapon until it sparks and falls. Collect the
+                  <strong>Antenna Fragment</strong> from the debris.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">WW Part 2</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf007" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 07</div>
+                <div class="step-title">Solve the Diner Fuse Box puzzle</div>
+                <div class="step-desc">
+                  Inside the <strong>Liberty Falls Diner</strong>, interact with
+                  the open fuse box. The puzzle requires switching four fuses to
+                  match the lit pattern on the wall poster.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">WW Part 3</span><span class="step-tag tag-tip">Pattern on poster</span></div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-lf007" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Fuse Box Solution
+            </button>
+            <div class="substeps" id="subs-lf007" role="region">
+              <ol>
+                <li>The wall poster shows a 2×2 grid with two squares lit. Match that pattern on the fuses.</li>
+                <li>Default puzzle solution (fixed across all matches): Fuse <code>A ON</code>, Fuse <code>B OFF</code>, Fuse <code>C ON</code>, Fuse <code>D OFF</code>.</li>
+                <li>Confirm by pressing the large button on the left side of the box.</li>
+                <li>The <strong>Void Capacitor</strong> component will drop from the machine on the counter.</li>
+              </ol>
+              <p class="sub-note">💡 If the poster is obscured by zombie damage, the default solution always works.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf008" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 08</div>
+                <div class="step-title">Assemble RAI K-84 at the Workbench (Gas Station)</div>
+                <div class="step-desc">
+                  The workbench is inside the <strong>Liberty Auto Gas Station</strong>
+                  on the south end of town. Take all three parts and the blueprint here
+                  to craft the RAI K-84. Hold interact (3 sec).
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Wonder Weapon</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── CHURCH ─────────────────────────────────────── -->
+      <section class="guide-section" id="church" aria-labelledby="church-heading">
+        <div class="section-header section-header--purple">
+          <span class="section-icon">⛪</span>
+          <h2 id="church-heading">Church Investigation</h2>
+          <span class="section-phase-tag phase-mid">Rounds 10–14</span>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="lf009" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 09</div>
+                <div class="step-title">Unlock the church with the Town Hall Key</div>
+                <div class="step-desc">
+                  After building the RAI K-84, a special <strong>Mayor Zombie</strong>
+                  spawns wearing a suit and a glowing keychain. Kill it and
+                  collect the <strong>Town Hall Key</strong>. This key also opens
+                  the church door on the west end of Liberty Falls main street.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                  <span class="step-tag tag-warning">Elite Zombie</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf010" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 10</div>
+                <div class="step-title">Investigate the underground cult chamber</div>
+                <div class="step-desc">
+                  Inside the church, interact with the altar to reveal a hidden
+                  trapdoor. Descend into the <strong>Cult Chamber</strong>. Four
+                  ritual circles line the walls — each holds a glowing orb.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf011" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 11</div>
+                <div class="step-title">Shoot the 4 Ritual Candles in the correct order</div>
+                <div class="step-desc">
+                  Each candle corresponds to a symbol burned into the chamber
+                  floor. Shoot them in the order: <strong>Sun → Moon →
+                  Eye → Spiral</strong>. Incorrect order restarts.
+                  Use the RAI K-84's void shots — they don't require precision.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Timed Puzzle</span>
+                  <span class="step-tag tag-warning">Fixed Order</span>
+                </div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-lf011" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Symbol Locations
+            </button>
+            <div class="substeps" id="subs-lf011" role="region">
+              <ol>
+                <li><strong>Sun symbol</strong> — North wall, floor level, left of the large painting.</li>
+                <li><strong>Moon symbol</strong> — West alcove ceiling, above the stone basin.</li>
+                <li><strong>Eye symbol</strong> — East wall centre, behind the wooden podium.</li>
+                <li><strong>Spiral symbol</strong> — South wall near the trapdoor entrance.</li>
+              </ol>
+              <p class="sub-note">⚠ After shooting the Eye, 3 Mimics spawn. Clear them before the Spiral or the sequence resets.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf012" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 12</div>
+                <div class="step-title">Collect the 4 Aether Crystals from the ritual circles</div>
+                <div class="step-desc">
+                  After the candle sequence, four purple crystals materialise in
+                  the ritual circles. Pick all four up. They glow with corruption
+                  energy and must be charged at the town's ley line nodes.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── CRYSTALS ───────────────────────────────────── -->
+      <section class="guide-section" id="crystals" aria-labelledby="crystals-heading">
+        <div class="section-header section-header--purple">
+          <span class="section-icon">💎</span>
+          <h2 id="crystals-heading">Charge the Aether Crystals</h2>
+          <span class="section-phase-tag phase-mid">Rounds 14–18</span>
+        </div>
+
+        <div class="callout callout-warn" style="margin-bottom:1rem;">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <strong>Do All Four In One Round</strong>
+            Once you place the first crystal at a ley line node, a 3-minute timer
+            starts. All four nodes must be charged before the timer expires or you
+            lose all progress. Plan routes in advance.
+          </div>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="lf013" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 13</div>
+                <div class="step-title">Charge Crystal 1 at the Central Park Ley Line Node</div>
+                <div class="step-desc">
+                  Place the crystal on the glowing ground symbol in
+                  <strong>Central Park</strong>. Kill 15 zombies within 10 metres
+                  of it to charge with enough Aether energy. Crystal glow
+                  changes from purple → gold when done.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Timed ⏱</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf014" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 14</div>
+                <div class="step-title">Charge Crystal 2 at the Graveyard Node</div>
+                <div class="step-desc">
+                  Northeast of town at the <strong>St. Michael's Graveyard</strong>.
+                  Same charging method — kill 15 zombies near the crystal.
+                  Beware: this node has restricted space and a fence you cannot
+                  mantle easily.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Timed ⏱</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf015" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 15</div>
+                <div class="step-title">Charge Crystal 3 at the Bank Vault Node</div>
+                <div class="step-desc">
+                  The <strong>Liberty National Bank</strong> vault room in the
+                  basement. Access via the back alley door. This is the most
+                  enclosed node — use Brain Rot to convert a zombie so you're
+                  not overwhelmed.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Timed ⏱</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf016" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 16</div>
+                <div class="step-title">Charge Crystal 4 at the Church Bell Tower Node</div>
+                <div class="step-desc">
+                  Back to the church — climb the bell tower stairs (now
+                  accessible after the catacombs sequence). The node is on the
+                  bell platform. Final crystal charged triggers the boss
+                  portal cutscene.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Timed ⏱</span>
+                  <span class="step-tag tag-required">Triggers Boss</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BOSS FIGHT ─────────────────────────────────── -->
+      <section class="guide-section" id="boss" aria-labelledby="boss-heading">
+        <div class="section-header section-header--red">
+          <span class="section-icon">💀</span>
+          <h2 id="boss-heading">Boss Fight — The Amalgam</h2>
+          <span class="section-phase-tag phase-boss">End Game</span>
+        </div>
+
+        <div class="checklist" role="list">
+          <div class="checklist-item" data-step-id="lf017" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 17</div>
+                <div class="step-title">Prepare — Max Ammo &amp; resupply before portal opens</div>
+                <div class="step-desc">You have one safe round after Crystal 4 charges. Buy Max Ammo from the box if available and re-up any downed perks.</div>
+                <div class="step-tags"><span class="step-tag tag-required">Prep</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf018" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 18</div>
+                <div class="step-title">Enter the Void Arena via the church portal</div>
+                <div class="step-desc">The boss arena is a circular void space. You'll be trapped here until the fight ends — no escaping. All 4 players must enter within 20 seconds.</div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf019" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 19</div>
+                <div class="step-title">Defeat the Amalgam — 3 phases</div>
+                <div class="step-desc">See the boss phase guide below.</div>
+                <div class="step-tags"><span class="step-tag tag-required">Boss Fight</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="lf020" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 20</div>
+                <div class="step-title">🎉 Easter Egg Complete!</div>
+                <div class="step-desc">The Amalgam dissolves, the portal closes, and you're returned to Liberty Falls with the Easter Egg completion cutscene. You've earned it!</div>
+                <div class="step-tags"><span class="step-tag tag-solo">Done!</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="boss-section" style="margin-top:1.5rem;" aria-label="Boss fight details">
+          <div class="boss-header">
+            <span class="boss-icon">🕷</span>
+            <div class="boss-info">
+              <h3>The Amalgam</h3>
+              <p>A fused mass of zombified townsfolk, driven by Aether corruption. Weak to void energy and explosives.</p>
+            </div>
+          </div>
+          <div class="boss-phases" role="list">
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">1</span>
+              <div class="phase-detail">
+                <h4>Phase 1 — Ground Swipe (100% → 70%)</h4>
+                <p>Amalgam drags itself across the floor, sweeping a wide arc. <strong>Jump over the sweep or sprint behind it.</strong> Exposed purple core on its back — RAI K-84 void grenades deal 4× damage here. Adds: Small zombie clusters.</p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">2</span>
+              <div class="phase-detail">
+                <h4>Phase 2 — Split Form (70% → 35%)</h4>
+                <p>The Amalgam splits into two smaller forms that orbit each other. <strong>Focus the one with the brighter core</strong> (the real one). Destroying a clone prematurely respawns it in 15 seconds. Adds: Disciple zombies with shields.</p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">3</span>
+              <div class="phase-detail">
+                <h4>Phase 3 — Aether Eruption (35% → 0%)</h4>
+                <p>The arena floor becomes partially electrified. <strong>Stay inside the white circles on the floor</strong> — standing on orange tiles deals rapid damage. The Amalgam's core becomes a permanent weak point — dump all remaining RAI K-84 ammo here.</p>
+              </div>
+            </div>
+          </div>
+          <div class="boss-tips">
+            <p class="boss-tips-title">🔶 Boss Survival Tips</p>
+            <ul>
+              <li><strong>RAI K-84 charged alt-fire</strong> (hold fire) deals massive damage to the core in all phases.</li>
+              <li>In Phase 3, use PhD Flopper dive-bombs into zombie clusters for extra crowd control.</li>
+              <li><strong>Don't chase the Amalgam</strong> in Phase 2 — it baits you into the electrified floor.</li>
+              <li>Squad tip: one player stays mobile with SMG, three players focus DPS on the core.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── Mobile Bottom Nav ──────────────────────────────── -->
+  <nav class="mobile-bottom-nav" aria-label="Quick navigation">
+    <a href="#loadout"><span>🎒</span>Loadout</a>
+    <a href="#power"><span>⚡</span>Power</a>
+    <a href="#raik84"><span>🔫</span>WW</a>
+    <a href="#church"><span>⛪</span>Church</a>
+    <a href="#crystals"><span>💎</span>Crystals</a>
+    <a href="#boss"><span>💀</span>Boss</a>
+  </nav>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>← <a href="terminus.html">Terminus</a> &nbsp;·&nbsp; <a href="citadelle.html">Citadelle des Morts →</a></p>
+    <p style="margin-top:0.5rem;">Fan-made guide · Not affiliated with Activision or Treyarch</p>
+  </footer>
+
+  <!-- Timer Modal (shared template) -->
+  <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
+    <div class="timer-modal">
+      <button class="timer-modal-close" aria-label="Close timer">✕</button>
+      <p class="timer-label">⏱ Round Stopwatch</p>
+      <div class="timer-display" aria-live="polite">00:00:00.00</div>
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-start">▶ Start</button>
+        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
+        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+      </div>
+      <div class="timer-laps" aria-label="Lap times" role="list"></div>
+    </div>
+  </div>
+  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

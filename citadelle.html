@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Citadelle des Morts Main Quest Easter Egg guide for Black Ops 6 Zombies. Elemental sword crafting, alchemical rituals, four WW variants, and Count Dracula boss fight." />
+  <title>Citadelle des Morts Easter Egg Guide — BO6 Zombies</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏰</text></svg>" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    :root { --accent-color: var(--neon-purple); }
+    .guide-hero--citadelle .guide-hero-tag { color: var(--neon-purple); }
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      color: var(--neon-purple) !important;
+      background: rgba(191,95,255,0.08) !important;
+      border-left-color: var(--neon-purple) !important;
+      text-shadow: none !important;
+    }
+    .hero-stat-value { color: var(--neon-purple) !important; }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: var(--neon-purple) !important; background: rgba(191,95,255,0.08) !important; }
+    .element-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0.75rem; margin-bottom:1rem; }
+    .element-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1rem; }
+    .element-card.fire    { border-color:rgba(255,107,0,0.35); }
+    .element-card.ice     { border-color:rgba(0,245,255,0.35); }
+    .element-card.shadow  { border-color:rgba(191,95,255,0.35); }
+    .element-card.storm   { border-color:rgba(255,230,0,0.35); }
+    .element-card .el-icon { font-size:1.8rem; margin-bottom:0.5rem; }
+    .element-card .el-name { font-size:0.85rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.3rem; }
+    .element-card.fire   .el-name { color: var(--neon-orange); }
+    .element-card.ice    .el-name { color: var(--neon-cyan);   }
+    .element-card.shadow .el-name { color: var(--neon-purple); }
+    .element-card.storm  .el-name { color: var(--neon-yellow); }
+    .element-card .el-desc { font-size:0.75rem; color:var(--text-secondary); line-height:1.5; }
+  </style>
+</head>
+<body data-map-id="citadelle">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🧟</span>
+        <span>BO6<span class="accent"> Zombies</span></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Maps</a></li>
+        <li><a href="terminus.html">Terminus</a></li>
+        <li><a href="liberty-falls.html">Liberty Falls</a></li>
+        <li><a href="citadelle.html" class="active">Citadelle</a></li>
+      </ul>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+    </nav>
+  </header>
+
+  <div class="guide-layout">
+
+    <!-- Sidebar -->
+    <aside class="guide-sidebar" aria-label="Guide navigation">
+      <p class="sidebar-label">Jump to Section</p>
+      <ul class="sidebar-nav" role="list">
+        <li><a href="#loadout">🎒 Recommended Loadout</a></li>
+        <li><a href="#power">⚡ Power the Castle</a></li>
+        <li><a href="#rituals">🔮 Alchemical Rituals</a></li>
+        <li><a href="#swords">⚔ Forge Elemental Swords</a></li>
+        <li><a href="#altar">🩸 The Blood Altar</a></li>
+        <li><a href="#boss">💀 Boss Fight — The Count</a></li>
+      </ul>
+      <div class="sidebar-progress" role="region" aria-label="Quest progress">
+        <p class="sidebar-progress-label">Quest Progress</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-text">
+          <span class="pct">0%</span>
+          <span class="count">0/0</span>
+        </div>
+        <button class="sidebar-reset-btn" type="button">↺ Reset Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="guide-main" id="main-content">
+
+      <!-- Hero -->
+      <div class="guide-hero guide-hero--citadelle">
+        <p class="guide-hero-tag">Main Quest Easter Egg · Round-Based</p>
+        <h1>Citadelle des Morts</h1>
+        <p>
+          A gothic French castle frozen in time by dark alchemy. Perform four
+          elemental rituals, forge a Wonder Weapon sword in the armory, activate
+          the Blood Altar under the great hall, and face the Count in an
+          epic three-phase showdown. Best attempted with 4 players.
+        </p>
+        <div class="guide-hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-purple)">26</span>
+            <span class="hero-stat-label">Quest Steps</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-orange)">3–4h</span>
+            <span class="hero-stat-label">Avg Time</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-red)">★★★</span>
+            <span class="hero-stat-label">Difficulty</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-orange)">4-Player</span>
+            <span class="hero-stat-label">Recommended</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOADOUT ─────────────────────────────────────── -->
+      <section class="guide-section" id="loadout" aria-labelledby="loadout-heading">
+        <div class="section-header section-header--purple">
+          <span class="section-icon">🎒</span>
+          <h2 id="loadout-heading">Recommended Loadout</h2>
+          <span class="section-phase-tag phase-early">Pre-Game</span>
+        </div>
+
+        <div class="loadout-grid">
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">💊</span>
+              <span class="loadout-label">Perks Priority</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Juggernaut</div><div class="item-why">Maximum HP essential — boss 1-shots at base HP</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Elemental Pop</div><div class="item-why">Random ammo mod on every shot — efficient for rituals</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Speed Cola</div><div class="item-why">Ritual steps require fast weapon swapping</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Deadshot Daiquiri</div><div class="item-why">Auto-aim on Count's face weakpoint in Phase 2</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">🧠</span>
+              <span class="loadout-label">Gobblegums</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Perkaholic</div><div class="item-why">This map benefits enormously from all perks early</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Reign Drops</div><div class="item-why">All 4 Power-ups — major time saver on ritual steps</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Crate Power</div><div class="item-why">Instant PaP on any mystery box WW pull</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">🔫</span>
+              <span class="loadout-label">Weapons</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">SVD (Sniper, PaP Tier 3)</div><div class="item-why">Long range essential for castle courtyard sections</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Elemental Sword (WW)</div><div class="item-why">Your chosen element — craft in the armory</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">🔮</span>
+              <span class="loadout-label">Ammo Mods</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Cryo-Freeze</div><div class="item-why">Freezing zombies is required for the Ice ritual step</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-purple)"></span>
+                <div><div class="item-name">Napalm Burst</div><div class="item-why">Required for Fire ritual step</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <strong>Squad Strategy Critical</strong>
+            Citadelle des Morts has steps where all 4 players must be in
+            different map areas simultaneously. Assign roles before entering:
+            one player per quadrant of the castle during ritual activation.
+          </div>
+        </div>
+      </section>
+
+      <!-- ── POWER ───────────────────────────────────────── -->
+      <section class="guide-section" id="power" aria-labelledby="power-heading">
+        <div class="section-header section-header--purple">
+          <span class="section-icon">⚡</span>
+          <h2 id="power-heading">Power the Castle</h2>
+          <span class="section-phase-tag phase-early">Rounds 1–5</span>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="cit001" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 01</div>
+                <div class="step-title">Activate the Alchemist's Furnace in the Lower Dungeon</div>
+                <div class="step-desc">
+                  The castle's power source is an ancient furnace in the lower dungeon
+                  (beneath the Great Hall). Throw any Field Upgrade at it to ignite.
+                  The furnace powers the castle's lighting and unlocks the PaP
+                  machine in the Upper Armory.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                  <span class="step-tag tag-tip">Unlocks PaP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit002" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 02</div>
+                <div class="step-title">Collect the Alchemist's Journal (Quest Trigger)</div>
+                <div class="step-desc">
+                  A leather-bound journal with a glowing purple rune on its cover sits
+                  on the reading stand in the <strong>Castle Library</strong> (east wing,
+                  second floor). Reading it starts the main quest and reveals the four
+                  elemental ritual locations.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Triggers Quest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit003" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 03</div>
+                <div class="step-title">Pack-a-Punch your main weapon to at least Tier 2</div>
+                <div class="step-desc">
+                  The ritual steps begin spawning elite enemies at Round 8+.
+                  Tier 2 PaP is the minimum — Tier 3 recommended before
+                  beginning the Fire and Shadow rituals.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── RITUALS ─────────────────────────────────────── -->
+      <section class="guide-section" id="rituals" aria-labelledby="rituals-heading">
+        <div class="section-header section-header--purple">
+          <span class="section-icon">🔮</span>
+          <h2 id="rituals-heading">Complete the 4 Alchemical Rituals</h2>
+          <span class="section-phase-tag phase-mid">Mid-Game</span>
+        </div>
+
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1.25rem;line-height:1.6;">
+          Four elemental ritual sites are scattered throughout the castle. Each ritual
+          requires a specific ammo mod and a unique challenge. Complete them in
+          any order — all four must be done before accessing the Sword Armory.
+        </p>
+
+        <!-- Element overview -->
+        <div class="element-cards" role="list">
+          <div class="element-card fire" role="listitem">
+            <div class="el-icon">🔥</div>
+            <div class="el-name">Fire Ritual</div>
+            <div class="el-desc">Location: North Tower<br>Ammo Mod: Napalm Burst<br>Challenge: Kill 25 zombies with fire damage on the ritual circle</div>
+          </div>
+          <div class="element-card ice" role="listitem">
+            <div class="el-icon">❄</div>
+            <div class="el-name">Ice Ritual</div>
+            <div class="el-desc">Location: East Courtyard<br>Ammo Mod: Cryo-Freeze<br>Challenge: Freeze and shatter 20 zombies on the ritual circle</div>
+          </div>
+          <div class="element-card shadow" role="listitem">
+            <div class="el-icon">🌑</div>
+            <div class="el-name">Shadow Ritual</div>
+            <div class="el-desc">Location: Lower Catacombs<br>Ammo Mod: Brain Rot<br>Challenge: Convert 10 zombies to fight each other on the circle</div>
+          </div>
+          <div class="element-card storm" role="listitem">
+            <div class="el-icon">⚡</div>
+            <div class="el-name">Storm Ritual</div>
+            <div class="el-desc">Location: West Battlements<br>Ammo Mod: Dead Wire<br>Challenge: Chain stun 5 zombies simultaneously 4 times</div>
+          </div>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="cit004" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 04</div>
+                <div class="step-title">Complete the Fire Ritual — North Tower</div>
+                <div class="step-desc">
+                  Equip Napalm Burst on your weapon. Stand inside the burning
+                  circle at the top of the North Tower and kill 25 zombies using
+                  fire damage. The circle must stay ignited — re-ignite it by
+                  shooting the brazier beside the altar every 30 seconds.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Ritual 1</span>
+                  <span class="step-tag tag-warning">Timer on brazier</span>
+                </div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-cit004" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Fire Ritual Detail
+            </button>
+            <div class="substeps" id="subs-cit004" role="region">
+              <ol>
+                <li>Climb the North Tower stairs (buy the 1000pt door near the chapel).</li>
+                <li>Interact with the stone altar at the top to activate the ritual circle.</li>
+                <li>Equip <strong>Napalm Burst</strong> ammo mod on your weapon.</li>
+                <li>Kill 25 zombies with fire damage <em>within the circle boundary</em>. Kills outside the circle don't count.</li>
+                <li>Every 30 seconds the circle dims — shoot the stone brazier to re-ignite it.</li>
+                <li>On completion a <strong>Fire Essence Vial</strong> appears on the altar. Collect it.</li>
+              </ol>
+              <p class="sub-note">💡 Tip: Stand at the circle's centre and let zombies walk into you — less positioning needed.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit005" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 05</div>
+                <div class="step-title">Complete the Ice Ritual — East Courtyard</div>
+                <div class="step-desc">
+                  Equip Cryo-Freeze ammo mod. Freeze and shatter 20 enemies
+                  on the ice ritual circle in the East Courtyard (beside the
+                  horse stables). Freeze them with Cryo, then melee or shoot
+                  to shatter while frozen.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Ritual 2</span>
+                  <span class="step-tag tag-tip">Freeze then melee</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit006" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 06</div>
+                <div class="step-title">Complete the Shadow Ritual — Lower Catacombs</div>
+                <div class="step-desc">
+                  The catacombs ritual requires Brain Rot conversions.
+                  Convert 10 zombies on the shadow circle. Converted zombies
+                  must fight and kill other zombies within the circle —
+                  passive conversions outside the circle don't count.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Ritual 3</span>
+                  <span class="step-tag tag-warning">Tight space</span>
+                </div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-cit006" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Shadow Ritual Detail
+            </button>
+            <div class="substeps" id="subs-cit006" role="region">
+              <ol>
+                <li>Access the Lower Catacombs via the trapdoor in the wine cellar (buy the 1500pt door).</li>
+                <li>Activate the ritual circle — it pulses with dark purple energy.</li>
+                <li>Equip <strong>Brain Rot</strong> ammo mod.</li>
+                <li>Stand just outside the circle. As zombies enter it, shoot them once with Brain Rot to convert them.</li>
+                <li>Converted zombies will automatically attack others. You need 10 conversions — they don't need to win their fight.</li>
+                <li>Collect the <strong>Shadow Essence Vial</strong> from the altar after the 10th conversion.</li>
+              </ol>
+              <p class="sub-note">⚠ The catacombs corridor is narrow. Place a Proximity Mine at the far end to prevent behind-flanks.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit007" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 07</div>
+                <div class="step-title">Complete the Storm Ritual — West Battlements</div>
+                <div class="step-desc">
+                  Equip Dead Wire ammo mod. On the West Battlements, chain-stun
+                  5 or more zombies simultaneously using Dead Wire electricity.
+                  This must happen 4 times total to complete the ritual.
+                  Requires zombie density — let them bunch up first.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Ritual 4</span>
+                  <span class="step-tag tag-squad">Easier with crowd</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit008" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 08</div>
+                <div class="step-title">Deliver all 4 Essence Vials to the Grand Altar in the Great Hall</div>
+                <div class="step-desc">
+                  Take the Fire, Ice, Shadow, and Storm vials to the large stone altar
+                  in the centre of the Great Hall. Place them in their corresponding
+                  coloured slots simultaneously (in squad, one player per vial;
+                  solo, interact four times in quick succession).
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                  <span class="step-tag tag-squad">Simultaneous in squad</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── SWORDS ──────────────────────────────────────── -->
+      <section class="guide-section" id="swords" aria-labelledby="swords-heading">
+        <div class="section-header section-header--yellow">
+          <span class="section-icon">⚔</span>
+          <h2 id="swords-heading">Forge the Elemental Sword</h2>
+          <span class="section-phase-tag phase-mid">Mid-Game</span>
+        </div>
+
+        <div class="callout callout-tip" style="margin-bottom:1rem;">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>Each Player Gets One Element</strong>
+            In a 4-player squad, each player can forge a different elemental variant —
+            Fire, Ice, Shadow, or Storm. In solo, you forge whichever element you
+            completed most recently. All variants are effective against the boss.
+          </div>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="cit009" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 09</div>
+                <div class="step-title">Retrieve the Sword Blank from the Upper Armory</div>
+                <div class="step-desc">
+                  After placing the vials on the Grand Altar, the Armory door
+                  unlocks. Each player must retrieve their own Sword Blank from
+                  the weapon racks inside, then return to the forge.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit010" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 10</div>
+                <div class="step-title">Temper the sword at the Elemental Forge</div>
+                <div class="step-desc">
+                  Take the Sword Blank + your chosen Essence Vial to the
+                  <strong>Elemental Forge</strong> in the castle's blacksmith
+                  room (west wing, ground floor). Insert the vial first, then
+                  place the blank on the anvil. Hold interact for 5 seconds.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Wonder Weapon</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit011" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 11</div>
+                <div class="step-title">Kill 50 enemies with the Elemental Sword to unlock alt-fire</div>
+                <div class="step-desc">
+                  Your elemental sword starts in basic mode. After 50 kills with it,
+                  the sword "awakens" — gaining an alternate elemental projectile
+                  attack (hold Melee button). This is critical for the boss fight.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Upgrade WW</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BLOOD ALTAR ────────────────────────────────── -->
+      <section class="guide-section" id="altar" aria-labelledby="altar-heading">
+        <div class="section-header section-header--red">
+          <span class="section-icon">🩸</span>
+          <h2 id="altar-heading">Activate the Blood Altar</h2>
+          <span class="section-phase-tag phase-mid">Late Game</span>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="cit012" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 12</div>
+                <div class="step-title">Collect the Count's Portrait from the Trophy Room</div>
+                <div class="step-desc">
+                  A specific portrait in the Trophy Room (north wing, third floor)
+                  hides the Blood Altar trigger. Interact with it three times —
+                  each time reveals more of the hidden text beneath the painting.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit013" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 13</div>
+                <div class="step-title">Bleed all 4 elemental swords on the altar's rune channels</div>
+                <div class="step-desc">
+                  The Blood Altar is in the sub-basement of the Great Hall
+                  (revealed by the portrait sequence). Each player must perform
+                  a <strong>melee attack inside their respective rune channel</strong>
+                  (coloured channels match sword elements). Must be done simultaneously.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">All 4 Players</span>
+                  <span class="step-tag tag-warning">Simultaneous</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit014" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 14</div>
+                <div class="step-title">Survive the Blood Altar lockdown (3 waves)</div>
+                <div class="step-desc">
+                  After bleeding the swords, three waves of elite enemies
+                  (Amalgams + Warlocks) spawn in the sub-basement. You
+                  cannot leave until all three waves are cleared.
+                  Beamsmasher (from another player) or elemental swords work best here.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Survive 3 Waves</span>
+                  <span class="step-tag tag-warning">No escape</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit015" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 15</div>
+                <div class="step-title">Stock up before the Great Hall boss portal opens</div>
+                <div class="step-desc">
+                  You have two full rounds after the lockdown. Buy Max Ammo,
+                  re-up all perks, and ensure all players have Tier 3 PaP.
+                  This is your last chance before the boss.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Prep</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BOSS FIGHT ─────────────────────────────────── -->
+      <section class="guide-section" id="boss" aria-labelledby="boss-heading">
+        <div class="section-header section-header--red">
+          <span class="section-icon">💀</span>
+          <h2 id="boss-heading">Boss Fight — The Count</h2>
+          <span class="section-phase-tag phase-boss">End Game</span>
+        </div>
+
+        <div class="checklist" role="list">
+          <div class="checklist-item" data-step-id="cit016" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 16</div>
+                <div class="step-title">Enter the Great Hall Boss Arena via the activated portal</div>
+                <div class="step-desc">All players must enter the arena before the 20-second window closes.</div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="cit017" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 17</div>
+                <div class="step-title">Defeat The Count — 3 phases</div>
+                <div class="step-desc">See the boss phase guide below. The Count is immune to conventional damage except during his elemental vulnerability windows.</div>
+                <div class="step-tags"><span class="step-tag tag-required">Boss Fight</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="boss-section" style="margin-top:1.5rem;" aria-label="Boss fight details">
+          <div class="boss-header">
+            <span class="boss-icon">🧛</span>
+            <div class="boss-info">
+              <h3>Count Dragoranov — The Undying</h3>
+              <p>An immortal alchemist fused with the Dark Aether. Requires elemental sword damage to defeat. Immune to conventional weapons during protected phases.</p>
+            </div>
+          </div>
+
+          <div class="boss-phases" role="list">
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">1</span>
+              <div class="phase-detail">
+                <h4>Phase 1 — Elemental Guard (100% → 70%)</h4>
+                <p>
+                  The Count is surrounded by a rotating elemental shield cycling
+                  through all four elements every 10 seconds. <strong>Only the matching
+                  elemental sword damages him while that element is active.</strong>
+                  Watch the colour of his shield aura — match it to your sword
+                  element and attack during that window. Non-matching swords bounce off.
+                </p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">2</span>
+              <div class="phase-detail">
+                <h4>Phase 2 — Bat Swarm (70% → 35%)</h4>
+                <p>
+                  The Count summons a bat swarm that blinds all players for
+                  8 seconds. <strong>Lie prone immediately when the swarm starts</strong>
+                  — it reduces blind duration. While blinded, shoot at the
+                  glowing red dot (his face weak point) — Deadshot Daiquiri
+                  helps aim here. The shield cycling speed doubles.
+                </p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">3</span>
+              <div class="phase-detail">
+                <h4>Phase 3 — True Form (35% → 0%)</h4>
+                <p>
+                  The Count reveals his true monstrous form — all elemental
+                  shields drop. <strong>Every elemental sword now damages him
+                  simultaneously.</strong> All players unload everything.
+                  He still spawns Warlock adds every 30 seconds — one
+                  dedicated player should handle add control while three
+                  focus DPS. This phase ends quickly with 4 players.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="boss-tips">
+            <p class="boss-tips-title">🏰 Boss Survival Tips</p>
+            <ul>
+              <li>In Phase 1, call out the current element — colour-coded: <strong>Orange = Fire, Blue = Ice, Purple = Shadow, Yellow = Storm</strong>.</li>
+              <li>Keep moving in a wide circle around the boss — the Count's melee attacks only track in straight lines.</li>
+              <li><strong>Revive immediately.</strong> In Phase 2, a downed player during blind is almost unrecoverable.</li>
+              <li>In Phase 3, keep one player near the portal spawn point to intercept Warlocks before they spread.</li>
+              <li>The sword alt-fire (charged projectile) does <strong>3× normal damage</strong> in Phase 3 — use it constantly.</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── Mobile Bottom Nav ──────────────────────────────── -->
+  <nav class="mobile-bottom-nav" aria-label="Quick navigation">
+    <a href="#loadout"><span>🎒</span>Loadout</a>
+    <a href="#power"><span>⚡</span>Power</a>
+    <a href="#rituals"><span>🔮</span>Rituals</a>
+    <a href="#swords"><span>⚔</span>Swords</a>
+    <a href="#altar"><span>🩸</span>Altar</a>
+    <a href="#boss"><span>💀</span>Boss</a>
+  </nav>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>← <a href="liberty-falls.html">Liberty Falls</a> &nbsp;·&nbsp; <a href="index.html">Back to all maps</a></p>
+    <p style="margin-top:0.5rem;">Fan-made guide · Not affiliated with Activision or Treyarch</p>
+  </footer>
+
+  <!-- Timer Modal -->
+  <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
+    <div class="timer-modal">
+      <button class="timer-modal-close" aria-label="Close timer">✕</button>
+      <p class="timer-label">⏱ Round Stopwatch</p>
+      <div class="timer-display" aria-live="polite">00:00:00.00</div>
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-start">▶ Start</button>
+        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
+        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+      </div>
+      <div class="timer-laps" aria-label="Lap times" role="list"></div>
+    </div>
+  </div>
+  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

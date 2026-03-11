@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive Black Ops 6 Zombies Main Quest guide with step-by-step checklists, puzzle solvers, and loadout recommendations. Works offline and saves your progress." />
+  <title>BO6 Zombies — Easter Egg Guide</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧟</text></svg>" />
+  <!-- Preconnect for performance -->
+  <meta name="theme-color" content="#0a0a0f" />
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🧟</span>
+        <span>BO6<span class="accent"> Zombies</span></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="active">Maps</a></li>
+        <li><a href="terminus.html">Terminus</a></li>
+        <li><a href="liberty-falls.html">Liberty Falls</a></li>
+        <li><a href="citadelle.html">Citadelle</a></li>
+      </ul>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+    </nav>
+  </header>
+
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="hero-eyebrow">Black Ops 6 · Zombies Mode</p>
+    <h1 class="hero-title" id="hero-title">
+      Easter Egg<br />
+      <span class="line-accent">Strategy Guides</span>
+    </h1>
+    <p class="hero-subtitle">
+      Interactive checklists, puzzle solvers, and loadout tips — designed for
+      mobile play. Your progress is saved automatically. No account required.
+    </p>
+    <div class="hero-badges">
+      <span class="badge badge-green">✔ Saves Progress Locally</span>
+      <span class="badge badge-cyan">⚡ Mobile-Optimised</span>
+      <span class="badge badge-orange">🧩 Interactive Puzzle Solvers</span>
+    </div>
+  </section>
+
+  <!-- ── How it Works ───────────────────────────────────── -->
+  <section aria-label="How to use this guide" style="padding: 0 1.5rem 3rem; max-width:900px; margin:0 auto;">
+    <h2 class="section-title"><span>How It Works</span></h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+
+      <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1.25rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.6rem;">📍</div>
+        <h3 style="font-size:0.88rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Pick Your Map</h3>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.5;">Choose from Terminus, Liberty Falls, or Citadelle des Morts below.</p>
+      </div>
+
+      <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1.25rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.6rem;">☑️</div>
+        <h3 style="font-size:0.88rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Check Steps Off</h3>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.5;">Tap each step to mark it done. Your progress persists through refreshes and tab closes.</p>
+      </div>
+
+      <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1.25rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.6rem;">🧩</div>
+        <h3 style="font-size:0.88rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Solve Puzzles</h3>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.5;">Use the interactive symbol decoder for Terminus to instantly calculate computer codes.</p>
+      </div>
+
+      <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1.25rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.6rem;">⏱</div>
+        <h3 style="font-size:0.88rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Use the Timer</h3>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.5;">Track timed steps with the built-in stopwatch, accessible from any page.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Map Selection ──────────────────────────────────── -->
+  <main>
+    <h2 class="section-title" style="margin-top:1rem;"><span>Select a Map</span></h2>
+    <div class="maps-grid" role="list">
+
+      <!-- Terminus -->
+      <article class="map-card map-card--terminus" role="listitem">
+        <div class="map-card-banner">
+          <span class="map-card-banner-icon">🏝</span>
+        </div>
+        <div class="map-card-body">
+          <p class="map-card-tag">Round-Based · Ocean Island</p>
+          <h3 class="map-card-name">Terminus</h3>
+          <p class="map-card-desc">
+            A remote island prison overrun by the undead. Complete Dr. Peck's
+            experiments, craft the Beamsmasher Wonder Weapon, and shut down
+            the Terminus network before Keres escapes.
+          </p>
+          <div class="map-card-meta">
+            <span class="meta-pill diff-hard">★★★ Hard</span>
+            <span class="meta-pill">~2–3 hrs</span>
+            <span class="meta-pill">Solo Viable</span>
+            <span class="meta-pill">Decoder Tool</span>
+          </div>
+          <a href="terminus.html" class="map-card-btn" aria-label="Open Terminus Easter Egg guide">
+            Open Guide →
+          </a>
+        </div>
+      </article>
+
+      <!-- Liberty Falls -->
+      <article class="map-card map-card--liberty" role="listitem">
+        <div class="map-card-banner">
+          <span class="map-card-banner-icon">⛪</span>
+        </div>
+        <div class="map-card-body">
+          <p class="map-card-tag">Round-Based · Small Town USA</p>
+          <h3 class="map-card-name">Liberty Falls</h3>
+          <p class="map-card-desc">
+            A quiet West Virginia town hiding a dark secret. Rebuild the
+            Ray Gun Mark II, investigate the church conspiracy, and face the
+            Amalgam in a chaotic multi-phase boss fight.
+          </p>
+          <div class="map-card-meta">
+            <span class="meta-pill diff-medium">★★☆ Medium</span>
+            <span class="meta-pill">~1–2 hrs</span>
+            <span class="meta-pill">Best for Beginners</span>
+          </div>
+          <a href="liberty-falls.html" class="map-card-btn" aria-label="Open Liberty Falls Easter Egg guide">
+            Open Guide →
+          </a>
+        </div>
+      </article>
+
+      <!-- Citadelle des Morts -->
+      <article class="map-card map-card--citadelle" role="listitem">
+        <div class="map-card-banner">
+          <span class="map-card-banner-icon">🏰</span>
+        </div>
+        <div class="map-card-body">
+          <p class="map-card-tag">Round-Based · Medieval Castle</p>
+          <h3 class="map-card-name">Citadelle des Morts</h3>
+          <p class="map-card-desc">
+            A gothic French castle cursed by dark alchemy. Forge elemental
+            swords with the Alchemical Ritual, master four unique Wonder
+            Weapon variants, and defeat the Count himself.
+          </p>
+          <div class="map-card-meta">
+            <span class="meta-pill diff-hard">★★★ Hard</span>
+            <span class="meta-pill">~3–4 hrs</span>
+            <span class="meta-pill">4-Player Recommended</span>
+          </div>
+          <a href="citadelle.html" class="map-card-btn" aria-label="Open Citadelle des Morts Easter Egg guide">
+            Open Guide →
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ── Features Callout ────────────────────────────────── -->
+  <section style="padding: 0 1.5rem 4rem; max-width:900px; margin:0 auto;" aria-label="App features">
+    <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.5rem;">
+      <h2 style="font-size:0.88rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;">App Features</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem;">
+        <div style="font-size:0.8rem;color:var(--text-secondary);display:flex;gap:0.5rem;align-items:flex-start;">
+          <span style="color:var(--neon-green);font-weight:700;">✔</span>
+          <span>Offline-first — no internet needed after first load</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);display:flex;gap:0.5rem;align-items:flex-start;">
+          <span style="color:var(--neon-green);font-weight:700;">✔</span>
+          <span>Zero accounts — all progress stored in your browser</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);display:flex;gap:0.5rem;align-items:flex-start;">
+          <span style="color:var(--neon-green);font-weight:700;">✔</span>
+          <span>Neon high-contrast UI readable in dark gaming rooms</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);display:flex;gap:0.5rem;align-items:flex-start;">
+          <span style="color:var(--neon-green);font-weight:700;">✔</span>
+          <span>Collapsible sub-steps for complex puzzle sections</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);display:flex;gap:0.5rem;align-items:flex-start;">
+          <span style="color:var(--neon-green);font-weight:700;">✔</span>
+          <span>Built-in stopwatch for timed Easter Egg steps</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);display:flex;gap:0.5rem;align-items:flex-start;">
+          <span style="color:var(--neon-green);font-weight:700;">✔</span>
+          <span>One-tap reset to start fresh after each run</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p><strong style="color:var(--text-secondary);">BO6 Zombies Guide</strong> — Fan-made interactive Easter Egg guide</p>
+    <p>Not affiliated with Activision or Treyarch. For educational &amp; entertainment purposes.</p>
+    <p style="margin-top:0.5rem;">
+      <a href="index.html">Maps</a> ·
+      <a href="terminus.html">Terminus</a> ·
+      <a href="liberty-falls.html">Liberty Falls</a> ·
+      <a href="citadelle.html">Citadelle</a>
+    </p>
+  </footer>
+
+  <!-- ── Timer Modal ────────────────────────────────────── -->
+  <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
+    <div class="timer-modal">
+      <button class="timer-modal-close" aria-label="Close timer">✕</button>
+      <p class="timer-label">⏱ Round Stopwatch</p>
+      <div class="timer-display" aria-live="polite">00:00:00.00</div>
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-start">▶ Start</button>
+        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
+        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+      </div>
+      <div class="timer-laps" aria-label="Lap times" role="list"></div>
+    </div>
+  </div>
+
+  <!-- Floating timer button -->
+  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

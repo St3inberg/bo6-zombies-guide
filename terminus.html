@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terminus Main Quest Easter Egg guide for Black Ops 6 Zombies. Step-by-step checklist, Beamsmasher crafting, symbol decoder for computer codes, and boss fight strategy." />
+  <title>Terminus Easter Egg Guide — BO6 Zombies</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏝</text></svg>" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    :root { --accent-color: var(--neon-cyan); }
+    .terminal-tabs { display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap; }
+    .terminal-tab {
+      padding:0.35rem 0.85rem; border-radius:var(--radius-sm);
+      background:rgba(0,245,255,0.06); border:1px solid rgba(0,245,255,0.2);
+      color:var(--text-secondary); font-size:0.75rem; font-weight:700;
+      text-transform:uppercase; letter-spacing:0.08em; cursor:pointer;
+      transition:all var(--transition);
+    }
+    .terminal-tab.active, .terminal-tab:hover {
+      background:rgba(0,245,255,0.18); color:var(--neon-cyan);
+      border-color:rgba(0,245,255,0.5);
+    }
+    #all-terminal-results { font-size:0.82rem; }
+  </style>
+</head>
+<body data-map-id="terminus">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🧟</span>
+        <span>BO6<span class="accent"> Zombies</span></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Maps</a></li>
+        <li><a href="terminus.html" class="active">Terminus</a></li>
+        <li><a href="liberty-falls.html">Liberty Falls</a></li>
+        <li><a href="citadelle.html">Citadelle</a></li>
+      </ul>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+    </nav>
+  </header>
+
+  <!-- ── Guide Layout ───────────────────────────────────── -->
+  <div class="guide-layout">
+
+    <!-- Sidebar -->
+    <aside class="guide-sidebar" aria-label="Guide navigation">
+      <p class="sidebar-label">Jump to Section</p>
+      <ul class="sidebar-nav" role="list">
+        <li><a href="#loadout">🎒 Recommended Loadout</a></li>
+        <li><a href="#power">⚡ Power &amp; Setup</a></li>
+        <li><a href="#beamsmasher">🔫 Build Beamsmasher</a></li>
+        <li><a href="#decoder">🧩 Symbol Decoder</a></li>
+        <li><a href="#computers">💻 Computer Codes</a></li>
+        <li><a href="#side-steps">📦 Side Steps</a></li>
+        <li><a href="#boss">💀 Boss Fight</a></li>
+      </ul>
+
+      <!-- Progress tracker -->
+      <div class="sidebar-progress" role="region" aria-label="Quest progress">
+        <p class="sidebar-progress-label">Quest Progress</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-text">
+          <span class="pct">0%</span>
+          <span class="count">0/0</span>
+        </div>
+        <button class="sidebar-reset-btn" type="button">↺ Reset Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="guide-main" id="main-content">
+
+      <!-- Hero -->
+      <div class="guide-hero guide-hero--terminus">
+        <p class="guide-hero-tag">Main Quest Easter Egg · Round-Based</p>
+        <h1>Terminus</h1>
+        <p>
+          Escape the island prison, piece together Dr. Peck's research, craft the
+          Beamsmasher Wonder Weapon, input the computer codes, and neutralise Keres
+          before she breaks containment. Difficulty: High.
+        </p>
+        <div class="guide-hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-cyan)">22</span>
+            <span class="hero-stat-label">Quest Steps</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-orange)">2–3h</span>
+            <span class="hero-stat-label">Avg Time</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-red)">★★★</span>
+            <span class="hero-stat-label">Difficulty</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-green)">Solo</span>
+            <span class="hero-stat-label">Viable</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOADOUT ─────────────────────────────────────── -->
+      <section class="guide-section" id="loadout" aria-labelledby="loadout-heading">
+        <div class="section-header section-header--green">
+          <span class="section-icon">🎒</span>
+          <h2 id="loadout-heading">Recommended Loadout</h2>
+          <span class="section-phase-tag phase-early">Pre-Game</span>
+        </div>
+
+        <div class="loadout-grid">
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">💊</span>
+              <span class="loadout-label">Perks Priority</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Juggernaut</div>
+                  <div class="item-why">Survivability — stay alive during long WW steps</div>
+                </div>
+              </div>
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Speed Cola</div>
+                  <div class="item-why">Reload speed critical for boss fight phases</div>
+                </div>
+              </div>
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Quick Revive</div>
+                  <div class="item-why">Self-revive x3 when playing solo</div>
+                </div>
+              </div>
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Deadshot Daiquiri</div>
+                  <div class="item-why">Aim-assist on boss weak points</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">🧠</span>
+              <span class="loadout-label">Gobblegums (Recommended)</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Perkaholic</div>
+                  <div class="item-why">All perks instantly — run it round 1</div>
+                </div>
+              </div>
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Shopping Free</div>
+                  <div class="item-why">Craft WW components without point drain</div>
+                </div>
+              </div>
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">On the House</div>
+                  <div class="item-why">Free wallbuy — great for early Bowie Knife</div>
+                </div>
+              </div>
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Burned Out</div>
+                  <div class="item-why">Emergency crowd control during quest steps</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">🔫</span>
+              <span class="loadout-label">Weapons</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">BAL-27 (Packed)</div>
+                  <div class="item-why">Primary — fast TTK for elite enemies</div>
+                </div>
+              </div>
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Beamsmasher (WW)</div>
+                  <div class="item-why">Boss fight essential — chain lightning</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loadout-card">
+            <div class="loadout-card-header">
+              <span class="loadout-icon">🔮</span>
+              <span class="loadout-label">Ammo Mods</span>
+            </div>
+            <div class="loadout-items">
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Brain Rot</div>
+                  <div class="item-why">Converts zombies — frees you during steps</div>
+                </div>
+              </div>
+              <div class="loadout-item">
+                <span class="dot"></span>
+                <div>
+                  <div class="item-name">Shatter Blast</div>
+                  <div class="item-why">Chunks electrical enemies quickly</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>Solo Tip</strong>
+            Do this on Casual or Normal difficulty first. Terminus has the most
+            unpredictable step RNG of any BO6 map — especially the symbol locations.
+          </div>
+        </div>
+      </section>
+
+      <!-- ── POWER & SETUP ───────────────────────────────── -->
+      <section class="guide-section" id="power" aria-labelledby="power-heading">
+        <div class="section-header section-header--cyan">
+          <span class="section-icon">⚡</span>
+          <h2 id="power-heading">Power &amp; Early Setup</h2>
+          <span class="section-phase-tag phase-early">Rounds 1–5</span>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="t001" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 01</div>
+                <div class="step-title">Activate all three power generators</div>
+                <div class="step-desc">
+                  Three generators are scattered across the island. Generator A is in the
+                  docks area, Generator B is near the main prison block, and Generator C
+                  is in the back jungle path. Activating all three unlocks the Pack-a-Punch.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                  <span class="step-tag tag-tip">Unlocks PaP</span>
+                </div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-t001" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Generator Locations
+            </button>
+            <div class="substeps" id="subs-t001" role="region">
+              <ol>
+                <li><strong>Generator A — Docks:</strong> Head down from spawn toward the water. The generator is inside the <code>Shipping Office</code> building, ground floor, east wall.</li>
+                <li><strong>Generator B — Prison Block:</strong> Take the main corridor past the cafeteria. The generator room is behind a breakable wall — melee it once to open.</li>
+                <li><strong>Generator C — Research Lab:</strong> Go through the jungle tunnel, past the waterfall. The generator is on the upper platform of the <code>Bio-Research Building</code>.</li>
+              </ol>
+              <p class="sub-note">⚠ Each generator spawns 2 Manglers when activated. Have your weapon Pack-a-Punched before activating B and C.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t002" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 02</div>
+                <div class="step-title">Use the Pack-a-Punch Machine</div>
+                <div class="step-desc">
+                  Once all generators are on, the PaP machine activates on the
+                  island's central courtyard. Pack your primary weapon before proceeding.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t003" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 03</div>
+                <div class="step-title">Locate and read Dr. Peck's research notes (×3)</div>
+                <div class="step-desc">
+                  Three glowing yellow notepads are scattered throughout the map.
+                  Interacting with all three triggers the first cutscene and starts
+                  the main quest proper.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Triggers Quest</span>
+                  <span class="step-tag tag-tip">Glows yellow</span>
+                </div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-t003" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Notepad Locations
+            </button>
+            <div class="substeps" id="subs-t003" role="region">
+              <ol>
+                <li><strong>Note 1:</strong> On the desk inside the <code>Warden's Office</code>, second floor of the main prison building. Look for the blinking light.</li>
+                <li><strong>Note 2:</strong> In the <code>Bio-Lab</code> underground section, on a metal bench near the centrifuge machines.</li>
+                <li><strong>Note 3:</strong> Pinned to the wall in the <code>Interrogation Block</code>, east wing ground floor.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t004" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 04</div>
+                <div class="step-title">Retrieve Dr. Peck's ID Badge</div>
+                <div class="step-desc">
+                  After reading the notes, a special Mangler will spawn wearing
+                  Peck's badge as a glowing item. Kill it and collect the badge
+                  drop. This unlocks the Bio-Lab terminal room.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-warning">Elite Enemy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BEAMSMASHER ─────────────────────────────────── -->
+      <section class="guide-section" id="beamsmasher" aria-labelledby="beamsmasher-heading">
+        <div class="section-header section-header--cyan">
+          <span class="section-icon">🔫</span>
+          <h2 id="beamsmasher-heading">Craft the Beamsmasher</h2>
+          <span class="section-phase-tag phase-mid">Mid-Game</span>
+        </div>
+
+        <div class="callout callout-warn" style="margin-bottom:1rem;">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <strong>Order Matters</strong>
+            Collecting Beamsmasher parts in any order is fine, but you must have the
+            ID Badge (Step 04) before the crafting table activates.
+          </div>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="t005" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 05</div>
+                <div class="step-title">Collect the Plasma Cell — Part 1</div>
+                <div class="step-desc">
+                  Kill 50 zombies with melee weapons near the <strong>Docks area</strong>.
+                  After the 50th kill, a glowing green orb (the Plasma Cell) appears
+                  floating above the crates. Walk into it to collect.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">WW Part</span>
+                  <span class="step-tag tag-solo">Solo Friendly</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t006" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 06</div>
+                <div class="step-title">Collect the Resonance Coil — Part 2</div>
+                <div class="step-desc">
+                  In the <strong>Research Lab</strong>, solve the spinning coil
+                  puzzle. Three coils on the wall rotate — match all three to the
+                  alignment shown on the diagram on Peck's notes.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">WW Part</span>
+                  <span class="step-tag tag-tip">Interact 3 coils</span>
+                </div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-t006" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Coil Alignment Guide
+            </button>
+            <div class="substeps" id="subs-t006" role="region">
+              <ol>
+                <li>Interact with the <strong>Left Coil</strong> until it points <code>UP</code>.</li>
+                <li>Interact with the <strong>Centre Coil</strong> until it points <code>RIGHT</code>.</li>
+                <li>Interact with the <strong>Right Coil</strong> until it points <code>UP</code>.</li>
+                <li>All three will lock with a green glow. Collect the Coil from the table below them.</li>
+              </ol>
+              <p class="sub-note">💡 The coil directions are fixed in every match — they never change.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t007" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 07</div>
+                <div class="step-title">Collect the Power Core — Part 3</div>
+                <div class="step-desc">
+                  The Power Core is dropped by the <strong>Abomination boss</strong>
+                  which roams the Jungle Path. Requires the Beamsmasher parts 1 &amp; 2
+                  to already be in your inventory to trigger the Abomination spawn.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">WW Part</span>
+                  <span class="step-tag tag-warning">Boss Spawn</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t008" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 08</div>
+                <div class="step-title">Assemble the Beamsmasher at the crafting table</div>
+                <div class="step-desc">
+                  Take all three parts to the <strong>Crafting Table</strong> inside
+                  the Bio-Lab. Hold the interact button (≈3 sec) to assemble.
+                  The Beamsmasher will replace your secondary weapon slot.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Wonder Weapon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t009" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 09</div>
+                <div class="step-title">Pack-a-Punch the Beamsmasher (optional but recommended)</div>
+                <div class="step-desc">
+                  Upgraded Beamsmasher (Tier 2) chains to 4 enemies and
+                  increases beam radius by 40%. Essential for the boss fight.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-tip">PaP Tier 2</span>
+                  <span class="step-tag tag-solo">Recommended</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── SYMBOL DECODER ─────────────────────────────── -->
+      <section class="guide-section" id="decoder" aria-labelledby="decoder-heading">
+        <div class="section-header section-header--cyan">
+          <span class="section-icon">🧩</span>
+          <h2 id="decoder-heading">Interactive Symbol Decoder</h2>
+          <span class="section-phase-tag phase-mid">Puzzle Tool</span>
+        </div>
+
+        <div class="puzzle-solver" role="region" aria-label="Symbol decoder tool">
+          <p class="puzzle-solver-title">Terminus Computer Code Solver</p>
+          <p class="puzzle-solver-desc">
+            Find the <strong>3 glowing symbols</strong> on the prisonwall during
+            the "Input Codes" step. Tap each one below in order (Symbol 1 → 2 → 3)
+            and the codes for all three computer terminals will be calculated
+            automatically.
+          </p>
+
+          <!-- Terminal selector -->
+          <div class="terminal-tabs" role="tablist" aria-label="Select computer terminal">
+            <button class="terminal-tab active" role="tab" aria-selected="true">Computer A</button>
+            <button class="terminal-tab" role="tab" aria-selected="false">Computer B</button>
+            <button class="terminal-tab" role="tab" aria-selected="false">Computer C</button>
+          </div>
+
+          <!-- Input slots -->
+          <div id="decoder-slots" style="display:flex;gap:0.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"
+               role="group" aria-label="Selected symbols"></div>
+
+          <!-- Symbol grid -->
+          <div id="decoder-grid" role="group" aria-label="Symbol selection grid"></div>
+
+          <!-- Output -->
+          <div class="solver-output" id="decoder-output" role="status" aria-live="polite">
+            <p class="solver-output-label">▸ Code for selected terminal:</p>
+            <div class="solver-output-code" id="terminal-code">--</div>
+            <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border-subtle);">
+              <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-bottom:0.5rem;">All Terminal Codes</p>
+              <div id="all-terminal-results"></div>
+            </div>
+          </div>
+
+          <button class="solver-btn" id="decoder-reset" type="button">↺ Clear Selection</button>
+        </div>
+
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <strong>Symbols Are Random Each Match</strong>
+            The three wall symbols change every time you load into Terminus.
+            You must identify them in-game — look for the <strong>glowing cyan
+            graffiti</strong> on the prison courtyard walls.
+          </div>
+        </div>
+      </section>
+
+      <!-- ── COMPUTER CODES ─────────────────────────────── -->
+      <section class="guide-section" id="computers" aria-labelledby="computers-heading">
+        <div class="section-header section-header--cyan">
+          <span class="section-icon">💻</span>
+          <h2 id="computers-heading">Input the Computer Codes</h2>
+          <span class="section-phase-tag phase-mid">Rounds 10–15</span>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="t010" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 10</div>
+                <div class="step-title">Locate and memorise (or decode) the 3 wall symbols</div>
+                <div class="step-desc">
+                  After obtaining the Beamsmasher, Peck gives a radio message.
+                  Three sections of the prison courtyard walls begin glowing with
+                  alien symbols. Use the decoder above — select each symbol
+                  in left-to-right order.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Decode First</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t011" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 11</div>
+                <div class="step-title">Open Bio-Lab terminal room with Peck's ID Badge</div>
+                <div class="step-desc">
+                  Swipe the badge at the security door next to the
+                  <strong>Bio-Lab elevator</strong>. The door will unlock
+                  revealing three computer terminals inside.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t012" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 12</div>
+                <div class="step-title">Enter code on Computer A (Bio-Lab)</div>
+                <div class="step-desc">
+                  Interact with <strong>Computer A</strong> and enter the 2-digit
+                  code from the decoder. Press confirm. A green light will activate
+                  above the terminal.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Timed</span>
+                  <span class="step-tag tag-warning">Mangler Spawns</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t013" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 13</div>
+                <div class="step-title">Enter code on Computer B (Research Wing)</div>
+                <div class="step-desc">
+                  Head immediately to the Research Wing. You have
+                  <strong>90 seconds</strong> from Computer A to enter Computer B
+                  before the timer resets. Use the decoder's Computer B value.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Timed ⏱</span>
+                  <span class="step-tag tag-warning">90s window</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t014" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 14</div>
+                <div class="step-title">Enter code on Computer C (Control Room)</div>
+                <div class="step-desc">
+                  The Control Room terminal is the hardest to reach — up two
+                  floors via the fire escape stairwell on the island's north end.
+                  Same 90-second window from Computer B.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Timed ⏱</span>
+                  <span class="step-tag tag-warning">90s window</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t015" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 15</div>
+                <div class="step-title">Watch the cutscene and survive the lockdown round</div>
+                <div class="step-desc">
+                  After the third code, a cutscene triggers. You'll be locked in
+                  the courtyard for <strong>one full lockdown round</strong>
+                  (infinite zombie spawns for ~2 minutes). Survive without going
+                  down to continue.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Survive Round</span>
+                  <span class="step-tag tag-squad">Squadmates help</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="callout callout-tip" style="margin-top:1rem;">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>Timer Tip</strong>
+            Start the in-app stopwatch when you interact with Computer A.
+            You should reach Computer B by <strong>01:15</strong> and Computer C
+            by <strong>02:30</strong> to have a comfortable buffer.
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SIDE STEPS ─────────────────────────────────── -->
+      <section class="guide-section" id="side-steps" aria-labelledby="side-steps-heading">
+        <div class="section-header section-header--orange">
+          <span class="section-icon">📦</span>
+          <h2 id="side-steps-heading">Side Steps &amp; Intel</h2>
+          <span class="section-phase-tag phase-mid">Optional</span>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="t016" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">BONUS 01</div>
+                <div class="step-title">Find all 5 Scattered Intel Documents</div>
+                <div class="step-desc">
+                  Five documents are hidden around the map. Collecting all 5
+                  unlocks a unique calling card and counts toward the
+                  Completionist achievement.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-tip">Completionist</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t017" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">BONUS 02</div>
+                <div class="step-title">Complete the Prisoner Side Quest</div>
+                <div class="step-desc">
+                  Three prisoner cells contain survivors whispering codes.
+                  Listening to all three in one match grants a free Perk Bottle.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-tip">Free Perk</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t018" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">BONUS 03</div>
+                <div class="step-title">Upgrade the Beamsmasher to Pack-a-Punch Tier 3</div>
+                <div class="step-desc">
+                  Tier 3 unlocks the alternate fire mode (EMP burst) —
+                  critical for 2nd and 3rd boss phases.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-tip">Recommended</span>
+                  <span class="step-tag tag-warning">Costs 4000 pts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BOSS FIGHT ─────────────────────────────────── -->
+      <section class="guide-section" id="boss" aria-labelledby="boss-heading">
+        <div class="section-header section-header--red">
+          <span class="section-icon">💀</span>
+          <h2 id="boss-heading">Boss Fight — Keres</h2>
+          <span class="section-phase-tag phase-boss">End Game</span>
+        </div>
+
+        <div class="checklist" role="list">
+          <div class="checklist-item" data-step-id="t019" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 19</div>
+                <div class="step-title">Stock up — buy all perks and Max Ammo before the portal opens</div>
+                <div class="step-desc">You have two full rounds between the lockdown ending and the portal activating. Do not skip this step.</div>
+                <div class="step-tags"><span class="step-tag tag-required">Prep</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t020" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 20</div>
+                <div class="step-title">Enter the Rift Portal in the courtyard</div>
+                <div class="step-desc">The glowing blue portal opens in the centre of the courtyard after the prep rounds. All players must enter before it closes (15 second window).</div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span><span class="step-tag tag-warning">15s window</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t021" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 21</div>
+                <div class="step-title">Survive all 3 boss phases</div>
+                <div class="step-desc">See the phase guide below. Keres has three distinct attack patterns. Completing all three triggers the final cutscene and Easter Egg completion.</div>
+                <div class="step-tags"><span class="step-tag tag-required">Boss Fight</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="t022" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-number">STEP 22</div>
+                <div class="step-title">🎉 Easter Egg Complete — Collect reward &amp; cutscene</div>
+                <div class="step-desc">Congratulations! After Phase 3 the final cutscene triggers and you'll receive the Terminus Calling Card + Dark Aether Camo unlock (if first completion).</div>
+                <div class="step-tags"><span class="step-tag tag-solo">Easter Egg Done!</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boss Phase Breakdown -->
+        <div class="boss-section" style="margin-top:1.5rem;" aria-label="Boss fight details">
+          <div class="boss-header">
+            <span class="boss-icon">🦂</span>
+            <div class="boss-info">
+              <h3>Keres — The Terminus Sentinel</h3>
+              <p>A mutated bio-weapon with three distinct phases. Weak to the Beamsmasher and explosive damage.</p>
+            </div>
+          </div>
+
+          <div class="boss-phases" role="list">
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">1</span>
+              <div class="phase-detail">
+                <h4>Phase 1 — Claw Rush (100% → 66% HP)</h4>
+                <p>
+                  Keres charges at players in a straight line. <strong>Always sprint
+                  left or right — never backwards.</strong> Exposed back weakpoint
+                  glows orange. Hit it with Beamsmasher charged shots for 3×
+                  damage. Adds: Standard zombie waves.
+                </p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">2</span>
+              <div class="phase-detail">
+                <h4>Phase 2 — Shield Wall (66% → 33% HP)</h4>
+                <p>
+                  Keres extends a bio-electric shield. <strong>The shield blocks
+                  all conventional damage.</strong> Shoot the 4 glowing orbs
+                  orbiting its body (use Beamsmasher EMP alt-fire to chain
+                  them). Once all 4 orbs are destroyed the shield drops for
+                  8 seconds — unload everything. Adds: Manglers + Disciples.
+                </p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">3</span>
+              <div class="phase-detail">
+                <h4>Phase 3 — Enrage (33% → 0% HP)</h4>
+                <p>
+                  Keres increases speed and spawns clones.
+                  <strong>The real Keres has a fully red health bar</strong>
+                  (clones show 40% bars). Focus fire on the real one.
+                  Beamsmasher chains will arc from real → clones, helping
+                  clear. Adds: Continuous Amalgam spawns.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="boss-tips">
+            <p class="boss-tips-title">⚡ Boss Fight Survival Tips</p>
+            <ul>
+              <li><strong>Never stop moving.</strong> Keres locks on if you stand still for > 2 seconds.</li>
+              <li>Keep <strong>Quick Revive</strong> active — it will proc at least once during Phase 3.</li>
+              <li>Use <strong>Brain Rot ammo</strong> to convert a zombie as a decoy during the shield phase.</li>
+              <li>In squads, assign one player as "orb caller" — they call out which orb is next.</li>
+              <li>There is <strong>no timer</strong> on the fight — take your time and stay calm in Phase 3.</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── Mobile Bottom Nav ──────────────────────────────── -->
+  <nav class="mobile-bottom-nav" aria-label="Quick navigation">
+    <a href="#loadout"><span>🎒</span>Loadout</a>
+    <a href="#power"><span>⚡</span>Power</a>
+    <a href="#beamsmasher"><span>🔫</span>WW</a>
+    <a href="#decoder"><span>🧩</span>Decoder</a>
+    <a href="#computers"><span>💻</span>Codes</a>
+    <a href="#boss"><span>💀</span>Boss</a>
+  </nav>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>← <a href="index.html">Back to all maps</a> &nbsp;·&nbsp; <a href="liberty-falls.html">Liberty Falls →</a></p>
+    <p style="margin-top:0.5rem;">Fan-made guide · Not affiliated with Activision or Treyarch</p>
+  </footer>
+
+  <!-- ── Timer Modal ────────────────────────────────────── -->
+  <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
+    <div class="timer-modal">
+      <button class="timer-modal-close" aria-label="Close timer">✕</button>
+      <p class="timer-label">⏱ Round Stopwatch</p>
+      <div class="timer-display" aria-live="polite">00:00:00.00</div>
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-start">▶ Start</button>
+        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
+        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+        <button class="timer-btn" id="lapBtn" style="background:rgba(191,95,255,0.1);border-color:rgba(191,95,255,0.3);color:var(--neon-purple);" onclick="Timer && Timer.lap && Timer.lap()">🏁 Lap</button>
+      </div>
+      <div class="timer-laps" aria-label="Lap times" role="list"></div>
+      <p style="font-size:0.68rem;color:var(--text-muted);margin-top:0.8rem;">Tip: Press <kbd style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-family:monospace;font-size:0.7rem;">Space</kbd> to start/pause</p>
+    </div>
+  </div>
+
+  <!-- Floating timer button -->
+  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+
+  <script src="js/app.js"></script>
+  <script src="js/terminus-decoder.js"></script>
+</body>
+</html>
