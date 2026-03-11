@@ -1,96 +1,127 @@
 /**
- * BO6 Zombies Guide — Terminus Symbol Decoder
- * 
- * The Terminus Main Quest involves finding glowing symbols around the
- * island and entering corresponding codes on prisoner computers.
- * This decoder converts the 3 symbol sequence into the correct code.
+ * BO6 Zombies Guide — Terminus Venn Diagram Solver
  *
- * Symbol → Number mapping is based on the in-game cipher chart.
- * Each of the 3 computer terminals requires a different code.
+ * The Terminus Main Quest puzzle ("No Mo' Modi"):
+ *   After activating the beacon, 3 glowing Venn-diagram symbols appear.
+ *   Each symbol has a numeric value based on its position in the triangular grid.
+ *   Select all 3 (X, Y, Z) to compute the codes for the three terminals.
+ *
+ * Formulas (from ajlee1976/terminus-formula-solver, verified against in-game):
+ *   Computer A  =  2X + 11
+ *   Computer B  =  2Z + Y − 5
+ *   Computer C  =  |Y + Z − X|
+ *
+ * Venn image CDN (MIT-licensed):
+ *   https://raw.githubusercontent.com/ajlee1976/terminus-formula-solver/main/venns/
  */
 
 const TerminusDecoder = (() => {
 
-  // The 20 symbols found on Terminus Island, each maps to a digit
-  const SYMBOLS = [
-    { id: 'tri',    glyph: '△',  name: 'Triangle',  value: 1  },
-    { id: 'sq',     glyph: '□',  name: 'Square',    value: 2  },
-    { id: 'circ',   glyph: '○',  name: 'Circle',    value: 3  },
-    { id: 'cross',  glyph: '✕',  name: 'Cross',     value: 4  },
-    { id: 'star',   glyph: '★',  name: 'Star',      value: 5  },
-    { id: 'hex',    glyph: '⬡',  name: 'Hexagon',   value: 6  },
-    { id: 'arrow',  glyph: '➤',  name: 'Arrow',     value: 7  },
-    { id: 'wave',   glyph: '〜',  name: 'Wave',      value: 8  },
-    { id: 'eye',    glyph: '👁',  name: 'Eye',       value: 9  },
-    { id: 'bolt',   glyph: '⚡',  name: 'Bolt',      value: 0  },
-    { id: 'skull',  glyph: '☠',  name: 'Skull',     value: 11 },
-    { id: 'crown',  glyph: '♛',  name: 'Crown',     value: 12 },
-    { id: 'biohaz', glyph: '☣',  name: 'Biohazard', value: 13 },
-    { id: 'atom',   glyph: '⚛',  name: 'Atom',      value: 14 },
-    { id: 'anchor', glyph: '⚓',  name: 'Anchor',    value: 15 },
-    { id: 'drop',   glyph: '💧',  name: 'Drop',      value: 16 },
-    { id: 'fire',   glyph: '🔥',  name: 'Flame',     value: 17 },
-    { id: 'key',    glyph: '🗝',  name: 'Key',       value: 18 },
-    { id: 'moon',   glyph: '☽',  name: 'Crescent',  value: 19 },
-    { id: 'sun',    glyph: '☀',  name: 'Sun',       value: 20 },
+  const IMG_BASE = 'https://raw.githubusercontent.com/ajlee1976/terminus-formula-solver/main/venns/';
+
+  /**
+   * 6 Venn diagram icons in triangular grid:
+   *
+   *   col→   2      1      0
+   * row 0:               [v0]
+   * row 1:         [v11] [v10]
+   * row 2:  [v22]  [v21] [v20]
+   */
+  const ICONS = [
+    { id: 'v22', value: 22, img: 'term4.png', row: 2, col: 2, label: 'Venn 22' },
+    { id: 'v21', value: 21, img: 'term5.png', row: 2, col: 1, label: 'Venn 21' },
+    { id: 'v20', value: 20, img: 'term6.png', row: 2, col: 0, label: 'Venn 20' },
+    { id: 'v11', value: 11, img: 'term3.png', row: 1, col: 1, label: 'Venn 11' },
+    { id: 'v10', value: 10, img: 'term2.png', row: 1, col: 0, label: 'Venn 10' },
+    { id: 'v0',  value: 0,  img: 'term1.png', row: 0, col: 0, label: 'Venn 0'  },
   ];
 
-  // Each computer terminal uses a specific formula to combine the 3 symbol values
-  const TERMINALS = [
-    {
-      id: 'pc1',
-      label: 'Computer A',
-      desc: 'Bio-Lab Terminal (underground)',
-      formula: (a, b, c) => ((a + b + c) % 100),
-      note: 'Sum of all three symbol values, mod 100',
-    },
-    {
-      id: 'pc2',
-      label: 'Computer B',
-      desc: 'Research Wing Terminal',
-      formula: (a, b, c) => Math.abs(a * b - c),
-      note: 'A × B minus C (absolute value)',
-    },
-    {
-      id: 'pc3',
-      label: 'Computer C',
-      desc: 'Control Room Terminal',
-      formula: (a, b, c) => ((a + c) * b) % 100,
-      note: '(A + C) × B, mod 100',
-    },
-  ];
+  const BY_ROW = ICONS.reduce((acc, ic) => {
+    (acc[ic.row] = acc[ic.row] || []).push(ic);
+    return acc;
+  }, {});
 
-  // State: 3 selected slots
-  let slots = [null, null, null];
+  /* state: up to 3 selections = [X, Y, Z] */
+  let selections = [null, null, null];
   let activeTerminal = 0;
 
-  /** Render the symbol selection grid */
+  /* ── GRID RENDERER ────────────────────────────────────── */
+
   function renderGrid(container) {
     container.innerHTML = '';
-    SYMBOLS.forEach(sym => {
-      const btn  = document.createElement('button');
-      btn.className   = 'symbol-btn';
-      btn.dataset.id  = sym.id;
-      btn.title       = `${sym.name} = ${sym.value}`;
-      btn.innerHTML   = `<span class="sym-glyph">${sym.glyph}</span><span>${sym.name}</span>`;
-      btn.addEventListener('click', () => onSymbolClick(sym, btn));
-      container.appendChild(btn);
+    container.style.cssText = 'display:flex;flex-direction:column;gap:0.5rem;align-items:center;margin-bottom:1rem;';
+
+    const colHeader = document.createElement('div');
+    colHeader.style.cssText = 'display:flex;gap:0.5rem;align-items:center;width:100%;max-width:18rem;';
+    colHeader.innerHTML = '<span style="width:1.6rem;flex-shrink:0;"></span>'
+      + '<span style="flex:1;text-align:center;font-size:0.62rem;color:var(--text-muted);">Col 2</span>'
+      + '<span style="flex:1;text-align:center;font-size:0.62rem;color:var(--text-muted);">Col 1</span>'
+      + '<span style="flex:1;text-align:center;font-size:0.62rem;color:var(--text-muted);">Col 0</span>';
+    container.appendChild(colHeader);
+
+    [0, 1, 2].forEach(row => {
+      const rowEl = document.createElement('div');
+      rowEl.style.cssText = 'display:flex;gap:0.5rem;align-items:center;width:100%;max-width:18rem;';
+
+      const rowLabel = document.createElement('span');
+      rowLabel.style.cssText = 'width:1.6rem;flex-shrink:0;font-size:0.62rem;color:var(--text-muted);text-align:right;';
+      rowLabel.textContent = `R${row}`;
+      rowEl.appendChild(rowLabel);
+
+      // 3 column slots, left = col2, right = col0
+      [2, 1, 0].forEach(col => {
+        const icon = (BY_ROW[row] || []).find(ic => ic.col === col);
+        const cell = document.createElement('div');
+        cell.style.cssText = [
+          'flex:1;aspect-ratio:1;border-radius:var(--radius-sm);overflow:hidden;',
+          'transition:border-color 0.15s,box-shadow 0.15s,background 0.15s;',
+        ].join('');
+
+        if (!icon) {
+          cell.style.background = 'rgba(255,255,255,0.02)';
+          cell.style.border     = '1px dashed rgba(255,255,255,0.04)';
+        } else {
+          cell.style.cursor     = 'pointer';
+          cell.style.border     = '1px solid rgba(255,255,255,0.12)';
+          cell.style.background = 'rgba(255,255,255,0.04)';
+          cell.dataset.id       = icon.id;
+          cell.title            = `${icon.label} — value: ${icon.value}`;
+
+          const img = document.createElement('img');
+          img.src     = IMG_BASE + icon.img;
+          img.alt     = icon.label;
+          img.loading = 'lazy';
+          img.style.cssText = 'width:100%;height:100%;object-fit:contain;padding:0.35rem;filter:invert(1) brightness(0.85);display:block;';
+          cell.appendChild(img);
+
+          const valLabel = document.createElement('div');
+          valLabel.style.cssText = 'font-size:0.6rem;text-align:center;color:var(--text-muted);padding-bottom:0.15rem;';
+          valLabel.textContent = icon.value;
+          cell.appendChild(valLabel);
+
+          cell.addEventListener('click', () => onIconClick(icon));
+        }
+        rowEl.appendChild(cell);
+      });
+      container.appendChild(rowEl);
     });
+
     updateGridHighlight();
   }
 
-  /** Render the 3 input slots */
+  /* ── SLOT RENDERER ────────────────────────────────────── */
+
   function renderSlots(container) {
     container.innerHTML = '';
-    ['Symbol 1', 'Symbol 2', 'Symbol 3'].forEach((label, idx) => {
+    ['X', 'Y', 'Z'].forEach((label, idx) => {
       const slot = document.createElement('div');
-      slot.className    = 'solver-slot';
-      slot.dataset.idx  = idx;
-      slot.innerHTML    = `
-        <span class="slot-label">${label}</span>
-        <span class="slot-symbol">?</span>
-        <span class="slot-name">—</span>
-        <button class="slot-clear" title="clear">✕</button>
+      slot.className   = 'solver-slot';
+      slot.dataset.idx = idx;
+      slot.innerHTML = `
+        <span class="slot-label">Symbol ${label}</span>
+        <span class="slot-symbol" style="font-size:0.85rem;font-weight:900;margin:0.1rem 0;font-family:monospace;">—</span>
+        <span class="slot-name" style="font-size:0.62rem;color:var(--text-muted);">not set</span>
+        <button class="slot-clear" title="Remove">✕</button>
       `;
       slot.querySelector('.slot-clear').addEventListener('click', e => {
         e.stopPropagation();
@@ -98,129 +129,133 @@ const TerminusDecoder = (() => {
       });
       container.appendChild(slot);
     });
-    renderSlotValues(container);
+    updateSlots();
   }
 
-  function clearSlot(idx) {
-    slots[idx] = null;
+  function updateSlots() {
     const container = document.getElementById('decoder-slots');
-    if (container) renderSlotValues(container);
-    updateGridHighlight();
-    computeOutput();
-  }
-
-  function renderSlotValues(container) {
-    const slotEls = container.querySelectorAll('.solver-slot');
-    slotEls.forEach((el, idx) => {
-      const sym = slots[idx];
-      const symEl  = el.querySelector('.slot-symbol');
+    if (!container) return;
+    container.querySelectorAll('.solver-slot').forEach((el, idx) => {
+      const ic     = selections[idx];
+      const valEl  = el.querySelector('.slot-symbol');
       const nameEl = el.querySelector('.slot-name');
-      if (sym) {
+      if (ic) {
         el.classList.add('filled');
-        symEl.textContent  = sym.glyph;
-        nameEl.textContent = `${sym.name} (${sym.value})`;
+        valEl.textContent  = ic.value;
+        nameEl.textContent = ic.label;
       } else {
         el.classList.remove('filled');
-        symEl.textContent  = '?';
-        nameEl.textContent = '—';
+        valEl.textContent  = '—';
+        nameEl.textContent = 'not set';
       }
     });
   }
 
-  /** When player clicks a symbol glyph */
-  function onSymbolClick(sym, btn) {
-    // Find first empty slot
-    const emptyIdx = slots.findIndex(s => s === null);
-    if (emptyIdx === -1) {
-      // All filled — replace slot matching this symbol, or first slot
-      const existingIdx = slots.findIndex(s => s && s.id === sym.id);
-      if (existingIdx !== -1) {
-        clearSlot(existingIdx);
-      }
-      return;
-    }
-    slots[emptyIdx] = sym;
-    const slotsContainer = document.getElementById('decoder-slots');
-    if (slotsContainer) renderSlotValues(slotsContainer);
+  /* ── ICON CLICK ───────────────────────────────────────── */
+
+  function onIconClick(icon) {
+    const existingIdx = selections.findIndex(s => s && s.id === icon.id);
+    if (existingIdx !== -1) { clearSlot(existingIdx); return; }
+    const emptyIdx = selections.findIndex(s => s === null);
+    if (emptyIdx === -1) return;
+    selections[emptyIdx] = icon;
+    updateSlots();
+    updateGridHighlight();
+    computeOutput();
+  }
+
+  function clearSlot(idx) {
+    selections[idx] = null;
+    updateSlots();
     updateGridHighlight();
     computeOutput();
   }
 
   function updateGridHighlight() {
-    document.querySelectorAll('.symbol-btn').forEach(btn => {
-      const symId   = btn.dataset.id;
-      const isUsed  = slots.some(s => s && s.id === symId);
-      btn.classList.toggle('selected', isUsed);
+    const gridEl = document.getElementById('decoder-grid');
+    if (!gridEl) return;
+    gridEl.querySelectorAll('[data-id]').forEach(cell => {
+      const on = selections.some(s => s && s.id === cell.dataset.id);
+      cell.style.borderColor = on ? 'var(--neon-cyan)' : 'rgba(255,255,255,0.12)';
+      cell.style.boxShadow   = on ? '0 0 10px var(--neon-cyan)' : 'none';
+      cell.style.background  = on ? 'rgba(0,212,255,0.12)' : 'rgba(255,255,255,0.04)';
     });
   }
 
-  /** Compute and display the code for all terminals */
+  /* ── FORMULA ENGINE ───────────────────────────────────── */
+
   function computeOutput() {
     const outputEl = document.getElementById('decoder-output');
     if (!outputEl) return;
 
-    if (slots.some(s => s === null)) {
+    if (!selections.every(s => s !== null)) {
       outputEl.classList.remove('visible');
       return;
     }
 
-    const [a, b, c] = slots.map(s => s.value);
-    const terminal  = TERMINALS[activeTerminal];
-    const code      = terminal.formula(a, b, c);
-    const display   = String(code).padStart(2, '0');
+    const [x, y, z] = selections.map(s => s.value);
+    const A = 2 * x + 11;
+    const B = 2 * z + y - 5;
+    const C = Math.abs(y + z - x);
 
     outputEl.classList.add('visible');
-    outputEl.querySelector('.solver-output-code').textContent = display;
 
-    // Also fill all-terminals view if present
+    const TERMINAL_DATA = [
+      { label: 'Computer A', desc: 'Bio-Lab (underground)', formula: 'A = 2X + 11',    value: A },
+      { label: 'Computer B', desc: 'Research Wing',         formula: 'B = 2Z + Y − 5', value: B },
+      { label: 'Computer C', desc: 'Control Room',          formula: 'C = |Y + Z − X|', value: C },
+    ];
+
+    const codeEl = outputEl.querySelector('.solver-output-code');
+    if (codeEl) codeEl.textContent = String(TERMINAL_DATA[activeTerminal].value).padStart(2, '0');
+
     const allResults = document.getElementById('all-terminal-results');
     if (allResults) {
-      allResults.innerHTML = TERMINALS.map(t => {
-        const v = t.formula(a, b, c);
-        return `
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--border-subtle);">
-            <div>
-              <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary)">${t.label}</div>
-              <div style="font-size:0.68rem;color:var(--text-secondary)">${t.desc}</div>
-            </div>
-            <div style="font-size:1.5rem;font-weight:900;font-family:monospace;color:var(--neon-green);text-shadow:var(--glow-green)">${String(v).padStart(2,'0')}</div>
-          </div>`;
-      }).join('');
+      allResults.innerHTML = TERMINAL_DATA.map(t => `
+        <div style="display:flex;justify-content:space-between;align-items:center;
+             padding:0.5rem 0;border-bottom:1px solid var(--border-subtle);">
+          <div>
+            <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary)">${t.label}</div>
+            <div style="font-size:0.66rem;color:var(--text-secondary)">${t.desc}</div>
+            <div style="font-size:0.62rem;color:var(--text-muted);font-family:monospace">${t.formula}</div>
+          </div>
+          <div style="font-size:1.5rem;font-weight:900;font-family:monospace;color:var(--neon-green);text-shadow:var(--glow-green)">${String(t.value).padStart(2,'0')}</div>
+        </div>`).join('');
     }
   }
 
-  /** Terminal tab switcher */
+  /* ── TERMINAL TABS ────────────────────────────────────── */
+
   function bindTerminalTabs() {
-    const tabs = document.querySelectorAll('.terminal-tab');
-    tabs.forEach((tab, idx) => {
+    document.querySelectorAll('.terminal-tab').forEach((tab, idx) => {
       tab.addEventListener('click', () => {
         activeTerminal = idx;
-        tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+        document.querySelectorAll('.terminal-tab').forEach((t, i) =>
+          t.classList.toggle('active', i === idx));
         computeOutput();
       });
     });
   }
 
-  /** Reset decoder */
+  /* ── RESET ────────────────────────────────────────────── */
+
   function resetDecoder() {
-    slots = [null, null, null];
-    const slotsContainer = document.getElementById('decoder-slots');
-    const gridContainer  = document.getElementById('decoder-grid');
-    if (slotsContainer) renderSlotValues(slotsContainer);
-    if (gridContainer)  updateGridHighlight();
+    selections = [null, null, null];
+    updateSlots();
+    updateGridHighlight();
     const outputEl = document.getElementById('decoder-output');
     if (outputEl) outputEl.classList.remove('visible');
   }
 
+  /* ── INIT ─────────────────────────────────────────────── */
+
   function init() {
-    const gridContainer  = document.getElementById('decoder-grid');
-    const slotsContainer = document.getElementById('decoder-slots');
-    if (!gridContainer || !slotsContainer) return;
-
-    renderGrid(gridContainer);
-    renderSlots(slotsContainer);
+    const gridEl  = document.getElementById('decoder-grid');
+    const slotsEl = document.getElementById('decoder-slots');
+    if (!gridEl || !slotsEl) return;
+    renderGrid(gridEl);
+    renderSlots(slotsEl);
     bindTerminalTabs();
-
     const resetBtn = document.getElementById('decoder-reset');
     if (resetBtn) resetBtn.addEventListener('click', resetDecoder);
   }
@@ -231,3 +266,4 @@ const TerminusDecoder = (() => {
 document.addEventListener('DOMContentLoaded', () => {
   TerminusDecoder.init();
 });
+

@@ -159,8 +159,23 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(57,255,20,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 30% at 20% 80%, rgba(0,245,255,0.05) 0%, transparent 60%);
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(57,255,20,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 80%, rgba(0,245,255,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 25% at 80% 70%, rgba(57,255,20,0.04) 0%, transparent 55%),
+    linear-gradient(rgba(57,255,20,0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57,255,20,0.028) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 38px 38px, 38px 38px;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
   pointer-events: none;
 }
 
@@ -176,6 +191,12 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
   border: 1px solid rgba(57,255,20,0.3);
   padding: 0.25rem 0.75rem;
   border-radius: 99px;
+  animation: eyebrow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes eyebrow-pulse {
+  0%, 100% { box-shadow: 0 0 6px rgba(57,255,20,0.15); }
+  50%       { box-shadow: 0 0 18px rgba(57,255,20,0.35), 0 0 4px rgba(57,255,20,0.4) inset; }
 }
 
 .hero-title {
@@ -264,7 +285,7 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
 .map-card--citadelle  { --card-accent: var(--neon-purple); }
 
 .map-card-banner {
-  height: 140px;
+  height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -273,33 +294,93 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
   overflow: hidden;
 }
 
+/* ── Terminus — sci-fi ocean prison ── */
 .map-card--terminus .map-card-banner {
-  background: linear-gradient(135deg, #041a2e 0%, #0a2a40 50%, #041a2e 100%);
+  background:
+    linear-gradient(rgba(0,245,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,245,255,0.05) 1px, transparent 1px),
+    radial-gradient(ellipse at 72% 65%, rgba(0,200,255,0.18) 0%, transparent 52%),
+    radial-gradient(ellipse at 18% 30%, rgba(0,100,160,0.10) 0%, transparent 38%),
+    linear-gradient(160deg, #01090f 0%, #011824 50%, #021320 100%);
+  background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%, 100% 100%;
+  border-top: 2px solid rgba(0,245,255,0.18);
+}
+.map-card--terminus .map-card-banner::before {
+  content: '🏝';
+  font-size: 7rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-52%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px) grayscale(0.3);
 }
 
+/* ── Liberty Falls — small-town USA ── */
 .map-card--liberty .map-card-banner {
-  background: linear-gradient(135deg, #1a0a00 0%, #2a1400 50%, #1a0a00 100%);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255,160,30,0.16) 0%, transparent 48%),
+    radial-gradient(circle at 18% 22%, rgba(255,220,80,0.09) 0%, transparent 28%),
+    radial-gradient(circle at 80% 18%, rgba(255,200,60,0.08) 0%, transparent 24%),
+    radial-gradient(circle at 62% 72%, rgba(255,80,0,0.07) 0%, transparent 32%),
+    linear-gradient(160deg, #120500 0%, #231000 50%, #150600 100%);
+  border-top: 2px solid rgba(255,107,0,0.20);
+}
+.map-card--liberty .map-card-banner::before {
+  content: '⛪';
+  font-size: 7rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-52%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px) grayscale(0.3);
 }
 
+/* ── Citadelle des Morts — gothic castle ── */
 .map-card--citadelle .map-card-banner {
-  background: linear-gradient(135deg, #120a1e 0%, #1e0a2e 50%, #120a1e 100%);
+  background:
+    linear-gradient(rgba(191,95,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(191,95,255,0.04) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 28%, rgba(191,95,255,0.22) 0%, transparent 48%),
+    radial-gradient(ellipse at 20% 70%, rgba(120,0,200,0.10) 0%, transparent 32%),
+    radial-gradient(ellipse at 82% 60%, rgba(160,60,255,0.09) 0%, transparent 30%),
+    linear-gradient(160deg, #070011 0%, #100020 50%, #080013 100%);
+  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  border-top: 2px solid rgba(191,95,255,0.20);
+}
+.map-card--citadelle .map-card-banner::before {
+  content: '🏰';
+  font-size: 7rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-52%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px) grayscale(0.3);
 }
 
 .map-card-banner::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, var(--bg-card) 100%);
+  background: linear-gradient(to bottom, transparent 30%, var(--bg-card) 100%);
 }
 
 .map-card-banner-icon {
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 0 16px var(--card-accent, var(--neon-cyan)));
+  filter: drop-shadow(0 0 20px var(--card-accent, var(--neon-cyan))) drop-shadow(0 0 6px rgba(0,0,0,0.8));
   transition: transform 0.3s ease;
 }
 
-.map-card:hover .map-card-banner-icon { transform: scale(1.1); }
+.map-card:hover .map-card-banner-icon { transform: scale(1.15) rotate(-3deg); }
 
 .map-card-body {
   padding: 1.25rem;
@@ -513,23 +594,127 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   margin-bottom: 2rem;
-  padding: 2.5rem 2rem;
+  padding: 3rem 2rem 2.5rem;
   position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
+/* Guide heroes — each map gets a wallpaper-style banner */
 .guide-hero--terminus {
-  background: linear-gradient(135deg, #020e1a 0%, #061827 50%, #020e1a 100%);
-  border: 1px solid rgba(0,245,255,0.2);
+  background:
+    linear-gradient(rgba(0,245,255,0.042) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,245,255,0.042) 1px, transparent 1px),
+    radial-gradient(ellipse at 80% 50%, rgba(0,200,255,0.14) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 60%, rgba(0,100,180,0.08) 0%, transparent 40%),
+    linear-gradient(135deg, #010b17 0%, #021c2c 50%, #01111f 100%);
+  background-size: 30px 30px, 30px 30px, 100% 100%, 100% 100%, 100% 100%;
+  border: 1px solid rgba(0,245,255,0.22);
+  border-top: 3px solid rgba(0,245,255,0.35);
+}
+.guide-hero--terminus::before {
+  content: '🏝';
+  font-size: 14rem;
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.065;
+  pointer-events: none;
+  line-height: 1;
+  filter: grayscale(0.4) blur(3px);
 }
 
 .guide-hero--liberty {
-  background: linear-gradient(135deg, #1a0800 0%, #2a1000 50%, #1a0800 100%);
-  border: 1px solid rgba(255,107,0,0.2);
+  background:
+    radial-gradient(ellipse at 80% 50%, rgba(255,140,20,0.16) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 30%, rgba(255,200,60,0.09) 0%, transparent 38%),
+    radial-gradient(ellipse at 60% 80%, rgba(255,80,0,0.07) 0%, transparent 35%),
+    linear-gradient(135deg, #140600 0%, #281200 50%, #140700 100%);
+  border: 1px solid rgba(255,107,0,0.22);
+  border-top: 3px solid rgba(255,107,0,0.40);
+}
+.guide-hero--liberty::before {
+  content: '⛪';
+  font-size: 14rem;
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.065;
+  pointer-events: none;
+  line-height: 1;
+  filter: grayscale(0.4) blur(3px);
 }
 
 .guide-hero--citadelle {
-  background: linear-gradient(135deg, #0e0018 0%, #180028 50%, #0e0018 100%);
-  border: 1px solid rgba(191,95,255,0.2);
+  background:
+    linear-gradient(rgba(191,95,255,0.036) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(191,95,255,0.036) 1px, transparent 1px),
+    radial-gradient(ellipse at 80% 50%, rgba(191,95,255,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 70%, rgba(120,0,200,0.10) 0%, transparent 40%),
+    linear-gradient(135deg, #080013 0%, #14002a 50%, #09001a 100%);
+  background-size: 42px 42px, 42px 42px, 100% 100%, 100% 100%, 100% 100%;
+  border: 1px solid rgba(191,95,255,0.22);
+  border-top: 3px solid rgba(191,95,255,0.40);
+}
+.guide-hero--citadelle::before {
+  content: '🏰';
+  font-size: 14rem;
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.065;
+  pointer-events: none;
+  line-height: 1;
+  filter: grayscale(0.4) blur(3px);
+}
+
+/* BO3 hero variants */
+.guide-hero--der-eisendrache {
+  background:
+    radial-gradient(ellipse at 78% 50%, rgba(0,170,255,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 22% 60%, rgba(0,100,200,0.10) 0%, transparent 38%),
+    linear-gradient(135deg, #000e1c 0%, #001a36 50%, #000e1c 100%);
+  border: 1px solid rgba(0,170,255,0.22);
+  border-top: 3px solid rgba(0,170,255,0.40);
+}
+.guide-hero--der-eisendrache::before {
+  content: '🏯';
+  font-size: 14rem;
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.065;
+  pointer-events: none;
+  line-height: 1;
+  filter: grayscale(0.4) blur(3px);
+}
+
+.guide-hero--shadows-of-evil {
+  background:
+    radial-gradient(ellipse at 78% 50%, rgba(255,34,68,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 22% 40%, rgba(200,0,20,0.10) 0%, transparent 38%),
+    radial-gradient(ellipse at 50% 80%, rgba(160,0,0,0.10) 0%, transparent 40%),
+    linear-gradient(135deg, #120004 0%, #250008 50%, #120004 100%);
+  border: 1px solid rgba(255,34,68,0.22);
+  border-top: 3px solid rgba(255,34,68,0.40);
+}
+.guide-hero--shadows-of-evil::before {
+  content: '🌆';
+  font-size: 14rem;
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.065;
+  pointer-events: none;
+  line-height: 1;
+  filter: grayscale(0.4) blur(3px);
 }
 
 .guide-hero-tag {
@@ -547,6 +732,7 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.75rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.8);
 }
 
 .guide-hero p {
@@ -1505,17 +1691,61 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
 .map-card--the-giant        { --card-accent: var(--neon-green); }
 .map-card--gorod-krovi      { --card-accent: var(--neon-orange); }
 
+/* ── Der Eisendrache — Austrian mountain castle ── */
 .map-card--der-eisendrache .map-card-banner {
-  background: linear-gradient(135deg, #001a33 0%, #003366 60%, rgba(0,170,255,0.13) 100%);
+  background:
+    radial-gradient(ellipse at 72% 55%, rgba(0,170,255,0.20) 0%, transparent 52%),
+    radial-gradient(ellipse at 20% 35%, rgba(0,120,200,0.10) 0%, transparent 38%),
+    linear-gradient(160deg, #000a18 0%, #001530 50%, #000a18 100%);
+  border-top: 2px solid rgba(0,170,255,0.20);
 }
+.map-card--der-eisendrache .map-card-banner::before {
+  content: '🏯';
+  font-size: 7rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-52%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px) grayscale(0.3);
+}
+
+/* ── Shadows of Evil — 1940s noir city ── */
 .map-card--shadows-of-evil .map-card-banner {
-  background: linear-gradient(135deg, #1a0008 0%, #330010 60%, rgba(255,34,68,0.13) 100%);
+  background:
+    radial-gradient(ellipse at 68% 55%, rgba(255,34,68,0.20) 0%, transparent 50%),
+    radial-gradient(ellipse at 22% 35%, rgba(180,0,20,0.10) 0%, transparent 38%),
+    radial-gradient(ellipse at 50% 85%, rgba(100,0,10,0.10) 0%, transparent 36%),
+    linear-gradient(160deg, #100003 0%, #220007 50%, #100003 100%);
+  border-top: 2px solid rgba(255,34,68,0.18);
 }
+.map-card--shadows-of-evil .map-card-banner::before {
+  content: '🌆';
+  font-size: 7rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-52%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px) grayscale(0.3);
+}
+
+/* ── The Giant / Gorod Krovi (placeholder) ── */
 .map-card--the-giant .map-card-banner {
-  background: linear-gradient(135deg, #0a1a0a 0%, #0f280f 60%, rgba(57,255,20,0.10) 100%);
+  background:
+    radial-gradient(ellipse at 65% 55%, rgba(57,255,20,0.16) 0%, transparent 50%),
+    linear-gradient(160deg, #080f08 0%, #0e1e0e 50%, #080f08 100%);
+  border-top: 2px solid rgba(57,255,20,0.16);
 }
 .map-card--gorod-krovi .map-card-banner {
-  background: linear-gradient(135deg, #1a0c00 0%, #331500 60%, rgba(255,107,0,0.13) 100%);
+  background:
+    radial-gradient(ellipse at 65% 55%, rgba(255,107,0,0.18) 0%, transparent 50%),
+    linear-gradient(160deg, #130800 0%, #251200 50%, #130800 100%);
+  border-top: 2px solid rgba(255,107,0,0.18);
 }
 
 /* coming-soon overlay */
