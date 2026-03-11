@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shadows of Evil Main Quest Easter Egg guide for Black Ops 3 Zombies. Four rituals, Apothicon Servant, shadow realm, and the final boss sequence." />
+  <title>Shadows of Evil Easter Egg Guide — BO3 Zombies</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌆</text></svg>" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    :root { --accent-color: var(--neon-red); }
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      color: var(--neon-red) !important;
+      background: rgba(255,34,68,0.08) !important;
+      border-left-color: var(--neon-red) !important;
+    }
+    .hero-stat-value { color: var(--neon-red) !important; }
+    .guide-hero h1 { color: var(--neon-red); }
+    .guide-hero-tag { color: var(--neon-red) !important; }
+    .section-header { border-left: 3px solid var(--neon-red); }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: var(--neon-red) !important; background: rgba(255,34,68,0.08) !important; }
+    .step-checkbox { border-color: rgba(255,34,68,0.4) !important; }
+    .checklist-item.completed .step-checkbox {
+      background: var(--neon-red) !important; border-color: var(--neon-red) !important; box-shadow: 0 0 8px rgba(255,34,68,0.5) !important;
+    }
+    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, var(--neon-red), #aa0022) !important; }
+    .ritual-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
+    .ritual-card { background: var(--bg-card); border: 1px solid rgba(255,34,68,0.2); border-radius: var(--radius-md); padding: 1rem; }
+    .ritual-card .rc-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+    .ritual-card .rc-name { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--neon-red); margin-bottom: 0.3rem; }
+    .ritual-card .rc-loc  { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; }
+  </style>
+</head>
+<body data-map-id="soe">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🧟</span>
+        <span>Zombies<span class="accent"> Guides</span></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">All Maps</a></li>
+        <li><a href="bo3-der-eisendrache.html">Der Eisendrache</a></li>
+        <li><a href="bo3-shadows-of-evil.html" class="active">Shadows of Evil</a></li>
+      </ul>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+    </nav>
+  </header>
+
+  <div class="guide-layout">
+
+    <!-- Sidebar -->
+    <aside class="guide-sidebar" aria-label="Guide navigation">
+      <p class="sidebar-label">Jump to Section</p>
+      <ul class="sidebar-nav" role="list">
+        <li><a href="#loadout">🎒 Loadout</a></li>
+        <li><a href="#pap">⚡ Unlock Pack-a-Punch</a></li>
+        <li><a href="#rituals">🩸 4 Character Rituals</a></li>
+        <li><a href="#servant">🦑 Apothicon Servant</a></li>
+        <li><a href="#shadow">🌑 Shadow Realm Steps</a></li>
+        <li><a href="#final">🎯 Final Steps</a></li>
+        <li><a href="#boss">💀 Shadowman Boss</a></li>
+      </ul>
+      <div class="sidebar-progress" role="region" aria-label="Quest progress">
+        <p class="sidebar-progress-label">Quest Progress</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-text">
+          <span class="pct">0%</span>
+          <span class="count">0/0</span>
+        </div>
+        <button class="sidebar-reset-btn" type="button">↺ Reset Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="guide-main" id="main-content">
+
+      <!-- Hero -->
+      <div class="guide-hero">
+        <p class="guide-hero-tag" style="color:var(--neon-red);">
+          <span class="game-badge game-badge-bo3" style="margin-right:0.4rem;">BO3</span>
+          Main Quest Easter Egg · Round-Based
+        </p>
+        <h1 style="color:var(--neon-red);">Shadows of Evil</h1>
+        <p>
+          A twisted 1940s noir metropolis controlled by the Shadowman. Four damned
+          souls — the Magician, Fighter, Femme Fatale, and Cop — must perform
+          rituals, craft the Apothicon Servant Wonder Weapon, survive the Shadow
+          Realm, and seal the Shadowman in the Summoning Key.
+        </p>
+        <div class="guide-hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-red);">28</span>
+            <span class="hero-stat-label">Quest Steps</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-red);">3–4h</span>
+            <span class="hero-stat-label">Avg Time</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-orange);">★★★</span>
+            <span class="hero-stat-label">Difficulty</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-red);">4P Rec.</span>
+            <span class="hero-stat-label">Players</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOADOUT ─────────────────────────────────────── -->
+      <section class="guide-section" id="loadout" aria-labelledby="loadout-h">
+        <div class="section-header">
+          <span class="section-icon">🎒</span>
+          <h2 id="loadout-h">Recommended Loadout</h2>
+          <span class="section-phase-tag phase-early">Pre-Game</span>
+        </div>
+        <div class="loadout-grid">
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">💊</span><span class="loadout-label">Perks Priority</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-red)"></span>
+                <div><div class="item-name">Jugger-Nog</div><div class="item-why">Mandatory — this map's tight alleyways punish low HP</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-red)"></span>
+                <div><div class="item-name">Mule Kick</div><div class="item-why">3 weapons = carry Apothicon Servant + 2 backup guns</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-red)"></span>
+                <div><div class="item-name">Speed Cola</div><div class="item-why">Reloading mid-horde in alleyways is lethal without it</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-red)"></span>
+                <div><div class="item-name">Widows Wine</div><div class="item-why">Slow down grabbing Margwas — essential in shadow realm</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">🔫</span><span class="loadout-label">Weapons</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-red)"></span>
+                <div><div class="item-name">HVK-30 or L-CAR 9 (PaP Tier 2)</div><div class="item-why">Best sustained DPS for ritual steps; HVK-30 is meta</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-red)"></span>
+                <div><div class="item-name">Apothicon Servant (WW)</div><div class="item-why">Tenacious black hole suction — best non-upgraded WW in BO3</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">🧠</span><span class="loadout-label">Gobblegums (BO3)</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-red)"></span>
+                <div><div class="item-name">Perkaholic</div><div class="item-why">All perks — vital on this map's perk positions</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:var(--neon-red)"></span>
+                <div><div class="item-name">Slaughter Slide</div><div class="item-why">Kills while sliding — useful during shadow realm escape sequences</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <strong>Choose Your Character</strong>
+            Each of the 4 characters (Magician, Cop, Fighter, Femme Fatale) has a
+            <em>different symbol</em> required for the pack-a-punch ritual. Your
+            symbol is shown on the GobbleGum machine near spawn. Note it down
+            before doing anything else.
+          </div>
+        </div>
+      </section>
+
+      <!-- ── UNLOCK PAP ─────────────────────────────────── -->
+      <section class="guide-section" id="pap" aria-labelledby="pap-h">
+        <div class="section-header">
+          <span class="section-icon">⚡</span>
+          <h2 id="pap-h">Unlock Pack-a-Punch</h2>
+          <span class="section-phase-tag phase-early">Rounds 1–5</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1.25rem;line-height:1.6;">
+          Unlike other maps, PaP here is locked behind a ritual. Each player must
+          complete their own ritual in the shadow realm to unlock the PaP machine
+          for everyone.
+        </p>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="soe001" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 01</div>
+                <div class="step-title">Identify your character's unique symbol at spawn</div>
+                <div class="step-desc">
+                  Near the spawn GobbleGum machine, look at the circular icon above
+                  your character's portrait. This symbol corresponds to your ritual
+                  table location. You'll need it in the shadow realm.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required First</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe002" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 02</div>
+                <div class="step-title">Collect a Sword of Ra from the shadow realm</div>
+                <div class="step-desc">
+                  Enter the shadow realm by interacting with a glowing rift (watch
+                  for purple crackling portals at street level). Inside, locate
+                  a Sword of Ra on its altar and carry it back through the rift
+                  to the real world. Do not die — dropping the sword resets it.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Shadow Realm</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe003" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 03</div>
+                <div class="step-title">Complete your character's ritual with the sword</div>
+                <div class="step-desc">
+                  Take the Sword of Ra to the ritual table matching your character
+                  symbol. Perform the ritual — this takes 60 seconds of standing
+                  near the table while defending against zombie waves.
+                  Each player must perform their own ritual.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">All 4 Players</span></div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-soe003" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Ritual Table Locations
+            </button>
+            <div class="substeps" id="subs-soe003" role="region">
+              <ul>
+                <li><strong>Magician's Table</strong>: In the underground club (enter from the jazz bar alleyway)</li>
+                <li><strong>Cop's Table</strong>: In the police station holding area (second floor)</li>
+                <li><strong>Fighter's Table</strong>: In the boxing gym (south-east district)</li>
+                <li><strong>Femme Fatale's Table</strong>: In the burlesque backstage room (theatre district)</li>
+              </ul>
+              <p class="sub-note">💡 All 4 rituals can be completed simultaneously in a squad — much faster.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe004" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 04</div>
+                <div class="step-title">Use all 4 completed swords (in the shadow realm) to unlock PaP</div>
+                <div class="step-desc">
+                  After all 4 rituals are done, enter the shadow realm together.
+                  All 4 players place their completed swords on the central altar
+                  simultaneously. The Pack-a-Punch machine then unlocks in the real
+                  world (appears in the canal plaza area).
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Unlock PaP</span>
+                  <span class="step-tag tag-squad">All 4 Simultaneously</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── RITUALS ─────────────────────────────────────── -->
+      <section class="guide-section" id="rituals" aria-labelledby="rituals-h">
+        <div class="section-header">
+          <span class="section-icon">🩸</span>
+          <h2 id="rituals-h">Complete the 4 Character Rituals</h2>
+          <span class="section-phase-tag phase-mid">Mid-Game</span>
+        </div>
+
+        <div class="ritual-cards" role="list">
+          <div class="ritual-card" role="listitem">
+            <div class="rc-icon">🔮</div>
+            <div class="rc-name">The Magician</div>
+            <div class="rc-loc">Location: Underground Jazz Club<br>Objective: Kill 10 Parasites while standing in the ritual circle</div>
+          </div>
+          <div class="ritual-card" role="listitem">
+            <div class="rc-icon">👮</div>
+            <div class="rc-name">The Cop</div>
+            <div class="rc-loc">Location: Police Station 2F<br>Objective: Kill 10 zombies with your pistol (Iron Sights only)</div>
+          </div>
+          <div class="ritual-card" role="listitem">
+            <div class="rc-icon">🥊</div>
+            <div class="rc-name">The Fighter</div>
+            <div class="rc-loc">Location: Boxing Gym Ring<br>Objective: Melee 20 zombies while standing in the ring boundary</div>
+          </div>
+          <div class="ritual-card" role="listitem">
+            <div class="rc-icon">💃</div>
+            <div class="rc-name">Femme Fatale</div>
+            <div class="rc-loc">Location: Theatre Backstage<br>Objective: Kill 20 zombies with explosive damage in the ritual area</div>
+          </div>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="soe005" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 05</div>
+                <div class="step-title">Complete the Magician's Ritual — Underground Jazz Club</div>
+                <div class="step-desc">
+                  Kill 10 Parasites (flying skull enemies) while standing inside
+                  the glowing circle. Parasites only spawn in the shadow realm in
+                  this area — enter via the rift in the alley outside the club.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Ritual 1</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe006" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 06</div>
+                <div class="step-title">Complete the Cop's Ritual — Police Station</div>
+                <div class="step-desc">
+                  Kill 10 zombies with your pistol in iron-sights mode while in
+                  the police station ritual area. You cannot ADS with any other weapon
+                  — only iron sights counts. A basic pistol works fine unupgraded.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Ritual 2</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe007" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 07</div>
+                <div class="step-title">Complete the Fighter's Ritual — Boxing Gym</div>
+                <div class="step-desc">
+                  Melee-kill 20 zombies while standing in the boxing ring
+                  boundary. Only melee inside the ring counts — kills outside
+                  the ropes don't register. The ring accommodates all
+                  4 players if needed.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Ritual 3</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe008" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 08</div>
+                <div class="step-title">Complete the Femme Fatale's Ritual — Theatre Backstage</div>
+                <div class="step-desc">
+                  Explosively kill 20 zombies in the backstage area. Grenades,
+                  RC-XDs, grenade launcher attachments, and explosive weapons all count.
+                  The Apothicon Servant's void detonations also count as explosive kills.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Ritual 4</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── APOTHICON SERVANT ──────────────────────────── -->
+      <section class="guide-section" id="servant" aria-labelledby="servant-h">
+        <div class="section-header">
+          <span class="section-icon">🦑</span>
+          <h2 id="servant-h">Craft: Apothicon Servant</h2>
+          <span class="section-phase-tag phase-mid">Wonder Weapon</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="soe009" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 09</div>
+                <div class="step-title">Find Apothicon Servant Part 1 — Mouth Piece (shadow realm)</div>
+                <div class="step-desc">
+                  Enter the shadow realm and look for a glowing purple organic part
+                  floating near the central plaza fountain. It cycles between 3 spawn
+                  positions inside the shadow realm — check all three if it's not
+                  at the first.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">WW Part 1</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe010" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 10</div>
+                <div class="step-title">Find Apothicon Servant Part 2 — Parasite Body</div>
+                <div class="step-desc">
+                  Kill the special glowing Parasites (their colour is brighter
+                  than normal Parasites) in the shadow realm. One of them randomly
+                  drops the Parasite Body part. They can spawn in any shadow realm zone.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">WW Part 2</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe011" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 11</div>
+                <div class="step-title">Find Apothicon Servant Part 3 — Eye from the Margwa</div>
+                <div class="step-desc">
+                  Kill a Margwa (3-headed tall creature) with a melee kill to its
+                  open mouths. The Margwa drops the Eye component. Margwas spawn
+                  every 4–5 rounds in the main game world — be ready to
+                  melee-finish one when it spawns.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">WW Part 3</span></div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-soe011" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Killing Margwas Efficiently
+            </button>
+            <div class="substeps" id="subs-soe011" role="region">
+              <ol>
+                <li>When a Margwa spawns, immediately equip a melee weapon (knife).</li>
+                <li>When one of the three socket mouths opens and glows, sprint up and melee it directly.</li>
+                <li>After hitting all three, the Margwa staggers. Hit the main weak point on its body with your gun.</li>
+                <li>For the Eye drop: make the final kill via melee — not with a gun. A melee-finish is required.</li>
+              </ol>
+              <p class="sub-note">⚠ Do NOT use the Apothicon Servant on a Margwa — it instantly kills it but may prevent the Eye drop.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe012" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 12</div>
+                <div class="step-title">Build the Apothicon Servant at the workbench</div>
+                <div class="step-desc">
+                  Three workbenches are on the map (canal plaza, theatre, police station).
+                  Take all 3 parts to any workbench and hold interact to assemble
+                  the Apothicon Servant Wonder Weapon.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Build WW</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── SHADOW REALM ───────────────────────────────── -->
+      <section class="guide-section" id="shadow" aria-labelledby="shadow-h">
+        <div class="section-header">
+          <span class="section-icon">🌑</span>
+          <h2 id="shadow-h">Shadow Realm Steps</h2>
+          <span class="section-phase-tag phase-mid">Late Game</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="soe013" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 13</div>
+                <div class="step-title">Locate all 3 Gateworm spawn positions in the shadow realm</div>
+                <div class="step-desc">
+                  Inside the shadow realm there are 3 sealed "egg pods" on walls.
+                  Use the Apothicon Servant's alt-fire (hold fire button) to shoot
+                  each pod — this extracts a Gateworm from it. Collect all 3.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-soe013" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Gateworm Pod Locations
+            </button>
+            <div class="substeps" id="subs-soe013" role="region">
+              <ul>
+                <li><strong>Pod 1</strong>: Shadow realm, on the wall directly above the canal plaza bench (look up).</li>
+                <li><strong>Pod 2</strong>: Shadow realm, inside the boxing gym's shadow version — on the south wall.</li>
+                <li><strong>Pod 3</strong>: Shadow realm, in the theatre district — on the wall near the exit rift.</li>
+              </ul>
+              <p class="sub-note">💡 The Apothicon Servant must be charged (at least 3 ammo) to open each pod.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe014" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 14</div>
+                <div class="step-title">Place the 3 Gateworms in the Summoning Key altar (underwater canal)</div>
+                <div class="step-desc">
+                  The Summoning Key altar is underwater in the canal (accessed via
+                  the submerged street entrance). Dive in and place all 3 worms on
+                  the altar. This is briefly underwater — hold your breath.
+                  The altar glows gold when all 3 are placed.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── FINAL STEPS ────────────────────────────────── -->
+      <section class="guide-section" id="final" aria-labelledby="final-h">
+        <div class="section-header">
+          <span class="section-icon">🎯</span>
+          <h2 id="final-h">Final Steps</h2>
+          <span class="section-phase-tag phase-mid">Late Game</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="soe015" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 15</div>
+                <div class="step-title">Retrieve the Summoning Key from the altar</div>
+                <div class="step-desc">
+                  After placing the worms, the altar empowers the Summoning Key.
+                  Re-enter the underwater canal and collect the Key from the altar.
+                  You now hold the Summoning Key as a special item.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="soe016" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 16</div>
+                <div class="step-title">Lure the Shadowman to consume the Key trap</div>
+                <div class="step-desc">
+                  The Shadowman (giant shadowy entity) periodically appears in the
+                  sky above the city. When he appears, use the Summoning Key
+                  (throw it like a grenade toward him) while he hovers in position.
+                  This stuns him and initiates the boss sequence.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Boss Trigger</span>
+                  <span class="step-tag tag-warning">Time window ~10 sec</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BOSS ───────────────────────────────────────── -->
+      <section class="guide-section" id="boss" aria-labelledby="boss-h">
+        <div class="section-header">
+          <span class="section-icon">💀</span>
+          <h2 id="boss-h">Boss Fight — The Shadowman</h2>
+          <span class="section-phase-tag phase-boss">End Game</span>
+        </div>
+        <div class="checklist" role="list">
+          <div class="checklist-item" data-step-id="soe017" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 17</div>
+                <div class="step-title">Enter the boss arena via the rift portal</div>
+                <div class="step-desc">When the Shadowman is stunned, a giant rift portal opens in the plaza. All players must enter it within 30 seconds.</div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="boss-section" style="margin-top:1.5rem;">
+          <div class="boss-header">
+            <span class="boss-icon">🌑</span>
+            <div class="boss-info">
+              <h3>The Shadowman — Keeper of Darkness</h3>
+              <p>A corrupted Keeper empowered by the Apothicons. The boss fight takes place in a dark alternate dimension. The Shadowman cannot be killed by conventional weapons — he must be sealed using the Summoning Key.</p>
+            </div>
+          </div>
+          <div class="boss-phases" role="list">
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">1</span>
+              <div class="phase-detail">
+                <h4>Phase 1 — Destroy the 3 Margwa Shields</h4>
+                <p>Three Margwas appear simultaneously and protect the Shadowman's orb with their energy. <strong>All 4 players must each focus on one Margwa simultaneously</strong> — if Margwas are killed too far apart in time, they respawn. Kill all 3 Margwas within a 5-second window by coordinating attacks.</p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">2</span>
+              <div class="phase-detail">
+                <h4>Phase 2 — Strike the Shadowman's Core</h4>
+                <p>When all 3 Margwas die simultaneously, the Shadowman's glowing core is exposed briefly. All players immediately unload their Apothicon Servants and PaP'd weapons at the core. This window lasts only 8 seconds before the Shadowman re-shields. The cycle repeats 3 times total.</p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">3</span>
+              <div class="phase-detail">
+                <h4>Phase 3 — Use the Summoning Key</h4>
+                <p>On the 3rd cycle, after the final Apothicon Servant volley, a prompt appears to use the Summoning Key. <strong>The Key holder throws it at the descending Shadowman</strong>. All other players must keep him stationary by shooting his legs. The Key seals him, triggering the victory cutscene.</p>
+              </div>
+            </div>
+          </div>
+          <div class="boss-tips">
+            <p class="boss-tips-title">🌆 Boss Survival Tips</p>
+            <ul>
+              <li><strong>Margwa sync is everything</strong> — call out "hitting now" and count down from 3 before the final shot on your Margwa.</li>
+              <li>All 4 players should hold full Apothicon Servant ammo when entering Phase 2 damage windows.</li>
+              <li>During Margwa fighting, stay mobile — the Shadowman fires shadow bolts that 1-hit DBNO at full health.</li>
+              <li>The Key holder should not engage Margwas — conserve Widows Wine for Phase 3 grab prevention.</li>
+              <li>If a player is downed in Phase 3, a teammate can revive quickly — the Key prompt waits until the holder activates it.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav" aria-label="Quick navigation">
+    <a href="#loadout"><span>🎒</span>Loadout</a>
+    <a href="#pap"><span>⚡</span>PaP</a>
+    <a href="#rituals"><span>🩸</span>Rituals</a>
+    <a href="#servant"><span>🦑</span>WW</a>
+    <a href="#shadow"><span>🌑</span>Shadow</a>
+    <a href="#boss"><span>💀</span>Boss</a>
+  </nav>
+
+  <footer class="site-footer">
+    <p>
+      <a href="bo3-der-eisendrache.html">← Der Eisendrache</a> &nbsp;·&nbsp;
+      <a href="index.html">All Maps</a>
+    </p>
+    <p style="margin-top:0.5rem;">Fan-made guide · Not affiliated with Activision or Treyarch</p>
+  </footer>
+
+  <!-- Timer Modal -->
+  <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
+    <div class="timer-modal">
+      <button class="timer-modal-close" aria-label="Close timer">✕</button>
+      <p class="timer-label">⏱ Round Stopwatch</p>
+      <div class="timer-display" aria-live="polite">00:00:00.00</div>
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-start">▶ Start</button>
+        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
+        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+      </div>
+      <div class="timer-laps" aria-label="Lap times" role="list"></div>
+    </div>
+  </div>
+  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Der Eisendrache Main Quest Easter Egg guide for Black Ops 3 Zombies. Tame the dragons, upgrade the Wrath of the Ancients bow, and defeat the boss." />
+  <title>Der Eisendrache Easter Egg Guide — BO3 Zombies</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏯</text></svg>" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    :root { --accent-color: #00aaff; }
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      color: #00aaff !important;
+      background: rgba(0,170,255,0.08) !important;
+      border-left-color: #00aaff !important;
+    }
+    .hero-stat-value { color: #00aaff !important; }
+    .guide-hero h1 { color: #00aaff; }
+    .guide-hero-tag { color: #00aaff !important; }
+    .section-header--blue { border-left-color: #00aaff !important; }
+    .section-header--blue .section-icon { color: #00aaff; }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: #00aaff !important; background: rgba(0,170,255,0.08) !important; }
+    .step-checkbox { border-color: rgba(0,170,255,0.4) !important; }
+    .checklist-item.completed .step-checkbox {
+      background: #00aaff !important; border-color: #00aaff !important; box-shadow: 0 0 8px rgba(0,170,255,0.5) !important;
+    }
+    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, #00aaff, #0055ff) !important; }
+    .section-header { border-left: 3px solid #00aaff; }
+  </style>
+</head>
+<body data-map-id="de">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🧟</span>
+        <span>Zombies<span class="accent"> Guides</span></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">All Maps</a></li>
+        <li><a href="bo3-der-eisendrache.html" class="active">Der Eisendrache</a></li>
+        <li><a href="bo3-shadows-of-evil.html">Shadows of Evil</a></li>
+      </ul>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+    </nav>
+  </header>
+
+  <div class="guide-layout">
+
+    <!-- Sidebar -->
+    <aside class="guide-sidebar" aria-label="Guide navigation">
+      <p class="sidebar-label">Jump to Section</p>
+      <ul class="sidebar-nav" role="list">
+        <li><a href="#loadout">🎒 Loadout</a></li>
+        <li><a href="#power">⚡ Power On</a></li>
+        <li><a href="#dragons">🐉 Tame the Dragons</a></li>
+        <li><a href="#bow">🏹 Wrath of the Ancients</a></li>
+        <li><a href="#upgrade">⬆ Upgrade Your Bow</a></li>
+        <li><a href="#final">🎯 Final Steps</a></li>
+        <li><a href="#boss">💀 Boss Sequence</a></li>
+      </ul>
+      <div class="sidebar-progress" role="region" aria-label="Quest progress">
+        <p class="sidebar-progress-label">Quest Progress</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-text">
+          <span class="pct">0%</span>
+          <span class="count">0/0</span>
+        </div>
+        <button class="sidebar-reset-btn" type="button">↺ Reset Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="guide-main" id="main-content">
+
+      <!-- Hero -->
+      <div class="guide-hero">
+        <p class="guide-hero-tag" style="color:#00aaff;">
+          <span class="game-badge game-badge-bo3" style="margin-right:0.4rem;">BO3</span>
+          Main Quest Easter Egg · Round-Based
+        </p>
+        <h1 style="color:#00aaff;">Der Eisendrache</h1>
+        <p>
+          An ancient Austrian castle occupied by Group 935. Tame four dragons,
+          obtain the Wrath of the Ancients Wonder Weapon bow, upgrade it to
+          one of four powerful elemental variants, and trigger the final boss
+          sequence. One of the most beloved maps in Zombies history.
+        </p>
+        <div class="guide-hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#00aaff;">23</span>
+            <span class="hero-stat-label">Quest Steps</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#00aaff;">2–3h</span>
+            <span class="hero-stat-label">Avg Time</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-orange);">★★☆</span>
+            <span class="hero-stat-label">Difficulty</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#00aaff;">1–4P</span>
+            <span class="hero-stat-label">Players</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOADOUT ─────────────────────────────────────── -->
+      <section class="guide-section" id="loadout" aria-labelledby="loadout-h">
+        <div class="section-header">
+          <span class="section-icon">🎒</span>
+          <h2 id="loadout-h">Recommended Loadout</h2>
+          <span class="section-phase-tag phase-early">Pre-Game</span>
+        </div>
+        <div class="loadout-grid">
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">💊</span><span class="loadout-label">Perks Priority</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Jugger-Nog</div><div class="item-why">Mandatory — 4× HP base</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Double Tap II</div><div class="item-why">Double fire rate + damage — essential with the bow</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Quick Revive</div><div class="item-why">Solo lifesaver; squad revive speed boost</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Speed Cola</div><div class="item-why">Bow reload is slow — this helps in tight spots</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">🔫</span><span class="loadout-label">Weapons</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">KN-44 / M8A7 (PaP Tier 2)</div><div class="item-why">Best AR for round survivability + ammo economy</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Wrath of the Ancients (WW)</div><div class="item-why">The core bow Wonder Weapon — obtain via quest</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">🧠</span><span class="loadout-label">Gobblegums (BO3)</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Perkaholic</div><div class="item-why">All perks instantly — game-changer on this map</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Always Done Swiftly</div><div class="item-why">Walk while ADS — essential during dragon feeding</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── POWER ───────────────────────────────────────── -->
+      <section class="guide-section" id="power" aria-labelledby="power-h">
+        <div class="section-header">
+          <span class="section-icon">⚡</span>
+          <h2 id="power-h">Power On the Castle</h2>
+          <span class="section-phase-tag phase-early">Rounds 1–3</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="de001" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 01</div>
+                <div class="step-title">Activate all 3 generators to restore castle power</div>
+                <div class="step-desc">
+                  Three generators are located across the map:
+                  <strong>Generator 1</strong> — near spawn (free),
+                  <strong>Generator 2</strong> — courtyard (750 pts),
+                  <strong>Generator 3</strong> — upper battlements (1250 pts).
+                  Activating all three powers the Pack-a-Punch machine in the rocket bay.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Unlock PaP</span></div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-de001" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Generator Locations
+            </button>
+            <div class="substeps" id="subs-de001" role="region">
+              <ol>
+                <li><strong>Generator 1</strong>: Right outside the spawn room. Hold Square/X to activate (free).</li>
+                <li><strong>Generator 2</strong>: Buy the 750pt door in the main courtyard. The generator is on the left wall of the next room.</li>
+                <li><strong>Generator 3</strong>: Take the stairway up to the upper battlements area (1250pt door). The third generator is next to the rocket silo entrance.</li>
+                <li>After all 3 are active, the Pack-a-Punch machine rises from the rocket launch pad in the lower rocket bay.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de002" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 02</div>
+                <div class="step-title">Pack-a-Punch your main weapon (Tier 2 minimum)</div>
+                <div class="step-desc">
+                  The PaP machine is in the lower rocket bay. PaP Tier 2 is required
+                  before the dragon-feeding steps begin (you'll face large hordes in tight spaces).
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── TAME DRAGONS ───────────────────────────────── -->
+      <section class="guide-section" id="dragons" aria-labelledby="dragons-h">
+        <div class="section-header">
+          <span class="section-icon">🐉</span>
+          <h2 id="dragons-h">Tame the Four Dragons</h2>
+          <span class="section-phase-tag phase-mid">Rounds 4–8</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1.25rem;line-height:1.6;">
+          Four stone dragon shrines are positioned across the castle. Each must be "fed"
+          by killing zombies directly on top of it. Once a dragon shrine glows red,
+          it is fully charged. All four must be charged to unlock the bow.
+        </p>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="de003" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 03</div>
+                <div class="step-title">Feed Dragon Shrine 1 — Lower Courtyard</div>
+                <div class="step-desc">
+                  Kill ~20 zombies with their bodies landing on the stone shrine
+                  in the lower courtyard (near the speed cola machine).
+                  The dragon's eyes glow red when fully fed.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Dragon 1</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de004" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 04</div>
+                <div class="step-title">Feed Dragon Shrine 2 — Upper Battlements</div>
+                <div class="step-desc">
+                  Kill zombies on the shrine at the upper battlements walkway (near generator 3).
+                  Aim kills so bodies fall onto the shrine platform.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Dragon 2</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de005" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 05</div>
+                <div class="step-title">Feed Dragon Shrine 3 — Great Hall</div>
+                <div class="step-desc">
+                  The third shrine is in the great hall (central castle area).
+                  Kills must register on the shrine — the large room makes this
+                  the easiest shrine to feed.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Dragon 3</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de006" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 06</div>
+                <div class="step-title">Feed Dragon Shrine 4 — Keep Tower</div>
+                <div class="step-desc">
+                  The fourth shrine is atop the keep tower (accessible after buying
+                  the 1500pt door to the upper keep). Narrower space — let zombies
+                  funnel up the staircase before killing them on the shrine.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Dragon 4</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de007" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 07</div>
+                <div class="step-title">All 4 dragons glow red — return to the rocket silo</div>
+                <div class="step-desc">
+                  When all four shrines are charged, a visual/audio cue plays.
+                  Head to the rocket silo (lower level) — an energy sphere appears
+                  above the PaP machine pedestal.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── WRATH OF THE ANCIENTS ──────────────────────── -->
+      <section class="guide-section" id="bow" aria-labelledby="bow-h">
+        <div class="section-header">
+          <span class="section-icon">🏹</span>
+          <h2 id="bow-h">Obtain: Wrath of the Ancients</h2>
+          <span class="section-phase-tag phase-mid">Wonder Weapon</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="de008" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 08</div>
+                <div class="step-title">Interact with the glowing energy sphere above the PaP pedestal</div>
+                <div class="step-desc">
+                  The sphere contains the base Wrath of the Ancients bow.
+                  Walk up to it and hold the interact button to claim it.
+                  Each player in a squad can claim their own bow.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Get WW</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de009" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 09</div>
+                <div class="step-title">Shoot the four mid-air rune targets with the bow (in the arena)</div>
+                <div class="step-desc">
+                  After grabbing the bow, four glowing Vril symbols float in the air
+                  above the arena floor. Shoot each one with a bow arrow to unlock
+                  the four upgrade paths. The symbols rotate — you have about 2 seconds
+                  per symbol before they cycle positions.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Required</span>
+                  <span class="step-tag tag-warning">Time-sensitive</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── UPGRADE THE BOW ───────────────────────────── -->
+      <section class="guide-section" id="upgrade" aria-labelledby="upgrade-h">
+        <div class="section-header">
+          <span class="section-icon">⬆</span>
+          <h2 id="upgrade-h">Upgrade Your Bow (Choose One Element)</h2>
+          <span class="section-phase-tag phase-mid">Mid-Game</span>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>4 Elements Available</strong>
+            Each player can upgrade to a different element. You only need to complete
+            one upgrade path for the Easter Egg — but completing all four (across
+            multiple runs or with 4 players) is recommended for achievements.
+            <strong>Storm</strong> is considered the best solo egg element.
+          </div>
+        </div>
+
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="de010" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 10</div>
+                <div class="step-title">Find your element's Rune Tablet</div>
+                <div class="step-desc">
+                  Each upgrade element has a hidden Rune Tablet somewhere in the
+                  map, glowing in that element's colour (blue=Void, orange=Fire,
+                  yellow=Storm, green=Wolf). Find and shoot it with the base bow
+                  to begin that upgrade path.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Pick Element</span></div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-de010" aria-expanded="false">
+              <span class="toggle-icon">▶</span> All 4 Tablet Locations
+            </button>
+            <div class="substeps" id="subs-de010" role="region">
+              <ul>
+                <li><strong>Wolf (green)</strong>: On the wall above the lower courtyard fast-travel teleporter.</li>
+                <li><strong>Void (blue)</strong>: On the ceiling of the rocket silo chamber, above the PaP machine.</li>
+                <li><strong>Fire (orange)</strong>: Hidden inside the fireplace in the great hall — look up at the back wall.</li>
+                <li><strong>Storm (yellow)</strong>: On the exterior castle wall near the upper battlements, facing the mountain.</li>
+              </ul>
+              <p class="sub-note">💡 Each tablet only glows when you're holding the base Wrath of the Ancients bow.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de011" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 11</div>
+                <div class="step-title">Complete the upgrade element's 3 challenges</div>
+                <div class="step-desc">
+                  After shooting the tablet, three contextual challenges unlock.
+                  These are different per element — see the substeps for your chosen path.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">3 Challenges</span></div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-de011" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Per-Element Challenge Summaries
+            </button>
+            <div class="substeps" id="subs-de011" role="region">
+              <p><strong>🐺 Wolf Bow challenges:</strong></p>
+              <ol>
+                <li>Shoot glowing orbs that appear in the fireplace in the great hall.</li>
+                <li>Kill 6 zombies in quick succession with the bow without reloading between kills.</li>
+                <li>Enter the crazy place portal and shoot the 3 wolf tablets visible there before the timer expires.</li>
+              </ol>
+              <p style="margin-top:0.75rem;"><strong>🌌 Void Bow challenges:</strong></p>
+              <ol>
+                <li>Kill zombies near three different torches to collect their shadows (blue wisps).</li>
+                <li>Stand near the PaP machine and kill 20 zombies using the base bow's alt-fire.</li>
+                <li>Enter the crazy place and shoot four moving targets within 30 seconds.</li>
+              </ol>
+              <p style="margin-top:0.75rem;"><strong>🔥 Fire Bow challenges:</strong></p>
+              <ol>
+                <li>Shoot the three fire pedestals near the fireplace to ignite them simultaneously.</li>
+                <li>Kill 10 zombies with fire damage (base bow charged shot) in the upper keep area.</li>
+                <li>Enter the crazy place and navigate through fire walls using the bow to clear a path.</li>
+              </ol>
+              <p style="margin-top:0.75rem;"><strong>⚡ Storm Bow challenges:</strong></p>
+              <ol>
+                <li>Shoot the three yellow crystal formations in the battlements area.</li>
+                <li>Chain-kill 5 zombies in one chain-lightning shot.</li>
+                <li>Enter the crazy place and use storm bow shots to light all 5 torches before they extinguish.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de012" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 12</div>
+                <div class="step-title">Retrieve the Upgraded Bow from the Crazy Place altar</div>
+                <div class="step-desc">
+                  After completing all 3 challenges, enter the Crazy Place portal
+                  (activated by shooting the floor rune in the great hall).
+                  The upgraded bow appears on the central altar inside. Walk up
+                  and collect it.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Collect WW Upgrade</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── FINAL STEPS ────────────────────────────────── -->
+      <section class="guide-section" id="final" aria-labelledby="final-h">
+        <div class="section-header">
+          <span class="section-icon">🎯</span>
+          <h2 id="final-h">Final Quest Steps</h2>
+          <span class="section-phase-tag phase-mid">Late Game</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="de013" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 13</div>
+                <div class="step-title">Find and collect the 4 Vril Device components</div>
+                <div class="step-desc">
+                  The Vril Device (a pyramid-shaped artefact) is assembled from
+                  four parts scattered across the map. Each part glows when you're
+                  holding the upgraded bow. Parts can spawn in multiple random locations.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Random Spawns</span></div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-de013" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Common Spawn Locations
+            </button>
+            <div class="substeps" id="subs-de013" role="region">
+              <p>Parts rotate between these locations each match:</p>
+              <ul>
+                <li>On the wall next to the mystery box in the courtyard</li>
+                <li>On a table in the great hall main room</li>
+                <li>Next to the rocket silo control panel</li>
+                <li>Hanging from a hook on the upper battlements</li>
+                <li>Near the staircase leading from Gen 2 area upward</li>
+              </ul>
+              <p class="sub-note">💡 Look for items with a faint blue glow — visible from 10m with the upgraded bow equipped.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de014" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 14</div>
+                <div class="step-title">Assemble the Vril Device on the floor rune in the arena</div>
+                <div class="step-desc">
+                  Bring all 4 components to the large floor rune inscription at the
+                  centre of the main arena. Place each part by interacting with the
+                  rune. The assembled Vril Device floats up and activates.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de015" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 15</div>
+                <div class="step-title">Survive the lockdown — 3 Panzersoldat waves</div>
+                <div class="step-desc">
+                  Assembling the Vril Device triggers a lockdown. Three waves of
+                  Panzersoldat heavies (plus zombie hordes) spawn. Use your elemental
+                  bow + PaP weapon to clear them. Beware: Panzers can grab and
+                  kill you in one sequence if they close the distance.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Survive</span>
+                  <span class="step-tag tag-warning">Panzersoldat threat</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="de016" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 16</div>
+                <div class="step-title">Use the four upgraded bows to charge the four dragon shrines simultaneously</div>
+                <div class="step-desc">
+                  (Squad only) After the lockdown, each player must stand at their
+                  dragon shrine and fire one upgraded bow shot at it on the callout.
+                  Solo: fire at all four shrines in sequence within 10 seconds.
+                  The Vril Device absorbs the energy and emits a pillar of light.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Final Trigger</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BOSS ───────────────────────────────────────── -->
+      <section class="guide-section" id="boss" aria-labelledby="boss-h">
+        <div class="section-header">
+          <span class="section-icon">💀</span>
+          <h2 id="boss-h">Boss Sequence</h2>
+          <span class="section-phase-tag phase-boss">End Game</span>
+        </div>
+        <div class="checklist" role="list">
+          <div class="checklist-item" data-step-id="de017" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 17</div>
+                <div class="step-title">Enter the portal to the boss arena</div>
+                <div class="step-desc">The Vril pillar of light acts as the boss portal. Walk through it to enter the final arena. All players must enter within 30 seconds.</div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="boss-section" style="margin-top:1.5rem;">
+          <div class="boss-header">
+            <span class="boss-icon">🧟</span>
+            <div class="boss-info">
+              <h3>The Shadow Furies + Panzersoldat Overlord</h3>
+              <p>The boss sequence for Der Eisendrache involves destroying three energy shields using the elemental bow, while managing continuous zombie and Panzersoldat spawns.</p>
+            </div>
+          </div>
+          <div class="boss-phases" role="list">
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">1</span>
+              <div class="phase-detail">
+                <h4>Phase 1 — Destroy the Three Energy Shields</h4>
+                <p>Three glowing energy crystals float around the arena at varying heights. Shoot each one with an <strong>upgraded bow</strong> alt-fire (charged shot) to shatter it. You must hit all three to proceed. Zombies spawn continuously — keep moving in a large circle to avoid cornering.</p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">2</span>
+              <div class="phase-detail">
+                <h4>Phase 2 — Destroy the Core</h4>
+                <p>After all three shield crystals break, a large core orb descends to chest height. All players fire their upgraded bows at it simultaneously. The core has significant HP — spam your arrows. Panzersoldat waves spawn at 75%, 50%, and 25% core HP — prioritize the Panzers quickly before returning to DPS.</p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">3</span>
+              <div class="phase-detail">
+                <h4>Phase 3 — Escape Timer</h4>
+                <p>When the core explodes, a 60-second escape timer starts. All players must return through the main portal. If any player is downed, they respawn at the spawn room for the exit sequence. Do not stop moving during this phase.</p>
+              </div>
+            </div>
+          </div>
+          <div class="boss-tips">
+            <p class="boss-tips-title">🏯 Boss Survival Tips</p>
+            <ul>
+              <li>Keep knife-distance from the Panzersoldat — its grab ability requires melee range.</li>
+              <li>Do not allow the Panzersoldat to put on his helmet (he starts un-helmeted) — damage him before the helmet animation completes or you'll need significantly more shots.</li>
+              <li>In Phase 2, designate one player on add-control so three focus on the core.</li>
+              <li>Upgraded Storm Bow works best for the core — the chain lightning bounces between core hit and nearby zombie kills simultaneously.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav" aria-label="Quick navigation">
+    <a href="#loadout"><span>🎒</span>Loadout</a>
+    <a href="#power"><span>⚡</span>Power</a>
+    <a href="#dragons"><span>🐉</span>Dragons</a>
+    <a href="#bow"><span>🏹</span>Bow</a>
+    <a href="#upgrade"><span>⬆</span>Upgrade</a>
+    <a href="#boss"><span>💀</span>Boss</a>
+  </nav>
+
+  <footer class="site-footer">
+    <p>
+      <a href="index.html">← All Maps</a> &nbsp;·&nbsp;
+      <a href="bo3-shadows-of-evil.html">Shadows of Evil →</a>
+    </p>
+    <p style="margin-top:0.5rem;">Fan-made guide · Not affiliated with Activision or Treyarch</p>
+  </footer>
+
+  <!-- Timer Modal -->
+  <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
+    <div class="timer-modal">
+      <button class="timer-modal-close" aria-label="Close timer">✕</button>
+      <p class="timer-label">⏱ Round Stopwatch</p>
+      <div class="timer-display" aria-live="polite">00:00:00.00</div>
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-start">▶ Start</button>
+        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
+        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+      </div>
+      <div class="timer-laps" aria-label="Lap times" role="list"></div>
+    </div>
+  </div>
+  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -82,10 +82,23 @@
   <!-- ── Map Selection ──────────────────────────────────── -->
   <main>
     <h2 class="section-title" style="margin-top:1rem;"><span>Select a Map</span></h2>
+
+    <!-- Game filter -->
+    <div class="game-filter" role="tablist" aria-label="Filter by game">
+      <span class="game-filter-label">Filter:</span>
+      <button class="game-tab-btn active" data-filter="all"  role="tab" aria-selected="true">All Games</button>
+      <button class="game-tab-btn"        data-filter="bo6"  role="tab" aria-selected="false"><span class="game-badge game-badge-bo6">BO6</span> Black Ops 6</button>
+      <button class="game-tab-btn"        data-filter="bo3"  role="tab" aria-selected="false"><span class="game-badge game-badge-bo3">BO3</span> Black Ops 3</button>
+    </div>
+
+    <!-- BO6 section -->
+    <div class="game-section-heading" data-game-section="bo6">
+      <h2><span class="game-badge game-badge-bo6">BO6</span> Black Ops 6</h2>
+    </div>
     <div class="maps-grid" role="list">
 
       <!-- Terminus -->
-      <article class="map-card map-card--terminus" role="listitem">
+      <article class="map-card map-card--terminus" data-game="bo6" role="listitem">
         <div class="map-card-banner">
           <span class="map-card-banner-icon">🏝</span>
         </div>
@@ -110,7 +123,7 @@
       </article>
 
       <!-- Liberty Falls -->
-      <article class="map-card map-card--liberty" role="listitem">
+      <article class="map-card map-card--liberty" data-game="bo6" role="listitem">
         <div class="map-card-banner">
           <span class="map-card-banner-icon">⛪</span>
         </div>
@@ -134,7 +147,7 @@
       </article>
 
       <!-- Citadelle des Morts -->
-      <article class="map-card map-card--citadelle" role="listitem">
+      <article class="map-card map-card--citadelle" data-game="bo6" role="listitem">
         <div class="map-card-banner">
           <span class="map-card-banner-icon">🏰</span>
         </div>
@@ -154,6 +167,103 @@
           <a href="citadelle.html" class="map-card-btn" aria-label="Open Citadelle des Morts Easter Egg guide">
             Open Guide →
           </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- BO3 section -->
+    <div class="game-section-heading" data-game-section="bo3" style="margin-top:2rem;">
+      <h2><span class="game-badge game-badge-bo3">BO3</span> Black Ops 3</h2>
+    </div>
+    <div class="maps-grid" role="list">
+
+      <!-- Der Eisendrache -->
+      <article class="map-card map-card--der-eisendrache" data-game="bo3" role="listitem">
+        <div class="map-card-banner">
+          <span class="map-card-banner-icon">🏯</span>
+        </div>
+        <div class="map-card-body">
+          <p class="map-card-tag">Round-Based · Austrian Castle</p>
+          <h3 class="map-card-name">Der Eisendrache</h3>
+          <p class="map-card-desc">
+            An ancient Austrian castle occupied by Group 935. Tame four dragons,
+            upgrade the Wrath of the Ancients bow to a powerful elemental variant,
+            and confront the Panzersoldat boss.
+          </p>
+          <div class="map-card-meta">
+            <span class="meta-pill diff-medium">★★☆ Medium</span>
+            <span class="meta-pill">~2–3 hrs</span>
+            <span class="meta-pill">Solo Viable</span>
+          </div>
+          <a href="bo3-der-eisendrache.html" class="map-card-btn" aria-label="Open Der Eisendrache Easter Egg guide">
+            Open Guide →
+          </a>
+        </div>
+      </article>
+
+      <!-- Shadows of Evil -->
+      <article class="map-card map-card--shadows-of-evil" data-game="bo3" role="listitem">
+        <div class="map-card-banner">
+          <span class="map-card-banner-icon">🌆</span>
+        </div>
+        <div class="map-card-body">
+          <p class="map-card-tag">Round-Based · Noir Metropolis</p>
+          <h3 class="map-card-name">Shadows of Evil</h3>
+          <p class="map-card-desc">
+            A 1940s noir city held captive by Shadowman. Perform four rituals,
+            craft the Apothicon Servant, navigate the shadow realm, and unlock
+            Pack-a-Punch.
+          </p>
+          <div class="map-card-meta">
+            <span class="meta-pill diff-hard">★★★ Hard</span>
+            <span class="meta-pill">~3–4 hrs</span>
+            <span class="meta-pill">4-Player Recommended</span>
+          </div>
+          <a href="bo3-shadows-of-evil.html" class="map-card-btn" aria-label="Open Shadows of Evil Easter Egg guide">
+            Open Guide →
+          </a>
+        </div>
+      </article>
+
+      <!-- The Giant -->
+      <article class="map-card map-card--the-giant map-card-coming-soon" data-game="bo3" role="listitem">
+        <div class="map-card-banner">
+          <span class="map-card-banner-icon">💀</span>
+        </div>
+        <div class="map-card-body">
+          <p class="map-card-tag">Round-Based · Der Riese Remake</p>
+          <h3 class="map-card-name">The Giant</h3>
+          <p class="map-card-desc">
+            The classic Group 935 facility remade for BO3. Unlock the mystery and
+            complete the Easter Egg quest inside the Wunderwaffe factory.
+          </p>
+          <div class="map-card-meta">
+            <span class="meta-pill diff-medium">★★☆ Medium</span>
+            <span class="meta-pill">~1–2 hrs</span>
+          </div>
+          <span class="map-card-btn" style="opacity:0.4;pointer-events:none;">Coming Soon</span>
+        </div>
+      </article>
+
+      <!-- Gorod Krovi -->
+      <article class="map-card map-card--gorod-krovi map-card-coming-soon" data-game="bo3" role="listitem">
+        <div class="map-card-banner">
+          <span class="map-card-banner-icon">🐉</span>
+        </div>
+        <div class="map-card-body">
+          <p class="map-card-tag">Round-Based · Soviet War Zone</p>
+          <h3 class="map-card-name">Gorod Krovi</h3>
+          <p class="map-card-desc">
+            A war-torn Stalingrad overrun by dragons and zombies. Tame the
+            dragon, build the Gauntlet of Siegfried, and face the Shadowman's
+            forces.
+          </p>
+          <div class="map-card-meta">
+            <span class="meta-pill diff-hard">★★★ Hard</span>
+            <span class="meta-pill">~3–4 hrs</span>
+          </div>
+          <span class="map-card-btn" style="opacity:0.4;pointer-events:none;">Coming Soon</span>
         </div>
       </article>
 
@@ -198,10 +308,15 @@
     <p><strong style="color:var(--text-secondary);">BO6 Zombies Guide</strong> — Fan-made interactive Easter Egg guide</p>
     <p>Not affiliated with Activision or Treyarch. For educational &amp; entertainment purposes.</p>
     <p style="margin-top:0.5rem;">
-      <a href="index.html">Maps</a> ·
+      <strong style="color:var(--text-muted);font-size:0.75rem;">BO6:</strong>
       <a href="terminus.html">Terminus</a> ·
       <a href="liberty-falls.html">Liberty Falls</a> ·
       <a href="citadelle.html">Citadelle</a>
+    </p>
+    <p style="margin-top:0.35rem;">
+      <strong style="color:var(--text-muted);font-size:0.75rem;">BO3:</strong>
+      <a href="bo3-der-eisendrache.html">Der Eisendrache</a> ·
+      <a href="bo3-shadows-of-evil.html">Shadows of Evil</a>
     </p>
   </footer>
 
@@ -224,5 +339,34 @@
   <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
 
   <script src="js/app.js"></script>
+  <script>
+    // ── Game Filter Tabs ──────────────────────────────────
+    (function () {
+      const tabs  = document.querySelectorAll('.game-tab-btn');
+      const cards = document.querySelectorAll('.map-card[data-game]');
+      const sects = document.querySelectorAll('[data-game-section]');
+
+      function applyFilter(filter) {
+        // Update tab states
+        tabs.forEach(t => {
+          const active = t.dataset.filter === filter;
+          t.classList.toggle('active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        // Show/hide cards
+        cards.forEach(card => {
+          card.hidden = !(filter === 'all' || card.dataset.game === filter);
+        });
+
+        // Show/hide section headings
+        sects.forEach(s => {
+          s.hidden = !(filter === 'all' || s.dataset.gameSection === filter);
+        });
+      }
+
+      tabs.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
+    }());
+  </script>
 </body>
 </html>

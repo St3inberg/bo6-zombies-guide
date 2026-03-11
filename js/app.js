@@ -11,8 +11,39 @@ const Checklist = (() => {
   /** Build storage key from map ID + step ID */
   const storageKey = (mapId, stepId) => `bo6_${mapId}_${stepId}`;
 
+  /** Auto-inject a screenshot image slot into every checklist step */
+  function injectImageSlots(mapId) {
+    document.querySelectorAll('.checklist-item[data-step-id]').forEach(item => {
+      const stepId   = item.dataset.stepId;
+      const content  = item.querySelector('.step-content');
+      if (!content || content.querySelector('.step-image-slot')) return; // guard
+
+      const imgPath  = `images/${mapId}/${stepId}.webp`;
+      const slot     = document.createElement('div');
+      slot.className = 'step-image-slot';
+      slot.setAttribute('aria-hidden', 'true');
+
+      const img      = document.createElement('img');
+      img.src        = imgPath;
+      img.alt        = '';
+      img.loading    = 'lazy';
+      img.addEventListener('load',  () => slot.classList.add('img-loaded'));
+      img.addEventListener('error', () => slot.classList.add('img-missing'));
+
+      const ph       = document.createElement('div');
+      ph.className   = 'img-slot-placeholder';
+      ph.innerHTML   = `<span class="img-slot-icon">📷</span>
+        <span class="img-slot-path">Add screenshot here:<br><code>${imgPath}</code></span>`;
+
+      slot.appendChild(img);
+      slot.appendChild(ph);
+      content.appendChild(slot);
+    });
+  }
+
   /** Load all saved states for a given mapId, populate checkboxes */
   function init(mapId) {
+    injectImageSlots(mapId);
     const items = document.querySelectorAll('.checklist-item[data-step-id]');
     items.forEach(item => {
       const stepId = item.dataset.stepId;
