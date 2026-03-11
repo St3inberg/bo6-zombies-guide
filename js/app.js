@@ -45,27 +45,10 @@ const Checklist = (() => {
         content.appendChild(refs);
       }
 
-      // --- Local screenshot slot ---
-      const imgPath  = `images/${mapId}/${stepId}.webp`;
-      const slot     = document.createElement('div');
-      slot.className = 'step-image-slot';
-      slot.setAttribute('aria-hidden', 'true');
-
-      const img      = document.createElement('img');
-      img.src        = imgPath;
-      img.alt        = '';
-      img.loading    = 'lazy';
-      img.addEventListener('load',  () => slot.classList.add('img-loaded'));
-      img.addEventListener('error', () => slot.classList.add('img-missing'));
-
-      const ph       = document.createElement('div');
-      ph.className   = 'img-slot-placeholder';
-      ph.innerHTML   = `<span class="img-slot-icon">📷</span>
-        <span class="img-slot-path">Drop screenshot here:<br><code>${imgPath}</code></span>`;
-
-      slot.appendChild(img);
-      slot.appendChild(ph);
-      content.appendChild(slot);
+      // --- Local screenshot slot DISABLED ---
+      // Images are already embedded in HTML content, no need for dynamic slots
+      // const imgPath  = `images/${mapId}/${stepId}.webp`;
+      // ... rest of image slot code disabled
     });
   }
 

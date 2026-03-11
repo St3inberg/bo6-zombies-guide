@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shattered Veil Main Quest Easter Egg guide for Black Ops 3 Zombies. Navigate the lab, build the Raygun Mark 2, and defeat the boss." />
+  <title>Shattered Veil Easter Egg Guide — BO6 Zombies</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    :root { --accent-color: #00aaff; }
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      color: #00aaff !important;
+      background: rgba(0,170,255,0.08) !important;
+      border-left-color: #00aaff !important;
+    }
+    .hero-stat-value { color: #00aaff !important; }
+    .guide-hero h1 { color: #00aaff; }
+    .guide-hero-tag { color: #00aaff !important; }
+    .section-header--blue { border-left-color: #00aaff !important; }
+    .section-header--blue .section-icon { color: #00aaff; }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: #00aaff !important; background: rgba(0,170,255,0.08) !important; }
+    .step-checkbox { border-color: rgba(0,170,255,0.4) !important; }
+    .checklist-item.completed .step-checkbox {
+      background: #00aaff !important; border-color: #00aaff !important; box-shadow: 0 0 8px rgba(0,170,255,0.5) !important;
+    }
+    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, #00aaff, #0055ff) !important; }
+    .section-header { border-left: 3px solid #00aaff; }
+  </style>
+</head>
+<body data-map-id="sv">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🧟</span>
+        <span>Zombies<span class="accent"> Guides</span></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">All Maps</a></li>
+        <li><a href="bo3-der-eisendrache.html">Der Eisendrache</a></li>
+        <li><a href="bo3-shadows-of-evil.html">Shadows of Evil</a></li>
+        <li><a href="the-tomb.html">The Tomb</a></li>
+        <li><a href="shattered-veil.html" class="active">Shattered Veil</a></li>
+        <li><a href="reckoning.html">Reckoning</a></li>
+      </ul>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+    </nav>
+  </header>
+
+  <div class="guide-layout">
+
+    <!-- Sidebar -->
+    <aside class="guide-sidebar" aria-label="Guide navigation">
+      <p class="sidebar-label">Jump to Section</p>
+      <ul class="sidebar-nav" role="list">
+        <li><a href="#loadout">🎒 Loadout</a></li>
+        <li><a href="#power">⚡ Power On</a></li>
+        <li><a href="#raygun">🔫 Raygun Mark 2</a></li>
+        <li><a href="#boss">💀 Boss Fight</a></li>
+      </ul>
+      <div class="sidebar-progress" role="region" aria-label="Quest progress">
+        <p class="sidebar-progress-label">Quest Progress</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-text">
+          <span class="pct">0%</span>
+          <span class="count">0/0</span>
+        </div>
+        <button class="sidebar-reset-btn" type="button">↺ Reset Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="guide-main" id="main-content">
+
+      <!-- Hero -->
+      <div class="guide-hero guide-hero--shattered-veil">
+        <p class="guide-hero-tag" style="color:#00aaff;">
+          <span class="game-badge game-badge-bo6" style="margin-right:0.4rem;">BO6</span>
+          Main Quest Easter Egg · Round-Based
+        </p>
+        <h1 style="color:#00aaff;">Shattered Veil</h1>
+        <p>
+          Infiltrate the secret lab, uncover the experiments, build the Raygun Mark 2 Wonder Weapon,
+          and confront the monstrous boss in this high-tech facility.
+        </p>
+        <div class="guide-hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#00aaff;">20</span>
+            <span class="hero-stat-label">Quest Steps</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#00aaff;">1–2h</span>
+            <span class="hero-stat-label">Avg Time</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--neon-orange);">★★☆</span>
+            <span class="hero-stat-label">Difficulty</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#00aaff;">1–4P</span>
+            <span class="hero-stat-label">Players</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOADOUT ─────────────────────────────────────── -->
+      <section class="guide-section" id="loadout" aria-labelledby="loadout-h">
+        <div class="section-header">
+          <span class="section-icon">🎒</span>
+          <h2 id="loadout-h">Recommended Loadout</h2>
+          <span class="section-phase-tag phase-early">Pre-Game</span>
+        </div>
+        <div class="loadout-grid">
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">💊</span><span class="loadout-label">Perks Priority</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Jugger-Nog</div><div class="item-why">Mandatory — 4× HP base</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Double Tap II</div><div class="item-why">Double fire rate + damage</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Quick Revive</div><div class="item-why">Solo lifesaver; squad revive speed boost</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Speed Cola</div><div class="item-why">Faster reloads and use speed</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">🔫</span><span class="loadout-label">Weapons</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">KN-44 / M8A7 (PaP Tier 2)</div><div class="item-why">Best AR for round survivability</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Raygun Mark 2 (WW)</div><div class="item-why">The core Wonder Weapon — obtain via quest</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">🧠</span><span class="loadout-label">Gobblegums</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Perkaholic</div><div class="item-why">All perks instantly</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
+                <div><div class="item-name">Always Done Swiftly</div><div class="item-why">Walk while ADS</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── POWER ───────────────────────────────────────── -->
+      <section class="guide-section" id="power" aria-labelledby="power-h">
+        <div class="section-header">
+          <span class="section-icon">⚡</span>
+          <h2 id="power-h">Power On the Lab</h2>
+          <span class="section-phase-tag phase-early">Rounds 1–3</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="sv001" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 01</div>
+                <div class="step-title">Find the Lab Technician</div>
+                <div class="step-desc">
+                  Locate the Lab Technician in the facility.
+                  <img src="images/shattered-veil-step1.jpg" alt="Lab Technician location" style="width:100%; margin-top:1rem; border-radius:8px;">
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Power</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="sv002" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 02</div>
+                <div class="step-title">Access the Fax Machine and Computer</div>
+                <div class="step-desc">
+                  Use the fax machine and computer to gather information.
+                  <img src="images/shattered-veil-step2.jpg" alt="Fax machine and computer" style="width:100%; margin-top:1rem; border-radius:8px;">
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Power</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="sv003" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 03</div>
+                <div class="step-title">Check the Nursery Chalkboard</div>
+                <div class="step-desc">
+                  Examine the chalkboard in the nursery for clues.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Power</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="sv004" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 04</div>
+                <div class="step-title">Navigate the Service Tunnel Trap</div>
+                <div class="step-desc">
+                  Carefully move through the service tunnel to avoid traps.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Power</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="sv005" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 05</div>
+                <div class="step-title">Access the Arm Keypad</div>
+                <div class="step-desc">
+                  Enter the correct code on the arm keypad.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Power</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── RAYGUN MARK 2 ──────────────────────────────── -->
+      <section class="guide-section" id="raygun" aria-labelledby="raygun-h">
+        <div class="section-header">
+          <span class="section-icon">🔫</span>
+          <h2 id="raygun-h">Build the Raygun Mark 2</h2>
+          <span class="section-phase-tag phase-mid">Rounds 4–8</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="sv006" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 06</div>
+                <div class="step-title">Build the Raygun Mark 2</div>
+                <div class="step-desc">
+                  Gather the parts and assemble the Raygun Mark 2 at the workbench.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Raygun</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="sv007" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 07</div>
+                <div class="step-title">Locate the Canisters</div>
+                <div class="step-desc">
+                  Find and interact with the canisters around the lab.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Raygun</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="sv008" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 08</div>
+                <div class="step-title">Adjust the Pipe Valves</div>
+                <div class="step-desc">
+                  Turn the pipe valves in the correct sequence.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Raygun</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BOSS FIGHT ──────────────────────────────────── -->
+      <section class="guide-section" id="boss" aria-labelledby="boss-h">
+        <div class="section-header">
+          <span class="section-icon">💀</span>
+          <h2 id="boss-h">Boss Fight</h2>
+          <span class="section-phase-tag phase-late">Rounds 9+</span>
+        </div>
+        <div class="boss-intro">
+          <p>
+            After completing the Raygun build, the boss emerges. Use the Raygun Mark 2 to defeat it.
+          </p>
+        </div>
+        <div class="boss-phases" role="list">
+          <div class="boss-phase" role="listitem">
+            <span class="phase-num">1</span>
+            <div class="phase-detail">
+              <h4>Phase 1 — Initial Assault</h4>
+              <p>Attack the boss with the Raygun Mark 2 while avoiding its attacks.</p>
+            </div>
+          </div>
+          <div class="boss-phase" role="listitem">
+            <span class="phase-num">2</span>
+            <div class="phase-detail">
+              <h4>Phase 2 — Weak Point Exposure</h4>
+              <p>Target the exposed weak points to deal maximum damage.</p>
+            </div>
+          </div>
+          <div class="boss-phase" role="listitem">
+            <span class="phase-num">3</span>
+            <div class="phase-detail">
+              <h4>Phase 3 — Final Defeat</h4>
+              <p>Deliver the finishing blows to end the fight.</p>
+            </div>
+          </div>
+        </div>
+        <div class="boss-tips">
+          <p class="boss-tips-title">🧪 Boss Survival Tips</p>
+          <ul>
+            <li>Use the Raygun Mark 2's charged shots for heavy damage.</li>
+            <li>Stay mobile to avoid area attacks.</li>
+            <li>Coordinate with teammates for focused fire.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav" aria-label="Quick navigation">
+    <a href="#loadout"><span>🎒</span>Loadout</a>
+    <a href="#power"><span>⚡</span>Power</a>
+    <a href="#raygun"><span>🔫</span>Raygun</a>
+    <a href="#boss"><span>💀</span>Boss</a>
+  </nav>
+
+  <footer class="site-footer">
+    <p>
+      <a href="index.html">← All Maps</a> &nbsp;·&nbsp;
+      <a href="the-tomb.html">The Tomb</a> &nbsp;·&nbsp;
+      <a href="shattered-veil.html">Shattered Veil</a> &nbsp;·&nbsp;
+      <a href="reckoning.html">Reckoning →</a>
+    </p>
+    <p style="margin-top:0.5rem;">Fan-made guide · Not affiliated with Activision or Treyarch</p>
+  </footer>
+
+  <!-- Timer Modal -->
+  <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
+    <div class="timer-modal">
+      <button class="timer-modal-close" aria-label="Close timer">✕</button>
+      <p class="timer-label">⏱ Round Stopwatch</p>
+      <div class="timer-display" aria-live="polite">00:00:00.00</div>
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-start">▶ Start</button>
+        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
+        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+      </div>
+      <div class="timer-laps" aria-label="Lap times" role="list"></div>
+    </div>
+  </div>
+  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

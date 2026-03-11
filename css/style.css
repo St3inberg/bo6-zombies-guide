@@ -301,8 +301,9 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
     linear-gradient(90deg, rgba(0,245,255,0.05) 1px, transparent 1px),
     radial-gradient(ellipse at 72% 65%, rgba(0,200,255,0.18) 0%, transparent 52%),
     radial-gradient(ellipse at 18% 30%, rgba(0,100,160,0.10) 0%, transparent 38%),
-    linear-gradient(160deg, #01090f 0%, #011824 50%, #021320 100%);
-  background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%, 100% 100%;
+    linear-gradient(160deg, rgba(1,9,15,0.72) 0%, rgba(1,24,36,0.72) 50%, rgba(2,19,32,0.72) 100%),
+    url('../images/terminus.jpg') center / cover no-repeat;
+  background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%, 100% 100%, cover;
   border-top: 2px solid rgba(0,245,255,0.18);
 }
 .map-card--terminus .map-card-banner::before {
@@ -325,7 +326,8 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
     radial-gradient(circle at 18% 22%, rgba(255,220,80,0.09) 0%, transparent 28%),
     radial-gradient(circle at 80% 18%, rgba(255,200,60,0.08) 0%, transparent 24%),
     radial-gradient(circle at 62% 72%, rgba(255,80,0,0.07) 0%, transparent 32%),
-    linear-gradient(160deg, #120500 0%, #231000 50%, #150600 100%);
+    linear-gradient(160deg, rgba(18,5,0,0.72) 0%, rgba(35,16,0,0.72) 50%, rgba(21,6,0,0.72) 100%),
+    url('../images/liberty-falls.jpg') center / cover no-repeat;
   border-top: 2px solid rgba(255,107,0,0.20);
 }
 .map-card--liberty .map-card-banner::before {
@@ -349,8 +351,9 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
     radial-gradient(ellipse at 50% 28%, rgba(191,95,255,0.22) 0%, transparent 48%),
     radial-gradient(ellipse at 20% 70%, rgba(120,0,200,0.10) 0%, transparent 32%),
     radial-gradient(ellipse at 82% 60%, rgba(160,60,255,0.09) 0%, transparent 30%),
-    linear-gradient(160deg, #070011 0%, #100020 50%, #080013 100%);
-  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    linear-gradient(160deg, rgba(7,0,17,0.72) 0%, rgba(16,0,32,0.72) 50%, rgba(8,0,19,0.72) 100%),
+    url('../images/citadelle.jpg') center / cover no-repeat;
+  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, cover;
   border-top: 2px solid rgba(191,95,255,0.20);
 }
 .map-card--citadelle .map-card-banner::before {
@@ -1688,6 +1691,9 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
 /* ── BO3 map card accent colours ─────────── */
 .map-card--der-eisendrache  { --card-accent: #00aaff; }
 .map-card--shadows-of-evil  { --card-accent: #ff2244; }
+.map-card--the-tomb         { --card-accent: #00ffff; }
+.map-card--shattered-veil   { --card-accent: #aa00ff; }
+.map-card--reckoning        { --card-accent: #ffaa00; }
 .map-card--the-giant        { --card-accent: var(--neon-green); }
 .map-card--gorod-krovi      { --card-accent: var(--neon-orange); }
 
@@ -1696,7 +1702,8 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
   background:
     radial-gradient(ellipse at 72% 55%, rgba(0,170,255,0.20) 0%, transparent 52%),
     radial-gradient(ellipse at 20% 35%, rgba(0,120,200,0.10) 0%, transparent 38%),
-    linear-gradient(160deg, #000a18 0%, #001530 50%, #000a18 100%);
+    linear-gradient(160deg, rgba(0,10,24,0.72) 0%, rgba(0,21,48,0.72) 50%, rgba(0,10,24,0.72) 100%),
+    url('../images/der-eisendrache.jpg') center / cover no-repeat;
   border-top: 2px solid rgba(0,170,255,0.20);
 }
 .map-card--der-eisendrache .map-card-banner::before {
@@ -1718,7 +1725,8 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
     radial-gradient(ellipse at 68% 55%, rgba(255,34,68,0.20) 0%, transparent 50%),
     radial-gradient(ellipse at 22% 35%, rgba(180,0,20,0.10) 0%, transparent 38%),
     radial-gradient(ellipse at 50% 85%, rgba(100,0,10,0.10) 0%, transparent 36%),
-    linear-gradient(160deg, #100003 0%, #220007 50%, #100003 100%);
+    linear-gradient(160deg, rgba(16,0,3,0.72) 0%, rgba(34,0,7,0.72) 50%, rgba(16,0,3,0.72) 100%),
+    url('../images/shadows-of-evil.jpg') center / cover no-repeat;
   border-top: 2px solid rgba(255,34,68,0.18);
 }
 .map-card--shadows-of-evil .map-card-banner::before {
@@ -1734,17 +1742,85 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
   filter: blur(2px) grayscale(0.3);
 }
 
+/* ── The Tomb — Tibetan mountains ── */
+.map-card--the-tomb .map-card-banner {
+  background:
+    radial-gradient(ellipse at 70% 55%, rgba(0,255,255,0.20) 0%, transparent 52%),
+    radial-gradient(ellipse at 25% 35%, rgba(0,180,180,0.10) 0%, transparent 38%),
+    linear-gradient(160deg, rgba(0,8,12,0.72) 0%, rgba(0,16,24,0.72) 50%, rgba(0,8,12,0.72) 100%),
+    url('../images/the-tomb.jpg') center / cover no-repeat;
+  border-top: 2px solid rgba(0,255,255,0.20);
+}
+.map-card--the-tomb .map-card-banner::before {
+  content: '🏔';
+  font-size: 7rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-52%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px) grayscale(0.3);
+}
+
+/* ── Shattered Veil — dimensional rift ── */
+.map-card--shattered-veil .map-card-banner {
+  background:
+    radial-gradient(ellipse at 65% 55%, rgba(170,0,255,0.20) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 35%, rgba(120,0,180,0.10) 0%, transparent 38%),
+    linear-gradient(160deg, rgba(8,0,16,0.72) 0%, rgba(16,0,32,0.72) 50%, rgba(8,0,16,0.72) 100%),
+    url('../images/shattered-veil.jpg') center / cover no-repeat;
+  border-top: 2px solid rgba(170,0,255,0.20);
+}
+.map-card--shattered-veil .map-card-banner::before {
+  content: '🌌';
+  font-size: 7rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-52%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px) grayscale(0.3);
+}
+
+/* ── Reckoning — maximum security prison ── */
+.map-card--reckoning .map-card-banner {
+  background:
+    radial-gradient(ellipse at 68% 55%, rgba(255,170,0,0.20) 0%, transparent 50%),
+    radial-gradient(ellipse at 28% 35%, rgba(180,120,0,0.10) 0%, transparent 38%),
+    linear-gradient(160deg, rgba(12,8,0,0.72) 0%, rgba(24,16,0,0.72) 50%, rgba(12,8,0,0.72) 100%),
+    url('../images/reckoning.jpg') center / cover no-repeat;
+  border-top: 2px solid rgba(255,170,0,0.20);
+}
+.map-card--reckoning .map-card-banner::before {
+  content: '🏰';
+  font-size: 7rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-52%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px) grayscale(0.3);
+}
+
 /* ── The Giant / Gorod Krovi (placeholder) ── */
 .map-card--the-giant .map-card-banner {
   background:
     radial-gradient(ellipse at 65% 55%, rgba(57,255,20,0.16) 0%, transparent 50%),
-    linear-gradient(160deg, #080f08 0%, #0e1e0e 50%, #080f08 100%);
+    linear-gradient(160deg, rgba(8,15,8,0.72) 0%, rgba(14,30,14,0.72) 50%, rgba(8,15,8,0.72) 100%),
+    url('../images/the-giant.jpg') center / cover no-repeat;
   border-top: 2px solid rgba(57,255,20,0.16);
 }
 .map-card--gorod-krovi .map-card-banner {
   background:
     radial-gradient(ellipse at 65% 55%, rgba(255,107,0,0.18) 0%, transparent 50%),
-    linear-gradient(160deg, #130800 0%, #251200 50%, #130800 100%);
+    linear-gradient(160deg, rgba(19,8,0,0.72) 0%, rgba(37,18,0,0.72) 50%, rgba(19,8,0,0.72) 100%),
+    url('../images/gorod-krovi.jpg') center / cover no-repeat;
   border-top: 2px solid rgba(255,107,0,0.18);
 }
 
