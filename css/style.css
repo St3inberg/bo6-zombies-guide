@@ -1598,3 +1598,45 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
 
 /* completed step: dim image slightly */
 .checklist-item.completed .step-image-slot { opacity: 0.5; }
+
+/* ============================================================
+   STEP REFERENCE LINKS  (wiki + youtube, injected by app.js)
+   ============================================================ */
+.step-refs {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-top: 0.65rem;
+}
+
+.step-ref-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: opacity 0.15s, transform 0.1s;
+  line-height: 1.4;
+  pointer-events: all;         /* always clickable even inside completed steps */
+}
+.step-ref-btn:hover  { opacity: 0.85; transform: translateY(-1px); }
+.step-ref-btn:active { transform: translateY(0); }
+
+.step-ref-wiki {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: #7bb3ff;
+}
+.step-ref-yt {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ff8787;
+}
+
+/* prevent link opacity from being killed inside completed items */
+.checklist-item.completed .step-refs { opacity: 0.65; }

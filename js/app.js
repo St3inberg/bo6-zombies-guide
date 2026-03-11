@@ -11,13 +11,41 @@ const Checklist = (() => {
   /** Build storage key from map ID + step ID */
   const storageKey = (mapId, stepId) => `bo6_${mapId}_${stepId}`;
 
-  /** Auto-inject a screenshot image slot into every checklist step */
+  /** Auto-inject a screenshot image slot + reference links into every checklist step */
   function injectImageSlots(mapId) {
     document.querySelectorAll('.checklist-item[data-step-id]').forEach(item => {
-      const stepId   = item.dataset.stepId;
-      const content  = item.querySelector('.step-content');
+      const stepId    = item.dataset.stepId;
+      const content   = item.querySelector('.step-content');
       if (!content || content.querySelector('.step-image-slot')) return; // guard
 
+      // --- Reference link bar (wiki / youtube) ---
+      const wikiUrl   = item.dataset.wikiUrl   || null;
+      const ytSearch  = item.dataset.ytSearch  || null;
+      if (wikiUrl || ytSearch) {
+        const refs = document.createElement('div');
+        refs.className = 'step-refs';
+        if (wikiUrl) {
+          const a = document.createElement('a');
+          a.href = wikiUrl;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.className = 'step-ref-btn step-ref-wiki';
+          a.innerHTML = '📖 Wiki Guide';
+          refs.appendChild(a);
+        }
+        if (ytSearch) {
+          const a = document.createElement('a');
+          a.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(ytSearch)}`;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.className = 'step-ref-btn step-ref-yt';
+          a.innerHTML = '🎬 Video Guide';
+          refs.appendChild(a);
+        }
+        content.appendChild(refs);
+      }
+
+      // --- Local screenshot slot ---
       const imgPath  = `images/${mapId}/${stepId}.webp`;
       const slot     = document.createElement('div');
       slot.className = 'step-image-slot';
@@ -33,7 +61,7 @@ const Checklist = (() => {
       const ph       = document.createElement('div');
       ph.className   = 'img-slot-placeholder';
       ph.innerHTML   = `<span class="img-slot-icon">📷</span>
-        <span class="img-slot-path">Add screenshot here:<br><code>${imgPath}</code></span>`;
+        <span class="img-slot-path">Drop screenshot here:<br><code>${imgPath}</code></span>`;
 
       slot.appendChild(img);
       slot.appendChild(ph);

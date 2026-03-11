@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^# Get all step IDs from BO6 guides\n\\$maps = @\\{\n  'd:\\\\bo6-zombies-guide\\\\terminus\\.html'      = @\\{ prefix='t';   wiki='Terminus_\\(map\\)#Easter_Egg'; yt='terminus bo6 zombies easter egg guide' \\}\n  'd:\\\\bo6-zombies-guide\\\\liberty-falls\\.html' = @\\{ prefix='lf';  wiki='Liberty_Falls_\\(map\\)#Easter_Egg'; yt='liberty falls bo6 zombies easter egg guide' \\}\n  'd:\\\\bo6-zombies-guide\\\\citadelle\\.html'     = @\\{ prefix='cit'; wiki='Citadelle_des_Morts#Easter_Egg'; yt='citadelle des morts bo6 zombies easter egg guide' \\}\n\\}\nforeach \\(\\$file in \\$maps\\.Keys\\) \\{\n  \\$m = \\$maps\\[\\$file\\]\n  \\$w = 'https://callofduty\\.fandom\\.com/wiki/' \\+ \\$m\\.wiki\n  \\$yt = \\$m\\.yt\n  # find all unique step IDs in file\n  \\$ids = Select-String 'data-step-id=\"\\(\\[\\^\"\\]\\+\\)\"' \\$file -AllMatches \\|\n         ForEach-Object \\{ \\$_\\.Matches \\} \\|\n         ForEach-Object \\{ \\$_\\.Groups\\[1\\]\\.Value \\} \\|\n         Sort-Object -Unique\n  \\$content = Get-Content \\$file -Raw\n  foreach \\(\\$id in \\$ids\\) \\{\n    \\$old = \"data-step-id=`\"\\$id`\" role=`\"listitem`\"\"\n    \\$new = \"data-step-id=`\"\\$id`\" data-wiki-url=`\"\\$w`\" data-yt-search=`\"\\$yt`\" role=`\"listitem`\"\"\n    \\$content = \\$content\\.Replace\\(\\$old, \\$new\\)\n  \\}\n  Set-Content \\$file -Value \\$content -NoNewline\n  \\$count = \\(\\$ids \\| Measure-Object\\)\\.Count\n  Write-Host \"\\$file : \\$count steps updated\"\n\\}\n$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
