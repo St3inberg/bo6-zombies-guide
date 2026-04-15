@@ -9,29 +9,38 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏰</text></svg>" />
   <meta name="theme-color" content="#0a0a0f" />
   <style>
-    :root { --accent-color: var(--neon-purple); }
-    .guide-hero--citadelle .guide-hero-tag { color: var(--neon-purple); }
+    :root { --accent-color: #ff7a00; }
     .sidebar-nav a:hover, .sidebar-nav a.active {
-      color: var(--neon-purple) !important;
-      background: rgba(191,95,255,0.08) !important;
-      border-left-color: var(--neon-purple) !important;
-      text-shadow: none !important;
+      color: #ff7a00 !important;
+      background: rgba(255, 122, 0, 0.12) !important;
+      border-left-color: #ff7a00 !important;
     }
-    .hero-stat-value { color: var(--neon-purple) !important; }
+    .hero-stat-value { color: #ff7a00 !important; }
+    .guide-hero h1 { color: #ff7a00; }
+    .guide-hero-tag { color: #ff7a00 !important; }
+    .section-header--purple { border-left-color: #ff7a00 !important; }
+    .section-header--purple .section-icon { color: #ff7a00; }
     .mobile-bottom-nav a:hover,
-    .mobile-bottom-nav a.active { color: var(--neon-purple) !important; background: rgba(191,95,255,0.08) !important; }
+    .mobile-bottom-nav a.active { color: #ff7a00 !important; background: rgba(255, 122, 0, 0.12) !important; }
+    .step-checkbox { border-color: rgba(255, 122, 0, 0.4) !important; }
+    .checklist-item.completed .step-checkbox {
+      background: #ff7a00 !important; border-color: #ff7a00 !important; box-shadow: 0 0 8px rgba(255, 122, 0, 0.5) !important;
+    }
+    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, #ff7a00, #ff9933) !important; }
+    .section-header { border-left: 3px solid #ff7a00; }
+
     .element-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0.75rem; margin-bottom:1rem; }
     .element-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1rem; }
     .element-card.fire    { border-color:rgba(255,107,0,0.35); }
     .element-card.ice     { border-color:rgba(0,245,255,0.35); }
-    .element-card.shadow  { border-color:rgba(191,95,255,0.35); }
+    .element-card.shadow  { border-color:rgba(255,122,0,0.35); }
     .element-card.storm   { border-color:rgba(255,230,0,0.35); }
     .element-card .el-icon { font-size:1.8rem; margin-bottom:0.5rem; }
     .element-card .el-name { font-size:0.85rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.3rem; }
-    .element-card.fire   .el-name { color: var(--neon-orange); }
-    .element-card.ice    .el-name { color: var(--neon-cyan);   }
-    .element-card.shadow .el-name { color: var(--neon-purple); }
-    .element-card.storm  .el-name { color: var(--neon-yellow); }
+    .element-card.fire   .el-name { color: #ff7a00; }
+    .element-card.ice    .el-name { color: #66ccff; }
+    .element-card.shadow .el-name { color: #ff9933; }
+    .element-card.storm  .el-name { color: #ffb84d; }
     .element-card .el-desc { font-size:0.75rem; color:var(--text-secondary); line-height:1.5; }
   </style>
 </head>
@@ -41,7 +50,7 @@
   <header class="site-header">
     <nav class="nav-inner" aria-label="Main navigation">
       <a href="index.html" class="nav-logo">
-        <span class="logo-icon">🧟</span>
+        <span class="logo-icon">[C]</span>
         <span>BO6<span class="accent"> Zombies</span></span>
       </a>
       <ul class="nav-links" role="list">
@@ -50,7 +59,7 @@
         <li><a href="liberty-falls.html">Liberty Falls</a></li>
         <li><a href="citadelle.html" class="active">Citadelle</a></li>
       </ul>
-      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">TIMER</button>
     </nav>
   </header>
 
@@ -61,11 +70,11 @@
       <p class="sidebar-label">Jump to Section</p>
       <ul class="sidebar-nav" role="list">
         <li><a href="#loadout">🎒 Recommended Loadout</a></li>
-        <li><a href="#power">⚡ Power the Castle</a></li>
+        <li><a href="#power">Power the Castle</a></li>
         <li><a href="#rituals">🔮 Alchemical Rituals</a></li>
         <li><a href="#swords">⚔ Forge Elemental Swords</a></li>
         <li><a href="#altar">🩸 The Blood Altar</a></li>
-        <li><a href="#boss">💀 Boss Fight — The Count</a></li>
+        <li><a href="#boss">Boss Fight — The Count</a></li>
       </ul>
       <div class="sidebar-progress" role="region" aria-label="Quest progress">
         <p class="sidebar-progress-label">Quest Progress</p>
@@ -163,7 +172,7 @@
 
           <div class="loadout-card">
             <div class="loadout-card-header">
-              <span class="loadout-icon">🔫</span>
+              <span class="loadout-icon"></span>
               <span class="loadout-label">Weapons</span>
             </div>
             <div class="loadout-items">
@@ -802,17 +811,17 @@
   <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
     <div class="timer-modal">
       <button class="timer-modal-close" aria-label="Close timer">✕</button>
-      <p class="timer-label">⏱ Round Stopwatch</p>
+      <p class="timer-label">Round Stopwatch</p>
       <div class="timer-display" aria-live="polite">00:00:00.00</div>
       <div class="timer-controls">
-        <button class="timer-btn timer-btn-start">▶ Start</button>
-        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
-        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+        <button class="timer-btn timer-btn-start">START</button>
+        <button class="timer-btn timer-btn-pause" disabled>PAUSE</button>
+        <button class="timer-btn timer-btn-reset">RESET</button>
       </div>
       <div class="timer-laps" aria-label="Lap times" role="list"></div>
     </div>
   </div>
-  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+  <button class="fab-timer" aria-label="Open stopwatch">TIMER</button>
 
   <script src="js/app.js"></script>
 </body>

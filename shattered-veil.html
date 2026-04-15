@@ -9,25 +9,25 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>" />
   <meta name="theme-color" content="#0a0a0f" />
   <style>
-    :root { --accent-color: #00aaff; }
+    :root { --accent-color: #ff7a00; }
     .sidebar-nav a:hover, .sidebar-nav a.active {
-      color: #00aaff !important;
-      background: rgba(0,170,255,0.08) !important;
-      border-left-color: #00aaff !important;
+      color: #ff7a00 !important;
+      background: rgba(255, 122, 0, 0.12) !important;
+      border-left-color: #ff7a00 !important;
     }
-    .hero-stat-value { color: #00aaff !important; }
-    .guide-hero h1 { color: #00aaff; }
-    .guide-hero-tag { color: #00aaff !important; }
-    .section-header--blue { border-left-color: #00aaff !important; }
-    .section-header--blue .section-icon { color: #00aaff; }
+    .hero-stat-value { color: #ff7a00 !important; }
+    .guide-hero h1 { color: #ff7a00; }
+    .guide-hero-tag { color: #ff7a00 !important; }
+    .section-header--blue { border-left-color: #ff7a00 !important; }
+    .section-header--blue .section-icon { color: #ff7a00; }
     .mobile-bottom-nav a:hover,
-    .mobile-bottom-nav a.active { color: #00aaff !important; background: rgba(0,170,255,0.08) !important; }
-    .step-checkbox { border-color: rgba(0,170,255,0.4) !important; }
+    .mobile-bottom-nav a.active { color: #ff7a00 !important; background: rgba(255, 122, 0, 0.12) !important; }
+    .step-checkbox { border-color: rgba(255, 122, 0, 0.4) !important; }
     .checklist-item.completed .step-checkbox {
-      background: #00aaff !important; border-color: #00aaff !important; box-shadow: 0 0 8px rgba(0,170,255,0.5) !important;
+      background: #ff7a00 !important; border-color: #ff7a00 !important; box-shadow: 0 0 8px rgba(255, 122, 0, 0.5) !important;
     }
-    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, #00aaff, #0055ff) !important; }
-    .section-header { border-left: 3px solid #00aaff; }
+    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, #ff7a00, #ff9933) !important; }
+    .section-header { border-left: 3px solid #ff7a00; }
   </style>
 </head>
 <body data-map-id="sv">
@@ -36,7 +36,7 @@
   <header class="site-header">
     <nav class="nav-inner" aria-label="Main navigation">
       <a href="index.html" class="nav-logo">
-        <span class="logo-icon">🧟</span>
+        <span class="logo-icon">[V]</span>
         <span>Zombies<span class="accent"> Guides</span></span>
       </a>
       <ul class="nav-links" role="list">
@@ -47,7 +47,7 @@
         <li><a href="shattered-veil.html" class="active">Shattered Veil</a></li>
         <li><a href="reckoning.html">Reckoning</a></li>
       </ul>
-      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">TIMER</button>
     </nav>
   </header>
 
@@ -58,9 +58,9 @@
       <p class="sidebar-label">Jump to Section</p>
       <ul class="sidebar-nav" role="list">
         <li><a href="#loadout">🎒 Loadout</a></li>
-        <li><a href="#power">⚡ Power On</a></li>
-        <li><a href="#raygun">🔫 Raygun Mark 2</a></li>
-        <li><a href="#boss">💀 Boss Fight</a></li>
+        <li><a href="#power">Power On</a></li>
+        <li><a href="#raygun">Raygun Mark 2</a></li>
+        <li><a href="#boss">Boss Fight</a></li>
       </ul>
       <div class="sidebar-progress" role="region" aria-label="Quest progress">
         <p class="sidebar-progress-label">Quest Progress</p>
@@ -135,7 +135,7 @@
             </div>
           </div>
           <div class="loadout-card">
-            <div class="loadout-card-header"><span class="loadout-icon">🔫</span><span class="loadout-label">Weapons</span></div>
+            <div class="loadout-card-header"><span class="loadout-label">Weapons</span></div>
             <div class="loadout-items">
               <div class="loadout-item"><span class="dot" style="background:#00aaff"></span>
                 <div><div class="item-name">KN-44 / M8A7 (PaP Tier 2)</div><div class="item-why">Best AR for round survivability</div></div>
@@ -367,17 +367,17 @@
   <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
     <div class="timer-modal">
       <button class="timer-modal-close" aria-label="Close timer">✕</button>
-      <p class="timer-label">⏱ Round Stopwatch</p>
+      <p class="timer-label">Round Stopwatch</p>
       <div class="timer-display" aria-live="polite">00:00:00.00</div>
       <div class="timer-controls">
-        <button class="timer-btn timer-btn-start">▶ Start</button>
-        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
-        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+        <button class="timer-btn timer-btn-start">START</button>
+        <button class="timer-btn timer-btn-pause" disabled>PAUSE</button>
+        <button class="timer-btn timer-btn-reset">RESET</button>
       </div>
       <div class="timer-laps" aria-label="Lap times" role="list"></div>
     </div>
   </div>
-  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+  <button class="fab-timer" aria-label="Open stopwatch">TIMER</button>
 
   <script src="js/app.js"></script>
 </body>

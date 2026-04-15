@@ -294,8 +294,143 @@ const Engagement = (() => {
 
 
 /* ============================================================
-   6. MAIN INIT
+   6. BACKGROUND MUSIC PLAYER (LOCAL FILE)
    ============================================================ */
+
+const MusicPlayer = (() => {
+  const AUDIO_FILE = "Orion's Belt.mp3";
+  const KEY_ENABLED = 'bo6_music_enabled';
+  const KEY_VOLUME = 'bo6_music_volume';
+  const DEFAULT_VOLUME = 0.12;
+
+  let audio = null;
+  let panel = null;
+  let toggleBtn = null;
+  let playBtn = null;
+  let volumeSlider = null;
+
+  function readEnabled() {
+    const saved = localStorage.getItem(KEY_ENABLED);
+    return saved === null ? true : saved === 'true';
+  }
+
+  function readVolume() {
+    const raw = parseFloat(localStorage.getItem(KEY_VOLUME));
+    if (Number.isNaN(raw)) return DEFAULT_VOLUME;
+    return Math.min(1, Math.max(0, raw));
+  }
+
+  function setEnabled(enabled) {
+    localStorage.setItem(KEY_ENABLED, String(enabled));
+    if (toggleBtn) {
+      toggleBtn.classList.toggle('active', enabled);
+      toggleBtn.textContent = enabled ? 'MUSIC ON' : 'MUSIC OFF';
+    }
+    if (panel) panel.classList.toggle('open', enabled);
+    if (!enabled && audio) audio.pause();
+  }
+
+  function setVolume(vol) {
+    const safe = Math.min(1, Math.max(0, vol));
+    localStorage.setItem(KEY_VOLUME, String(safe));
+    if (audio) audio.volume = safe;
+    if (volumeSlider) volumeSlider.value = String(Math.round(safe * 100));
+  }
+
+  function updatePlayButton() {
+    if (!playBtn || !audio) return;
+    playBtn.textContent = audio.paused ? 'PLAY' : 'PAUSE';
+  }
+
+  async function tryPlay() {
+    if (!audio || !readEnabled()) return;
+    try {
+      await audio.play();
+    } catch {
+      // Browser blocked autoplay until interaction.
+    }
+    updatePlayButton();
+  }
+
+  function buildUI() {
+    audio = new Audio(encodeURI(AUDIO_FILE));
+    audio.loop = true;
+    audio.preload = 'auto';
+    audio.volume = readVolume();
+    audio.addEventListener('play', updatePlayButton);
+    audio.addEventListener('pause', updatePlayButton);
+
+    toggleBtn = document.createElement('button');
+    toggleBtn.className = 'fab-music';
+    toggleBtn.type = 'button';
+    toggleBtn.setAttribute('aria-label', 'Toggle music panel');
+
+    panel = document.createElement('aside');
+    panel.className = 'music-panel';
+    panel.setAttribute('aria-label', 'Background music controls');
+    panel.innerHTML = `
+      <div class="music-panel-header">
+        <p class="music-panel-title">Background Music</p>
+      </div>
+      <div class="music-row">
+        <button class="music-play-btn" type="button">PLAY</button>
+        <label class="music-volume-wrap" for="musicVolume">VOL</label>
+        <input id="musicVolume" class="music-volume" type="range" min="0" max="100" step="1" value="12" aria-label="Music volume" />
+      </div>
+      <p class="music-panel-note">Looped, low-volume ambient track.</p>
+    `;
+
+    playBtn = panel.querySelector('.music-play-btn');
+    volumeSlider = panel.querySelector('.music-volume');
+
+    document.body.appendChild(panel);
+    document.body.appendChild(toggleBtn);
+
+    toggleBtn.addEventListener('click', async () => {
+      const next = !readEnabled();
+      setEnabled(next);
+      if (next) await tryPlay();
+    });
+
+    playBtn?.addEventListener('click', async () => {
+      if (!audio) return;
+      if (audio.paused) {
+        await tryPlay();
+      } else {
+        audio.pause();
+        updatePlayButton();
+      }
+    });
+
+    volumeSlider?.addEventListener('input', e => {
+      const value = Number(e.target.value) / 100;
+      setVolume(value);
+    });
+  }
+
+  function init() {
+    buildUI();
+    setEnabled(readEnabled());
+    setVolume(readVolume());
+    updatePlayButton();
+
+    const onFirstInteract = async () => {
+      await tryPlay();
+      document.removeEventListener('pointerdown', onFirstInteract);
+      document.removeEventListener('keydown', onFirstInteract);
+    };
+
+    document.addEventListener('pointerdown', onFirstInteract, { once: true });
+    document.addEventListener('keydown', onFirstInteract, { once: true });
+  }
+
+  return { init };
+})();
+
+
+/* ============================================================
+  7. MAIN INIT
+  ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
   const mapId = document.body.dataset.mapId || null;
@@ -325,6 +460,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll spy
   ScrollSpy.init();
+
+  // Background music
+  MusicPlayer.init();
 
   // Active nav link (landing page)
   const current = window.location.pathname.split('/').pop() || 'index.html';

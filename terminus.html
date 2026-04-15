@@ -9,7 +9,26 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏝</text></svg>" />
   <meta name="theme-color" content="#0a0a0f" />
   <style>
-    :root { --accent-color: var(--neon-cyan); }
+    :root { --accent-color: #ff7a00; }
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      color: #ff7a00 !important;
+      background: rgba(255, 122, 0, 0.12) !important;
+      border-left-color: #ff7a00 !important;
+    }
+    .hero-stat-value { color: #ff7a00 !important; }
+    .guide-hero h1 { color: #ff7a00; }
+    .guide-hero-tag { color: #ff7a00 !important; }
+    .section-header--cyan { border-left-color: #ff7a00 !important; }
+    .section-header--cyan .section-icon { color: #ff7a00; }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: #ff7a00 !important; background: rgba(255, 122, 0, 0.12) !important; }
+    .step-checkbox { border-color: rgba(255, 122, 0, 0.4) !important; }
+    .checklist-item.completed .step-checkbox {
+      background: #ff7a00 !important; border-color: #ff7a00 !important; box-shadow: 0 0 8px rgba(255, 122, 0, 0.5) !important;
+    }
+    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, #ff7a00, #ff9933) !important; }
+    .section-header { border-left: 3px solid #ff7a00; }
+
     .terminal-tabs { display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap; }
     .terminal-tab {
       padding:0.35rem 0.85rem; border-radius:var(--radius-sm);
@@ -19,7 +38,7 @@
       transition:all var(--transition);
     }
     .terminal-tab.active, .terminal-tab:hover {
-      background:rgba(0,245,255,0.18); color:var(--neon-cyan);
+      background:rgba(255,122,0,0.18); color:#ff7a00;
       border-color:rgba(0,245,255,0.5);
     }
     #all-terminal-results { font-size:0.82rem; }
@@ -31,7 +50,7 @@
   <header class="site-header">
     <nav class="nav-inner" aria-label="Main navigation">
       <a href="index.html" class="nav-logo">
-        <span class="logo-icon">🧟</span>
+        <span class="logo-icon">[T]</span>
         <span>BO6<span class="accent"> Zombies</span></span>
       </a>
       <ul class="nav-links" role="list">
@@ -40,7 +59,7 @@
         <li><a href="liberty-falls.html">Liberty Falls</a></li>
         <li><a href="citadelle.html">Citadelle</a></li>
       </ul>
-      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">TIMER</button>
     </nav>
   </header>
 
@@ -52,12 +71,12 @@
       <p class="sidebar-label">Jump to Section</p>
       <ul class="sidebar-nav" role="list">
         <li><a href="#loadout">🎒 Recommended Loadout</a></li>
-        <li><a href="#power">⚡ Power &amp; Setup</a></li>
-        <li><a href="#beamsmasher">🔫 Build Beamsmasher</a></li>
-        <li><a href="#decoder">🧩 Symbol Decoder</a></li>
+        <li><a href="#power">Power &amp; Setup</a></li>
+        <li><a href="#beamsmasher">Build Beamsmasher</a></li>
+        <li><a href="#decoder">Symbol Decoder</a></li>
         <li><a href="#computers">💻 Computer Codes</a></li>
         <li><a href="#side-steps">📦 Side Steps</a></li>
-        <li><a href="#boss">💀 Boss Fight</a></li>
+        <li><a href="#boss">Boss Fight</a></li>
       </ul>
 
       <!-- Progress tracker -->
@@ -191,7 +210,7 @@
 
           <div class="loadout-card">
             <div class="loadout-card-header">
-              <span class="loadout-icon">🔫</span>
+              <span class="loadout-icon"></span>
               <span class="loadout-label">Weapons</span>
             </div>
             <div class="loadout-items">
@@ -674,7 +693,7 @@
                   before the timer resets. Use the decoder's Computer B value.
                 </div>
                 <div class="step-tags">
-                  <span class="step-tag tag-required">Timed ⏱</span>
+                  <span class="step-tag tag-required">Timed</span>
                   <span class="step-tag tag-warning">90s window</span>
                 </div>
               </div>
@@ -945,7 +964,7 @@
           </div>
 
           <div class="boss-tips">
-            <p class="boss-tips-title">⚡ Boss Fight Survival Tips</p>
+            <p class="boss-tips-title">Boss Fight Survival Tips</p>
             <ul>
               <li><strong>Never stop moving.</strong> Keres locks on if you stand still for > 2 seconds.</li>
               <li>Keep <strong>Quick Revive</strong> active — it will proc at least once during Phase 3.</li>
@@ -981,12 +1000,12 @@
   <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
     <div class="timer-modal">
       <button class="timer-modal-close" aria-label="Close timer">✕</button>
-      <p class="timer-label">⏱ Round Stopwatch</p>
+      <p class="timer-label">Round Stopwatch</p>
       <div class="timer-display" aria-live="polite">00:00:00.00</div>
       <div class="timer-controls">
-        <button class="timer-btn timer-btn-start">▶ Start</button>
-        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
-        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+        <button class="timer-btn timer-btn-start">START</button>
+        <button class="timer-btn timer-btn-pause" disabled>PAUSE</button>
+        <button class="timer-btn timer-btn-reset">RESET</button>
         <button class="timer-btn" id="lapBtn" style="background:rgba(191,95,255,0.1);border-color:rgba(191,95,255,0.3);color:var(--neon-purple);" onclick="Timer && Timer.lap && Timer.lap()">🏁 Lap</button>
       </div>
       <div class="timer-laps" aria-label="Lap times" role="list"></div>
@@ -995,7 +1014,7 @@
   </div>
 
   <!-- Floating timer button -->
-  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+  <button class="fab-timer" aria-label="Open stopwatch">TIMER</button>
 
   <script src="js/app.js"></script>
   <script src="js/terminus-decoder.js"></script>

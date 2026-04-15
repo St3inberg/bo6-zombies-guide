@@ -9,27 +9,30 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌆</text></svg>" />
   <meta name="theme-color" content="#0a0a0f" />
   <style>
-    :root { --accent-color: var(--neon-red); }
+    :root { --accent-color: #ff7a00; }
     .sidebar-nav a:hover, .sidebar-nav a.active {
-      color: var(--neon-red) !important;
-      background: rgba(255,34,68,0.08) !important;
-      border-left-color: var(--neon-red) !important;
+      color: #ff7a00 !important;
+      background: rgba(255, 122, 0, 0.12) !important;
+      border-left-color: #ff7a00 !important;
     }
-    .hero-stat-value { color: var(--neon-red) !important; }
-    .guide-hero h1 { color: var(--neon-red); }
-    .guide-hero-tag { color: var(--neon-red) !important; }
-    .section-header { border-left: 3px solid var(--neon-red); }
+    .hero-stat-value { color: #ff7a00 !important; }
+    .guide-hero h1 { color: #ff7a00; }
+    .guide-hero-tag { color: #ff7a00 !important; }
+    .section-header--red { border-left-color: #ff7a00 !important; }
+    .section-header--red .section-icon { color: #ff7a00; }
     .mobile-bottom-nav a:hover,
-    .mobile-bottom-nav a.active { color: var(--neon-red) !important; background: rgba(255,34,68,0.08) !important; }
-    .step-checkbox { border-color: rgba(255,34,68,0.4) !important; }
+    .mobile-bottom-nav a.active { color: #ff7a00 !important; background: rgba(255, 122, 0, 0.12) !important; }
+    .step-checkbox { border-color: rgba(255, 122, 0, 0.4) !important; }
     .checklist-item.completed .step-checkbox {
-      background: var(--neon-red) !important; border-color: var(--neon-red) !important; box-shadow: 0 0 8px rgba(255,34,68,0.5) !important;
+      background: #ff7a00 !important; border-color: #ff7a00 !important; box-shadow: 0 0 8px rgba(255, 122, 0, 0.5) !important;
     }
-    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, var(--neon-red), #aa0022) !important; }
+    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, #ff7a00, #ff9933) !important; }
+    .section-header { border-left: 3px solid #ff7a00; }
+
     .ritual-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
-    .ritual-card { background: var(--bg-card); border: 1px solid rgba(255,34,68,0.2); border-radius: var(--radius-md); padding: 1rem; }
+    .ritual-card { background: var(--bg-card); border: 1px solid rgba(255,122,0,0.2); border-radius: var(--radius-md); padding: 1rem; }
     .ritual-card .rc-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
-    .ritual-card .rc-name { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--neon-red); margin-bottom: 0.3rem; }
+    .ritual-card .rc-name { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #ff7a00; margin-bottom: 0.3rem; }
     .ritual-card .rc-loc  { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; }
   </style>
 </head>
@@ -39,7 +42,7 @@
   <header class="site-header">
     <nav class="nav-inner" aria-label="Main navigation">
       <a href="index.html" class="nav-logo">
-        <span class="logo-icon">🧟</span>
+        <span class="logo-icon">[S]</span>
         <span>Zombies<span class="accent"> Guides</span></span>
       </a>
       <ul class="nav-links" role="list">
@@ -50,7 +53,7 @@
         <li><a href="shattered-veil.html">Shattered Veil</a></li>
         <li><a href="reckoning.html">Reckoning</a></li>
       </ul>
-      <button class="nav-timer-btn" aria-label="Open stopwatch timer">⏱ Timer</button>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">TIMER</button>
     </nav>
   </header>
 
@@ -61,12 +64,12 @@
       <p class="sidebar-label">Jump to Section</p>
       <ul class="sidebar-nav" role="list">
         <li><a href="#loadout">🎒 Loadout</a></li>
-        <li><a href="#pap">⚡ Unlock Pack-a-Punch</a></li>
+        <li><a href="#pap">Unlock Pack-a-Punch</a></li>
         <li><a href="#rituals">🩸 4 Character Rituals</a></li>
         <li><a href="#servant">🦑 Apothicon Servant</a></li>
         <li><a href="#shadow">🌑 Shadow Realm Steps</a></li>
-        <li><a href="#final">🎯 Final Steps</a></li>
-        <li><a href="#boss">💀 Shadowman Boss</a></li>
+        <li><a href="#final">Final Steps</a></li>
+        <li><a href="#boss">Shadowman Boss</a></li>
       </ul>
       <div class="sidebar-progress" role="region" aria-label="Quest progress">
         <p class="sidebar-progress-label">Quest Progress</p>
@@ -143,7 +146,7 @@
             </div>
           </div>
           <div class="loadout-card">
-            <div class="loadout-card-header"><span class="loadout-icon">🔫</span><span class="loadout-label">Weapons</span></div>
+            <div class="loadout-card-header"><span class="loadout-label">Weapons</span></div>
             <div class="loadout-items">
               <div class="loadout-item"><span class="dot" style="background:var(--neon-red)"></span>
                 <div><div class="item-name">HVK-30 or L-CAR 9 (PaP Tier 2)</div><div class="item-why">Best sustained DPS for ritual steps; HVK-30 is meta</div></div>
@@ -594,7 +597,7 @@
 
         <div class="boss-section" style="margin-top:1.5rem;">
           <div class="boss-header">
-            <span class="boss-icon">🌑</span>
+            <span class="boss-icon">[Boss]</span>
             <div class="boss-info">
               <h3>The Shadowman — Keeper of Darkness</h3>
               <p>A corrupted Keeper empowered by the Apothicons. The boss fight takes place in a dark alternate dimension. The Shadowman cannot be killed by conventional weapons — he must be sealed using the Summoning Key.</p>
@@ -661,17 +664,17 @@
   <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
     <div class="timer-modal">
       <button class="timer-modal-close" aria-label="Close timer">✕</button>
-      <p class="timer-label">⏱ Round Stopwatch</p>
+      <p class="timer-label">Round Stopwatch</p>
       <div class="timer-display" aria-live="polite">00:00:00.00</div>
       <div class="timer-controls">
-        <button class="timer-btn timer-btn-start">▶ Start</button>
-        <button class="timer-btn timer-btn-pause" disabled>⏸ Pause</button>
-        <button class="timer-btn timer-btn-reset">↺ Reset</button>
+        <button class="timer-btn timer-btn-start">START</button>
+        <button class="timer-btn timer-btn-pause" disabled>PAUSE</button>
+        <button class="timer-btn timer-btn-reset">RESET</button>
       </div>
       <div class="timer-laps" aria-label="Lap times" role="list"></div>
     </div>
   </div>
-  <button class="fab-timer" aria-label="Open stopwatch">⏱</button>
+  <button class="fab-timer" aria-label="Open stopwatch">TIMER</button>
 
   <script src="js/app.js"></script>
 </body>
