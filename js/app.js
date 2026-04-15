@@ -355,7 +355,8 @@ const MusicPlayer = (() => {
   function buildUI() {
     audio = new Audio(encodeURI(AUDIO_FILE));
     audio.loop = true;
-    audio.preload = 'auto';
+    // Do not fetch multi-MB audio on first paint; load when user interacts.
+    audio.preload = 'none';
     audio.volume = readVolume();
     audio.addEventListener('play', updatePlayButton);
     audio.addEventListener('pause', updatePlayButton);
