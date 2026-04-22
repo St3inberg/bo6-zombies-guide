@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gorod Krovi Main Quest Easter Egg guide for Black Ops 3 Zombies. Tame the dragon, build the Gauntlet of Siegfried, complete terminal codes, and defeat the boss." />
+  <title>Gorod Krovi Easter Egg Guide — BO3 Zombies</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐲</text></svg>" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      color: #ff4422 !important;
+      background: rgba(255, 68, 34, 0.12) !important;
+      border-left-color: #ff4422 !important;
+    }
+    .hero-stat-value { color: #ff4422 !important; }
+    .guide-hero h1 { color: #ff4422; }
+    .guide-hero-tag { color: #ff4422 !important; }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: #ff4422 !important; background: rgba(255, 68, 34, 0.12) !important; }
+    .step-checkbox { border-color: rgba(255, 68, 34, 0.4) !important; }
+    .checklist-item.completed .step-checkbox {
+      background: #ff4422 !important; border-color: #ff4422 !important;
+    }
+    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, #ff4422, #ff7744) !important; }
+    .section-header { border-left: 4px solid #ff4422; }
+    .guide-hero--gorod-krovi {
+      background:
+        radial-gradient(ellipse at 78% 50%, rgba(255, 68, 34, 0.18) 0%, transparent 52%),
+        radial-gradient(ellipse at 22% 60%, rgba(180, 20, 0, 0.10) 0%, transparent 38%),
+        radial-gradient(ellipse at 50% 85%, rgba(100, 10, 0, 0.10) 0%, transparent 40%),
+        linear-gradient(135deg, #1a0500 0%, #2a0800 50%, #1a0500 100%);
+      border-color: rgba(255, 68, 34, 0.3);
+    }
+    .guide-hero--gorod-krovi::after {
+      content: '🐲';
+      font-size: 12rem;
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.08;
+      pointer-events: none;
+      line-height: 1;
+      filter: grayscale(0.5) blur(4px);
+    }
+  </style>
+</head>
+<body data-map-id="gk">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">[K]</span>
+        <span>Zombies<span class="accent"> Guides</span></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">All Maps</a></li>
+        <li><a href="bo3-der-eisendrache.html">Der Eisendrache</a></li>
+        <li><a href="bo3-shadows-of-evil.html">Shadows of Evil</a></li>
+        <li><a href="bo3-the-giant.html">The Giant</a></li>
+        <li><a href="bo3-gorod-krovi.html" class="active">Gorod Krovi</a></li>
+      </ul>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">TIMER</button>
+    </nav>
+  </header>
+
+  <div class="guide-layout">
+
+    <!-- Sidebar -->
+    <aside class="guide-sidebar" aria-label="Guide navigation">
+      <p class="sidebar-label">Jump to Section</p>
+      <ul class="sidebar-nav" role="list">
+        <li><a href="#loadout">🎒 Loadout</a></li>
+        <li><a href="#dragon">🐉 Tame the Dragon</a></li>
+        <li><a href="#gauntlet">⚔ Gauntlet of Siegfried</a></li>
+        <li><a href="#terminals">💻 Dragon Terminals</a></li>
+        <li><a href="#ragnarok">💣 Ragnarok DG-4</a></li>
+        <li><a href="#sophia">🧬 Sophia Module</a></li>
+        <li><a href="#boss">💀 Boss Fight</a></li>
+      </ul>
+      <div class="sidebar-progress" role="region" aria-label="Quest progress">
+        <p class="sidebar-progress-label">Quest Progress</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-text">
+          <span class="pct">0%</span>
+          <span class="count">0/0</span>
+        </div>
+        <button class="sidebar-reset-btn" type="button">↺ Reset Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="guide-main" id="main-content">
+
+      <!-- Hero -->
+      <div class="guide-hero guide-hero--gorod-krovi">
+        <p class="guide-hero-tag">
+          <span class="game-badge game-badge-bo3" style="margin-right:0.4rem;">BO3</span>
+          Main Quest Easter Egg · Round-Based
+        </p>
+        <h1>Gorod Krovi</h1>
+        <p>
+          A war-ravaged Stalingrad overrun by dragons and the undead. Tame the dragon to
+          unlock Pack-a-Punch, build the Gauntlet of Siegfried Wonder Weapon, complete
+          four dragon terminal codes, construct the Ragnarok DG-4 grenades, and face
+          the Dragon Queen in an epic multi-phase final battle.
+        </p>
+        <div class="guide-hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#ff4422;">26</span>
+            <span class="hero-stat-label">Quest Steps</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#ff4422;">3–4h</span>
+            <span class="hero-stat-label">Avg Time</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--accent-secondary);">★★★</span>
+            <span class="hero-stat-label">Difficulty</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#ff4422;">4P Rec.</span>
+            <span class="hero-stat-label">Players</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOADOUT ─────────────────────────────────────── -->
+      <section class="guide-section" id="loadout" aria-labelledby="loadout-h">
+        <div class="section-header">
+          <span class="section-icon">🎒</span>
+          <h2 id="loadout-h">Recommended Loadout</h2>
+          <span class="section-phase-tag phase-early">Pre-Game</span>
+        </div>
+        <div class="loadout-grid">
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">💊</span><span class="loadout-label">Perks Priority</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Jugger-Nog</div><div class="item-why">Mandatory — dragon fire and Dragon Queen attacks hit hard</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Widows Wine</div><div class="item-why">Slows Valkyrie drones and grabs — essential for this map</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Mule Kick</div><div class="item-why">Carry Gauntlet + Ragnarok + AR simultaneously</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Speed Cola</div><div class="item-why">Fast reloads on the Gauntlet and PaP'd AR</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-label">Weapons</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">VMP or KRM-262 (PaP Tier 2)</div><div class="item-why">High DPS for the cramped Stalingrad streets</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Gauntlet of Siegfried (WW)</div><div class="item-why">Summons a personal dragon companion — key for the boss fight</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">🧠</span><span class="loadout-label">Gobblegums</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Perkaholic</div><div class="item-why">All perks — exceptionally strong on this perk-heavy map</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Licensed Contractor</div><div class="item-why">Build items instantly — use on Ragnarok DG-4 construction</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── DRAGON ──────────────────────────────────────── -->
+      <section class="guide-section" id="dragon" aria-labelledby="dragon-h">
+        <div class="section-header">
+          <span class="section-icon">🐉</span>
+          <h2 id="dragon-h">Tame the Dragon — Unlock Pack-a-Punch</h2>
+          <span class="section-phase-tag phase-early">Rounds 1–5</span>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>Unlike other maps</strong>
+            Pack-a-Punch is not accessible until you ride the dragon. This must be done early.
+            Open the streets by spending points on doors, then locate the dragon nest platform.
+          </div>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="gk001" data-yt-search="gorod krovi bo3 power on generators locations" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 01</div>
+                <div class="step-title">Activate the 3 generators to restore power to the city</div>
+                <div class="step-desc">
+                  Three generators are scattered across the open streets of Stalingrad.
+                  Each generator requires holding the interact button for 5 seconds while
+                  zombies attack. Activating all three powers the dragon nest platform
+                  and the pack-a-punch gateway.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Unlock Dragon</span></div>
+              </div>
+            </div>
+            <button class="substep-toggle" data-target="subs-gk001" aria-expanded="false">
+              <span class="toggle-icon">▶</span> Generator Locations
+            </button>
+            <div class="substeps" id="subs-gk001" role="region">
+              <ul>
+                <li><strong>Generator 1</strong>: Near spawn, at the foot of the main staircase leading to the square.</li>
+                <li><strong>Generator 2</strong>: In the central plaza area, next to a crashed Soviet tank.</li>
+                <li><strong>Generator 3</strong>: In the far end of the map near the supply depot building.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk002" data-yt-search="gorod krovi bo3 dragon nest platform ride" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 02</div>
+                <div class="step-title">Ride the dragon to unlock Pack-a-Punch</div>
+                <div class="step-desc">
+                  After generators are powered, a dragon lands on the nest platform in the
+                  central area. All players must stand on the platform and interact with the
+                  dragon simultaneously. The dragon flies to the Pack-a-Punch room — the
+                  PaP machine is now accessible from the central platform.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Unlock PaP</span>
+                  <span class="step-tag tag-squad">All Players</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk003" data-yt-search="gorod krovi bo3 pack a punch weapon upgrade" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 03</div>
+                <div class="step-title">Pack-a-Punch your primary weapon (Tier 2 minimum)</div>
+                <div class="step-desc">
+                  The PaP room is in the upper tower accessible via the dragon ride.
+                  You can also return at any time by riding the dragon again. PaP Tier 2
+                  is strongly recommended before tackling the terminal codes.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── GAUNTLET ────────────────────────────────────── -->
+      <section class="guide-section" id="gauntlet" aria-labelledby="gauntlet-h">
+        <div class="section-header">
+          <span class="section-icon">⚔</span>
+          <h2 id="gauntlet-h">Build: Gauntlet of Siegfried</h2>
+          <span class="section-phase-tag phase-mid">Wonder Weapon</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="gk004" data-yt-search="gorod krovi bo3 gauntlet of siegfried part 1 dragon scales" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 04</div>
+                <div class="step-title">Collect Dragon Scales — kill dragon-touched zombies</div>
+                <div class="step-desc">
+                  Dragon-touched zombies (they have glowing red eyes and have been
+                  set ablaze by dragon fire) drop a Dragon Scale when killed.
+                  You need 3 scales total. Kite large zombie groups under the dragon
+                  flight paths to maximise dragon-touched kills.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">WW Part 1</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk005" data-yt-search="gorod krovi bo3 gauntlet part 2 knight shield" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 05</div>
+                <div class="step-title">Find the Knight's Crest — in the supply depot</div>
+                <div class="step-desc">
+                  The Knight's Crest is a metal emblem found on a shelf in the supply depot
+                  building (far end of the map). It glows faintly when approached. Picking
+                  it up is straightforward — no kill requirement.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">WW Part 2</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk006" data-yt-search="gorod krovi bo3 gauntlet part 3 dragon egg incubate" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 06</div>
+                <div class="step-title">Incubate the Dragon Egg at the nest</div>
+                <div class="step-desc">
+                  Find a Dragon Egg near the dragon's nest (a small glowing egg on a stone
+                  ledge). Pick it up and carry it to the incubation chamber in the lower
+                  tunnel section. Place it on the pedestal and survive 2 rounds — the egg
+                  hatches into a baby dragon, which becomes the Gauntlet's companion.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">WW Part 3</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk007" data-yt-search="gorod krovi bo3 gauntlet of siegfried build bench" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 07</div>
+                <div class="step-title">Build the Gauntlet of Siegfried at a workbench</div>
+                <div class="step-desc">
+                  Bring all three parts to the workbench in the armory building (mid-map,
+                  near the central plaza). The Gauntlet fires a powerful electric bolt
+                  and its alt-fire commands the baby dragon companion to breathe fire.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Build WW</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── TERMINALS ──────────────────────────────────── -->
+      <section class="guide-section" id="terminals" aria-labelledby="terminals-h">
+        <div class="section-header">
+          <span class="section-icon">💻</span>
+          <h2 id="terminals-h">Complete the 4 Dragon Head Terminals</h2>
+          <span class="section-phase-tag phase-mid">Mid-Game</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1.25rem;line-height:1.6;">
+          Four dragon-head control terminals are positioned across the map. Each must be
+          activated by solving a hacking puzzle while surviving zombie waves. The Gauntlet
+          of Siegfried is required to activate each terminal.
+        </p>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="gk008" data-yt-search="gorod krovi bo3 terminal 1 plaza dragon head activate" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 08</div>
+                <div class="step-title">Activate Terminal 1 — Central Plaza dragon head</div>
+                <div class="step-desc">
+                  Fire the Gauntlet at the dragon head statue in the central plaza.
+                  A hacking interface opens — match the sequence shown on the terminal
+                  screen within 30 seconds. Valkyrie drone spawns increase during this step.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Terminal 1</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk009" data-yt-search="gorod krovi bo3 terminal 2 supply depot dragon" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 09</div>
+                <div class="step-title">Activate Terminal 2 — Supply Depot dragon head</div>
+                <div class="step-desc">
+                  The second dragon head is mounted above the supply depot entrance.
+                  Fire the Gauntlet and solve the terminal puzzle. The 30-second timer
+                  restarts if you fail — keep trying.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Terminal 2</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk010" data-yt-search="gorod krovi bo3 terminal 3 church dragon head" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 10</div>
+                <div class="step-title">Activate Terminal 3 — Church district dragon head</div>
+                <div class="step-desc">
+                  The third terminal is at the ruined church area (buy the 1250pt door
+                  from the central plaza). The dragon head is above the church entrance
+                  archway. Same Gauntlet activation and puzzle sequence as above.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Terminal 3</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk011" data-yt-search="gorod krovi bo3 terminal 4 spawn area dragon head" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 11</div>
+                <div class="step-title">Activate Terminal 4 — Spawn-side dragon head</div>
+                <div class="step-desc">
+                  The fourth dragon head is near the initial spawn area (on the exterior
+                  wall of the command building). After all four terminals are complete,
+                  a system-wide alert sounds — this unlocks the Ragnarok DG-4 blueprint.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Terminal 4 — Unlocks Ragnarok</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── RAGNAROK DG-4 ──────────────────────────────── -->
+      <section class="guide-section" id="ragnarok" aria-labelledby="ragnarok-h">
+        <div class="section-header">
+          <span class="section-icon">💣</span>
+          <h2 id="ragnarok-h">Build: Ragnarok DG-4 Grenades</h2>
+          <span class="section-phase-tag phase-mid">Mid-Game</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1.25rem;line-height:1.6;">
+          The Ragnarok DG-4 is a special grenade device that creates a gravity implosion,
+          pulling zombies into it. It is <strong>required for the boss fight</strong>.
+          Each player needs their own — 3 parts per player.
+        </p>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="gk012" data-yt-search="gorod krovi bo3 ragnarok DG4 part 1 location" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 12</div>
+                <div class="step-title">Find Ragnarok Part 1 — Power Cell</div>
+                <div class="step-desc">
+                  The Power Cell spawns in one of three locations: on the command building
+                  roof, in the supply depot basement, or near the dragon nest platform.
+                  It glows blue-white. Check all three if it's not at the first location.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Part 1 — Random Spawn</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk013" data-yt-search="gorod krovi bo3 ragnarok DG4 part 2 detonator" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 13</div>
+                <div class="step-title">Find Ragnarok Part 2 — Detonation Housing</div>
+                <div class="step-desc">
+                  The Detonation Housing spawns near the church ruin area (on a pew or
+                  on a stone wall), in the tunnels near generator 3, or at the
+                  armory workbench area. Same blue glow as the power cell.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Part 2 — Random Spawn</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk014" data-yt-search="gorod krovi bo3 ragnarok DG4 part 3 tube" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 14</div>
+                <div class="step-title">Find Ragnarok Part 3 — Containment Tube</div>
+                <div class="step-desc">
+                  The Containment Tube spawns in the laboratory area (inside the building
+                  near terminal 4 spawn) or on the ground near the central dragon nest.
+                  It's a cylindrical glass component.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Part 3 — Random Spawn</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk015" data-yt-search="gorod krovi bo3 ragnarok DG4 build workbench" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 15</div>
+                <div class="step-title">Build the Ragnarok DG-4 at the armory workbench</div>
+                <div class="step-desc">
+                  Take all 3 parts to the armory workbench. Assemble the device — it can
+                  be thrown like a grenade and creates a powerful gravity well on detonation.
+                  Recharges every round. All players should have one before the boss.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Build DG-4</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── SOPHIA MODULE ──────────────────────────────── -->
+      <section class="guide-section" id="sophia" aria-labelledby="sophia-h">
+        <div class="section-header">
+          <span class="section-icon">🧬</span>
+          <h2 id="sophia-h">Sophia's Module — Final Preparation</h2>
+          <span class="section-phase-tag phase-mid">Late Game</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="gk016" data-yt-search="gorod krovi bo3 sophia ai interact locations" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 16</div>
+                <div class="step-title">Find all 3 Sophia AI terminals and activate them</div>
+                <div class="step-desc">
+                  Sophia is a Maxis-constructed AI housed in three separate terminal nodes
+                  across the map. Interact with each terminal to download a portion of her
+                  consciousness. Terminal locations: near the command building entrance,
+                  inside the supply depot office, and in the underground tunnel section.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">3 Terminals</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk017" data-yt-search="gorod krovi bo3 sophia module assemble guide" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 17</div>
+                <div class="step-title">Assemble Sophia's Module in the PaP room</div>
+                <div class="step-desc">
+                  After interacting with all 3 terminals, ride the dragon to the PaP room.
+                  On a console near the PaP machine, a glowing cylinder appears — this is
+                  Sophia's Module. Interact with it to collect it. This is the item needed
+                  to initiate the boss sequence.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Get Module</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk018" data-yt-search="gorod krovi bo3 charge overdrive upgrade how to" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 18</div>
+                <div class="step-title">Charge the Overdrive using the dragon's energy</div>
+                <div class="step-desc">
+                  Holding Sophia's Module, stand under the dragon as it breathes fire.
+                  The module absorbs the fire energy to become "charged" — indicated by
+                  it glowing bright orange. You need 3 full charge cycles (stand under
+                  three separate dragon fire blasts). The Overdrive is now ready.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Charge Module</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="gk019" data-yt-search="gorod krovi bo3 insert module activate boss sequence" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 19</div>
+                <div class="step-title">Insert the charged module into the central console</div>
+                <div class="step-desc">
+                  Return to the central plaza and find the main Sophia console (a large
+                  pedestal with a slot on top). Insert the charged module to initiate the
+                  lockdown sequence. All players must be in position before inserting —
+                  the boss fight begins immediately after.
+                </div>
+                <div class="step-tags">
+                  <span class="step-tag tag-required">Trigger Boss</span>
+                  <span class="step-tag tag-warning">No return after this</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── BOSS ───────────────────────────────────────── -->
+      <section class="guide-section" id="boss" aria-labelledby="boss-h">
+        <div class="section-header">
+          <span class="section-icon">💀</span>
+          <h2 id="boss-h">Boss Fight — The Dragon Queen</h2>
+          <span class="section-phase-tag phase-boss">End Game</span>
+        </div>
+        <div class="checklist" role="list">
+          <div class="checklist-item" data-step-id="gk020" data-yt-search="gorod krovi bo3 boss dragon queen fight guide" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 20</div>
+                <div class="step-title">Enter the boss arena as a squad</div>
+                <div class="step-desc">
+                  After inserting the module, the arena activates in the central plaza area.
+                  The Dragon Queen descends — a massive armored undead dragon entity.
+                  Make sure all players have the Gauntlet of Siegfried and at least one
+                  Ragnarok DG-4 before starting.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="boss-section" style="margin-top:1.5rem;">
+          <div class="boss-header">
+            <span class="boss-icon">🐲</span>
+            <div class="boss-info">
+              <h3>The Dragon Queen</h3>
+              <p>
+                An ancient dragon corrupted by the Apothicons' influence. She cannot be
+                harmed by conventional weapons — only the Gauntlet of Siegfried's electric
+                bolt can pierce her armor, and only the Ragnarok DG-4 can neutralize
+                her regeneration.
+              </p>
+            </div>
+          </div>
+          <div class="boss-phases" role="list">
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">1</span>
+              <div class="phase-detail">
+                <h4>Phase 1 — Break the Armor with the Gauntlet</h4>
+                <p>The Dragon Queen is fully armored. All players must fire the Gauntlet of
+                Siegfried's primary electric shot at the glowing armor plates on her sides.
+                Hit all 4 plates to crack the armor. Coordinate which plates each player
+                is targeting — she sweeps fire attacks across the arena continuously.</p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">2</span>
+              <div class="phase-detail">
+                <h4>Phase 2 — Expose and Stun with Ragnarok DG-4</h4>
+                <p>When the armor breaks, she enters a rage phase — moving faster and
+                breathing fire constantly. Throw Ragnarok DG-4 grenades at her center mass
+                to create a gravity well that stuns her. During the stun (8 seconds),
+                all players unload the Gauntlet's alt-fire (dragon breath command) at
+                her exposed weak point. She re-armors after the stun — repeat this cycle
+                3 times.</p>
+              </div>
+            </div>
+            <div class="boss-phase" role="listitem">
+              <span class="phase-num">3</span>
+              <div class="phase-detail">
+                <h4>Phase 3 — Final Blast (All Gauntlets Simultaneously)</h4>
+                <p>On the final stun cycle, when the Dragon Queen is at low HP, Sophia
+                broadcasts a countdown. All 4 players must fire their Gauntlets simultaneously
+                on her exposed core when Sophia calls out "NOW." The combined beam from
+                4 Gauntlets triggers the kill animation. If players don't fire in sync,
+                the sequence resets and she regains partial HP.</p>
+              </div>
+            </div>
+          </div>
+          <div class="boss-tips">
+            <p class="boss-tips-title">🐲 Boss Survival Tips</p>
+            <ul>
+              <li><strong>Save your Ragnarok DG-4</strong> — only throw it when at least 2 armor plates are broken, to maximize the stun window.</li>
+              <li>The baby dragon companion from the Gauntlet alt-fire deals significant damage during stun phases — always command it in Phase 2.</li>
+              <li>Valkyrie drones still spawn during the boss fight — designate one player to manage them so the other three focus the Queen.</li>
+              <li>Move constantly in a clockwise circle to avoid most fire sweeps — standing still for more than 2 seconds guarantees a hit.</li>
+              <li>Use Widows Wine as a last resort when grabbed by fire tendrils — it frees you automatically.</li>
+              <li>During the final Phase 3 countdown, don't pre-fire — wait for Sophia's vocal cue to ensure all players synchronize.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav" aria-label="Quick navigation">
+    <a href="#loadout"><span>🎒</span>Loadout</a>
+    <a href="#dragon"><span>🐉</span>Dragon</a>
+    <a href="#gauntlet"><span>⚔</span>WW</a>
+    <a href="#terminals"><span>💻</span>Terminals</a>
+    <a href="#ragnarok"><span>💣</span>DG-4</a>
+    <a href="#boss"><span>💀</span>Boss</a>
+  </nav>
+
+  <footer class="site-footer">
+    <p>
+      <a href="bo3-the-giant.html">← The Giant</a> &nbsp;·&nbsp;
+      <a href="index.html">All Maps</a>
+    </p>
+    <p style="margin-top:0.5rem;">Fan-made guide · Not affiliated with Activision or Treyarch</p>
+  </footer>
+
+  <!-- Timer Modal -->
+  <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
+    <div class="timer-modal">
+      <button class="timer-modal-close" aria-label="Close timer">✕</button>
+      <p class="timer-label">Round Stopwatch</p>
+      <div class="timer-display" aria-live="polite">00:00:00.00</div>
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-start">START</button>
+        <button class="timer-btn timer-btn-pause" disabled>PAUSE</button>
+        <button class="timer-btn timer-btn-reset">RESET</button>
+      </div>
+      <div class="timer-laps" aria-label="Lap times" role="list"></div>
+    </div>
+  </div>
+  <button class="fab-timer" aria-label="Open stopwatch">TIMER</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

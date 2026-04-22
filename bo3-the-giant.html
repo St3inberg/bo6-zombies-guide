@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Giant Main Quest Easter Egg guide for Black Ops 3 Zombies. Link the teleporters, unlock Pack-a-Punch, and uncover Richtofen's secret in the Der Riese remake." />
+  <title>The Giant Easter Egg Guide — BO3 Zombies</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏭</text></svg>" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      color: #ff7a00 !important;
+      background: rgba(255, 122, 0, 0.12) !important;
+      border-left-color: #ff7a00 !important;
+    }
+    .hero-stat-value { color: #ff7a00 !important; }
+    .guide-hero h1 { color: #ff7a00; }
+    .guide-hero-tag { color: #ff7a00 !important; }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: #ff7a00 !important; background: rgba(255, 122, 0, 0.12) !important; }
+    .step-checkbox { border-color: rgba(255, 122, 0, 0.4) !important; }
+    .checklist-item.completed .step-checkbox {
+      background: #ff7a00 !important; border-color: #ff7a00 !important;
+    }
+    .sidebar-progress .progress-bar-fill { background: linear-gradient(90deg, #ff7a00, #ff9933) !important; }
+    .section-header { border-left: 4px solid #ff7a00; }
+  </style>
+</head>
+<body data-map-id="tg">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">[G]</span>
+        <span>Zombies<span class="accent"> Guides</span></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">All Maps</a></li>
+        <li><a href="bo3-der-eisendrache.html">Der Eisendrache</a></li>
+        <li><a href="bo3-shadows-of-evil.html">Shadows of Evil</a></li>
+        <li><a href="bo3-the-giant.html" class="active">The Giant</a></li>
+        <li><a href="bo3-gorod-krovi.html">Gorod Krovi</a></li>
+      </ul>
+      <button class="nav-timer-btn" aria-label="Open stopwatch timer">TIMER</button>
+    </nav>
+  </header>
+
+  <div class="guide-layout">
+
+    <!-- Sidebar -->
+    <aside class="guide-sidebar" aria-label="Guide navigation">
+      <p class="sidebar-label">Jump to Section</p>
+      <ul class="sidebar-nav" role="list">
+        <li><a href="#loadout">🎒 Loadout</a></li>
+        <li><a href="#power">⚡ Power On</a></li>
+        <li><a href="#teleporters">🔗 Link Teleporters</a></li>
+        <li><a href="#radios">📻 Radio Easter Eggs</a></li>
+        <li><a href="#ravens">🐦 Shoot the Ravens</a></li>
+        <li><a href="#richtofen">🧪 Richtofen's Final Step</a></li>
+      </ul>
+      <div class="sidebar-progress" role="region" aria-label="Quest progress">
+        <p class="sidebar-progress-label">Quest Progress</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-text">
+          <span class="pct">0%</span>
+          <span class="count">0/0</span>
+        </div>
+        <button class="sidebar-reset-btn" type="button">↺ Reset Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="guide-main" id="main-content">
+
+      <!-- Hero -->
+      <div class="guide-hero guide-hero--the-giant">
+        <p class="guide-hero-tag">
+          <span class="game-badge game-badge-bo3" style="margin-right:0.4rem;">BO3</span>
+          Easter Egg · Der Riese Remake
+        </p>
+        <h1>The Giant</h1>
+        <p>
+          The legendary Group 935 facility returns in BO3. Link the three teleporters
+          to unlock Pack-a-Punch, find Richtofen's hidden radio messages, shoot the
+          glowing ravens, and trigger the secret cinematic to uncover the true fate
+          of the Origins crew.
+        </p>
+        <div class="guide-hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#ff7a00;">18</span>
+            <span class="hero-stat-label">Quest Steps</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#ff7a00;">1–2h</span>
+            <span class="hero-stat-label">Avg Time</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:var(--accent-secondary);">★★☆</span>
+            <span class="hero-stat-label">Difficulty</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" style="color:#ff7a00;">1–4P</span>
+            <span class="hero-stat-label">Players</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOADOUT ─────────────────────────────────────── -->
+      <section class="guide-section" id="loadout" aria-labelledby="loadout-h">
+        <div class="section-header">
+          <span class="section-icon">🎒</span>
+          <h2 id="loadout-h">Recommended Loadout</h2>
+          <span class="section-phase-tag phase-early">Pre-Game</span>
+        </div>
+        <div class="loadout-grid">
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">💊</span><span class="loadout-label">Perks Priority</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Jugger-Nog</div><div class="item-why">Always first — mandatory survival perk</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Speed Cola</div><div class="item-why">Faster reloads when running training circuits</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Double Tap II</div><div class="item-why">Doubles fire rate and bullet damage — excellent with any AR</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Quick Revive</div><div class="item-why">Solo lifesaver; essential on this small, dense map</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-label">Weapons</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">KN-44 or HVK-30 (PaP)</div><div class="item-why">Best sustained DPS for round survivability</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">L-CAR 9 or Kuda (secondary)</div><div class="item-why">Fast-firing backup for tight corridors near the teleporters</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="loadout-card">
+            <div class="loadout-card-header"><span class="loadout-icon">🧠</span><span class="loadout-label">Gobblegums</span></div>
+            <div class="loadout-items">
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Perkaholic</div><div class="item-why">All perks instantly — powerful on this straightforward map</div></div>
+              </div>
+              <div class="loadout-item"><span class="dot"></span>
+                <div><div class="item-name">Temporal Gift</div><div class="item-why">Power-ups last longer — great during crowded training runs</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>The Giant Tip</strong>
+            The main quest on The Giant is lighter than other maps. It involves finding 5 radio
+            messages, shooting 3 glowing ravens, and performing one final interaction. All of
+            this can be done solo while playing normally. Focus on opening all areas early.
+          </div>
+        </div>
+      </section>
+
+      <!-- ── POWER ───────────────────────────────────────── -->
+      <section class="guide-section" id="power" aria-labelledby="power-h">
+        <div class="section-header">
+          <span class="section-icon">⚡</span>
+          <h2 id="power-h">Turn On the Power</h2>
+          <span class="section-phase-tag phase-early">Rounds 1–2</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="tg001" data-yt-search="the giant bo3 power switch location guide" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 01</div>
+                <div class="step-title">Turn on the main power switch in the facilities</div>
+                <div class="step-desc">
+                  The main power switch is located in the lower level of the facility —
+                  buy the 1000pt door from spawn toward the catwalk area, then take the
+                  stairs down to the lower factory floor. The power switch is on the wall
+                  next to the large machinery. Activating it powers all teleporters and
+                  traps.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required First</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg002" data-yt-search="the giant bo3 mystery box location guide" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 02</div>
+                <div class="step-title">Open all three teleporter areas (buy the zone doors)</div>
+                <div class="step-desc">
+                  Three areas contain teleporters — Teleporter A (Catwalk area),
+                  Teleporter B (Lower factory), Teleporter C (Laboratory wing).
+                  Buy the doors to each before attempting to link them to PaP.
+                  Budget roughly 3000–4500 points to fully open the map.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Open Map</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── TELEPORTERS ────────────────────────────────── -->
+      <section class="guide-section" id="teleporters" aria-labelledby="tele-h">
+        <div class="section-header">
+          <span class="section-icon">🔗</span>
+          <h2 id="tele-h">Link All 3 Teleporters to Pack-a-Punch</h2>
+          <span class="section-phase-tag phase-mid">Rounds 3–5</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1.25rem;line-height:1.6;">
+          All three teleporters must be linked to the Pack-a-Punch machine before PaP
+          becomes accessible. Each teleporter has a pad in the map and a corresponding
+          receiver panel near the PaP. Stand on the pad for 10 seconds to complete the
+          link — zombies still spawn, so be prepared.
+        </p>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="tg003" data-yt-search="the giant bo3 teleporter A link location" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 03</div>
+                <div class="step-title">Link Teleporter A — Catwalk / Spawn Side</div>
+                <div class="step-desc">
+                  The Teleporter A pad is on the main catwalk level near the spawn stairs.
+                  Stand on the glowing teleporter pad and interact — hold the interact button
+                  for 10 seconds while defending yourself. The screen will flash when linked.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Teleporter A</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg004" data-yt-search="the giant bo3 teleporter B link location" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 04</div>
+                <div class="step-title">Link Teleporter B — Lower Factory Floor</div>
+                <div class="step-desc">
+                  Teleporter B is on the lower factory floor, near the power switch area.
+                  Stand on the pad and hold interact for 10 seconds. The factory floor has
+                  multiple zombie entry points — kite zombies in a loop to avoid being
+                  cornered during the link.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Teleporter B</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg005" data-yt-search="the giant bo3 teleporter C link location" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 05</div>
+                <div class="step-title">Link Teleporter C — Laboratory Wing</div>
+                <div class="step-desc">
+                  Teleporter C is in the laboratory wing (the room with the chemical tanks).
+                  This area has tight corners — pre-clear the room with a quick round end
+                  before attempting to link. Same 10-second hold required.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Teleporter C</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg006" data-yt-search="the giant bo3 pack a punch location activate" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 06</div>
+                <div class="step-title">Pack-a-Punch your weapon (now unlocked)</div>
+                <div class="step-desc">
+                  After all 3 teleporters are linked, the Pack-a-Punch machine activates
+                  in the central room (accessible via any of the three teleporters — use
+                  the teleporter to warp directly to PaP). Upgrade your primary weapon
+                  to at least Tier 1 before proceeding.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">PaP Active</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── RADIO EASTER EGGS ───────────────────────────── -->
+      <section class="guide-section" id="radios" aria-labelledby="radios-h">
+        <div class="section-header">
+          <span class="section-icon">📻</span>
+          <h2 id="radios-h">Find All 5 Radio Messages</h2>
+          <span class="section-phase-tag phase-mid">Any Time</span>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>Story Context</strong>
+            The radios are Richtofen's personal audio logs recorded in the original Der Riese
+            facility. Activating all 5 reveals his plan to swap souls with Maxis, and is
+            required before the final Easter Egg step can be triggered.
+          </div>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="tg007" data-yt-search="the giant bo3 radio 1 location spawn" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 07</div>
+                <div class="step-title">Radio 1 — Near the spawn room entrance</div>
+                <div class="step-desc">
+                  On the table to the left as you first leave the spawn room. It looks like a
+                  small reel-to-reel tape recorder. Hold interact to play it.
+                  This log describes Richtofen's early experiments with the MTD teleporter.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Radio 1</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg008" data-yt-search="the giant bo3 radio 2 catwalk location" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 08</div>
+                <div class="step-title">Radio 2 — On the catwalk above the factory floor</div>
+                <div class="step-desc">
+                  On the upper catwalk walkway — on a metal shelf between the first and second
+                  support pillars. You'll pass it naturally when moving toward Teleporter A.
+                  This log discusses Maxis's disapproval of certain experiments.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Radio 2</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg009" data-yt-search="the giant bo3 radio 3 lower floor location" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 09</div>
+                <div class="step-title">Radio 3 — Lower factory floor, near the generator</div>
+                <div class="step-desc">
+                  On the lower factory floor next to the large generator housing (near
+                  Teleporter B). On a workbench in the corner. This log is Richtofen's
+                  reaction to the first successful teleportation test.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Radio 3</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg010" data-yt-search="the giant bo3 radio 4 laboratory location" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 10</div>
+                <div class="step-title">Radio 4 — In the laboratory wing, on a side counter</div>
+                <div class="step-desc">
+                  Inside the lab wing near Teleporter C. On a counter by the chemical vats
+                  on the right side of the room. Richtofen's log here reveals his plan to
+                  trap Maxis and Samantha inside the MTD teleporter.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Radio 4</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg011" data-yt-search="the giant bo3 radio 5 teleporter room" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 11</div>
+                <div class="step-title">Radio 5 — In the PaP teleport room, near the main console</div>
+                <div class="step-desc">
+                  In the central Pack-a-Punch room — teleport there using any linked pad.
+                  The final radio is on a desk near the main control console.
+                  This is Richtofen's final pre-incident log before the accident that
+                  separated the Origins crew across dimensions.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Radio 5</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── RAVENS ─────────────────────────────────────── -->
+      <section class="guide-section" id="ravens" aria-labelledby="ravens-h">
+        <div class="section-header">
+          <span class="section-icon">🐦</span>
+          <h2 id="ravens-h">Shoot the 3 Glowing Ravens</h2>
+          <span class="section-phase-tag phase-mid">After Radios</span>
+        </div>
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <strong>All 5 Radios First</strong>
+            The ravens only appear and glow after all 5 radio messages have been played.
+            If the ravens aren't glowing, check that you haven't missed a radio.
+            Ravens can appear in multiple locations — they're brief, so react quickly.
+          </div>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="tg012" data-yt-search="the giant bo3 glowing raven 1 location shoot" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 12</div>
+                <div class="step-title">Shoot Raven 1 — Catwalk area, perched on a railing</div>
+                <div class="step-desc">
+                  After all radios are found, ravens spawn in fixed locations. Raven 1 perches
+                  on the catwalk railing above the spawn-side stairs. It glows with a soft
+                  blue-purple aura. Shoot it with any weapon — one hit is enough.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Raven 1</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg013" data-yt-search="the giant bo3 glowing raven 2 location shoot" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 13</div>
+                <div class="step-title">Shoot Raven 2 — Near the lower floor power switch</div>
+                <div class="step-desc">
+                  Raven 2 sits on a pipe or beam near the main power switch on the lower
+                  factory floor. Look up when near the switch — the raven may also be
+                  on the overhead walkway directly above the switch panel.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Raven 2</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg014" data-yt-search="the giant bo3 glowing raven 3 laboratory location" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 14</div>
+                <div class="step-title">Shoot Raven 3 — Laboratory wing, on a tank or shelf</div>
+                <div class="step-desc">
+                  Raven 3 is in the laboratory wing near Teleporter C, resting on top of
+                  one of the large chemical storage tanks. Look for its faint glow near
+                  the ceiling of the lab. Shoot it with any weapon.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Raven 3</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── RICHTOFEN'S FINAL STEP ──────────────────────── -->
+      <section class="guide-section" id="richtofen" aria-labelledby="rich-h">
+        <div class="section-header">
+          <span class="section-icon">🧪</span>
+          <h2 id="rich-h">Richtofen's Final Step — The Secret Cinematic</h2>
+          <span class="section-phase-tag phase-boss">End Game</span>
+        </div>
+        <div class="checklist" role="list">
+
+          <div class="checklist-item" data-step-id="tg015" data-yt-search="the giant bo3 shoot teddy bears locations" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 15</div>
+                <div class="step-title">Shoot the 3 hidden teddy bears (side Easter Egg)</div>
+                <div class="step-desc">
+                  Three teddy bears are hidden across the map — shoot all three to unlock
+                  the "Little Resistance" achievement/trophy. Bears are found: one near
+                  the spawn room lockers, one on the upper catwalk behind a barrel, and
+                  one in the lab wing on a shelf. This step is optional but ties into the
+                  full Easter Egg narrative.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-tip">Optional — Achievement</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg016" data-yt-search="the giant bo3 richtofen audio log pap room interact" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 16</div>
+                <div class="step-title">Return to the PaP room and interact with the MTD machine</div>
+                <div class="step-desc">
+                  After all 5 radios and all 3 ravens are complete, teleport into the
+                  Pack-a-Punch room and walk up to the main MTD (Matter Transference Device)
+                  console. Hold interact to activate it. A secret audio log plays —
+                  it's a recording of Richtofen's plan as observed by an alternate Richtofen.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Required</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg017" data-yt-search="the giant bo3 secret ending cinematic how to trigger" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 17</div>
+                <div class="step-title">Trigger the secret ending cinematic</div>
+                <div class="step-desc">
+                  After the audio log plays, a cutscene triggers showing the Origins crew
+                  (Richtofen, Dempsey, Takeo, Nikolai) observing the events of Der Riese
+                  from outside, confirming they are from an alternate timeline. The scene
+                  sets up the overarching Black Ops 3 Zombies storyline.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-required">Story Complete</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-step-id="tg018" data-yt-search="the giant bo3 fly trap easter egg guide" role="listitem">
+            <div class="step-main" tabindex="0" role="button" aria-pressed="false">
+              <div class="step-checkbox" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="step-content">
+                <div class="step-number">STEP 18</div>
+                <div class="step-title">Bonus: Activate the Fly Trap (side Easter Egg)</div>
+                <div class="step-desc">
+                  The Fly Trap is a fan-favourite side Easter Egg from the original Der Riese.
+                  Kill zombies in a specific order on 3 traps (electric, zipline, and
+                  teleporter traps) to light them up in sequence. Successfully triggering
+                  the Fly Trap plays a special sound cue and rewards a full ammo drop.
+                </div>
+                <div class="step-tags"><span class="step-tag tag-tip">Optional — Fan Favourite</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav" aria-label="Quick navigation">
+    <a href="#loadout"><span>🎒</span>Loadout</a>
+    <a href="#power"><span>⚡</span>Power</a>
+    <a href="#teleporters"><span>🔗</span>Teleport</a>
+    <a href="#radios"><span>📻</span>Radios</a>
+    <a href="#ravens"><span>🐦</span>Ravens</a>
+    <a href="#richtofen"><span>🧪</span>Final</a>
+  </nav>
+
+  <footer class="site-footer">
+    <p>
+      <a href="bo3-shadows-of-evil.html">← Shadows of Evil</a> &nbsp;·&nbsp;
+      <a href="bo3-gorod-krovi.html">Gorod Krovi →</a>
+    </p>
+    <p style="margin-top:0.5rem;">Fan-made guide · Not affiliated with Activision or Treyarch</p>
+  </footer>
+
+  <!-- Timer Modal -->
+  <div class="timer-modal-overlay" role="dialog" aria-modal="true" aria-label="Stopwatch timer">
+    <div class="timer-modal">
+      <button class="timer-modal-close" aria-label="Close timer">✕</button>
+      <p class="timer-label">Round Stopwatch</p>
+      <div class="timer-display" aria-live="polite">00:00:00.00</div>
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-start">START</button>
+        <button class="timer-btn timer-btn-pause" disabled>PAUSE</button>
+        <button class="timer-btn timer-btn-reset">RESET</button>
+      </div>
+      <div class="timer-laps" aria-label="Lap times" role="list"></div>
+    </div>
+  </div>
+  <button class="fab-timer" aria-label="Open stopwatch">TIMER</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
